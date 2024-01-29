@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
 
-                                <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                                <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                             </form>
 
                         </div>

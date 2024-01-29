@@ -89,7 +89,7 @@
                   </div>
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                      <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                      <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                   </div>
                   </form>
               </div>
@@ -151,7 +151,7 @@
 
                           <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                              <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                              <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>
 
@@ -202,13 +202,13 @@
 
                           <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                              <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                              <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>
 
                       <?php } else { ?>
-                      Maaf, Anda sudah mengajukan permohonan PKL sebelumnya, silahkan menunggu validasi permohonan PKL
-                      dari Koordinator PKL.
+                      Maaf, Anda sudah mengajukan permohonan Prakerin sebelumnya, silahkan menunggu validasi permohonan Prakerin
+                      dari Koordinator Prakerin.
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                       </div>

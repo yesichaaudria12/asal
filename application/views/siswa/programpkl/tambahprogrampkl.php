@@ -99,7 +99,7 @@
 
                                     <input type="hidden" name="status" value="Belum Tervalidasi" />
 
-                                    <input class="btn btn-success" type="submit" name="btn" value="Simpan" />
+                                    <input class="btn btn-success" type="submit" name="btn" value="Save" />
 
                                 </form>
 

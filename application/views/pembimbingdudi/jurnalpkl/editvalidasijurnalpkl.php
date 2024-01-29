@@ -107,7 +107,7 @@
                                     <img class="col-lg-6" src="<?php echo base_url('dokumentasi/' . $jurnal_pkl->dokumentasi) ?>" width="480" height="320" />
                                 </div>
 
-                                <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                                <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                             </form>
 
                         </div>

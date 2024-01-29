@@ -91,4 +91,4 @@ defined('EXIT__AUTO_MAX')      or define('EXIT__AUTO_MAX', 125); // highest auto
 |
 */
 
-define('SITE_NAME', 'Aplikasi PKL SMKN 1 Glagah');
+define('SITE_NAME', 'Aplikasi Manajemen Administrasi Presensi Terpadu Pada PT.Yuasa Battry Indonesia');

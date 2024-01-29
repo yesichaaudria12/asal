@@ -122,7 +122,7 @@
 
                                 <input type="hidden" name="status_keanggotaan" value="Ketua Kelompok" />
 
-                                <input class="btn btn-primary" type="submit" name="btn" value="Simpan" />
+                                <input class="btn btn-primary" type="submit" name="btn" value="Save" />
 
                             </form>
 

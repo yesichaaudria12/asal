@@ -438,7 +438,7 @@
                                     </div>
                                 </div>
 
-                                <input class="btn btn-success mt-4" type="submit" name="btn" value="Simpan" />
+                                <input class="btn btn-success mt-4" type="submit" name="btn" value="save" />
                             </form>
 
                         </div>

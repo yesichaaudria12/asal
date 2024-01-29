@@ -41,7 +41,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                                Total Pengajuan PKL Belum Diproses</div>
+                                                Total Pengajuan Prakerin Belum Diproses</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $belum_tervalidasi; ?></div>
                                         </div>
@@ -59,7 +59,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total
-                                                Pengajuan PKL Diproses</div>
+                                                Pengajuan Prakerin Diproses</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $proses_pengajuan; ?></div>
                                         </div>
@@ -77,7 +77,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total
-                                                Pengajuan PKL Diterima</div>
+                                                Pengajuan Prakerin Diterima</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
@@ -99,7 +99,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total
-                                                Pengajuan PKL Ditolak</div>
+                                                Pengajuan Prakerin Ditolak</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $ditolak; ?>
                                             </div>
                                         </div>
@@ -117,7 +117,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total
-                                                Pengajuan PKL Keseluruhan</div>
+                                                Pengajuan Prakerin Keseluruhan</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
@@ -161,7 +161,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                                Jumlah Siswa Yang Belum Mengajukan Permohonan PKL</div>
+                                                Jumlah Siswa Yang Belum Mengajukan Permohonan Prakerin</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
@@ -183,7 +183,7 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Jumlah Siswa Yang Sudah Mengajukan Permohonan PKL</div>
+                                                Jumlah Siswa Yang Sudah Mengajukan Permohonan Prakerin</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
