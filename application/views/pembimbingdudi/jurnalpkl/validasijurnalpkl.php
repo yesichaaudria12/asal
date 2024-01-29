@@ -54,7 +54,7 @@
                                             <th style="text-align:center">Dokumentasi</th>
                                             <th style="text-align:center">Validasi</th>
                                             <th style="text-align:center">Catatan</th>
-                                            <th style="text-align:center">Opsi</th>
+                                            <th style="text-align:center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

@@ -17,7 +17,7 @@ class PelaksanaanPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Pelaksanaan PKL';
+        $data['title'] = 'Pelaksanaan Prakerin';
         $data['pelaksanaanpkl'] = $this->pelaksanaanpkl_model->getAll();
         $this->load->view("admin/pelaksanaanpkl/listpelaksanaanpkl", $data);
     }
@@ -25,7 +25,7 @@ class PelaksanaanPKL extends CI_Controller
     public function editpelaksanaanpkl($id = null)
     {
 
-        if (!isset($id)) redirect('admin/PelaksanaanPKL');
+        if (!isset($id)) redirect('admin/PelaksanaanPkl');
         $pelaksanaanpkl = $this->pelaksanaanpkl_model;
         $validation = $this->form_validation;
         $validation->set_rules($pelaksanaanpkl->rules());
@@ -35,7 +35,7 @@ class PelaksanaanPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/PelaksanaanPKL');
         }
-        $data['title'] = 'Kelompok Pelaksanaan PKL';
+        $data['title'] = 'Kelompok Pelaksanaan Prakerin';
         $data["pelaksanaanpkl"] = $pelaksanaanpkl->getById($id);
         if (!$data["pelaksanaanpkl"]) show_404();
         $this->load->view("admin/pelaksanaanpkl/editpelaksanaanpkl", $data);

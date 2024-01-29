@@ -16,14 +16,14 @@ class ValidasiJurnalPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Validasi Jurnal PKL';
+        $data['title'] = 'Validasi Logbook ';
         $data["jurnal_pkl"] = $this->validasijurnalpkl_model->getAll();
         $this->load->view("pembimbingdudi/jurnalpkl/validasijurnalpkl", $data);
     }
 
     public function editvalidasijurnalpkl($id_jurnal_pkl = null)
     {
-        $data['title'] = 'Ubah Validasi Jurnal PKL';
+        $data['title'] = 'Edit Validasi Logbook';
         if (!isset($id_jurnal_pkl)) redirect('pembimbingdudi/ValidasiJurnalPKL');
         $validasijurnalpkl = $this->validasijurnalpkl_model;
         $validation = $this->form_validation;

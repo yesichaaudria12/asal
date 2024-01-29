@@ -50,7 +50,8 @@
                                         <?php if (empty($pengajuanpkl->status_validasi)) { ?>
                                             <strong> Belum mengajukan. </strong>
                                         <?php } else { ?>
-                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.</p>
+                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.
+                                    </p>
                                 <?php } ?>
                                 <hr>
                                 <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
@@ -60,7 +61,7 @@
                             <?php foreach ($jurnal_pkl as $jurnal) :
                                 if ($jurnal->tanggal == date('Y-m-d')) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        Bagus, Anda sudah melaksanakan kegiatan PKL hari ini dan mencatatnya di jurnal kegiatan PKL!
+                                        Bagus, Anda sudah melaksanakan kegiatan Prakerin hari ini dan mencatatnya di Logbook kegiatan Prakerin!
                                     </div>
                                 <?php } else { ?>
                                     <div class="alert alert-danger" role="alert">
@@ -72,13 +73,13 @@
                             <div class="card mb-3">
                                 <div class="card-header d-flex bd-highlight">
                                     <div class="mr-auto p-2 bd-highlight">
-                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Tambah Data Jurnal PKL</a>
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Add Data Logbook</a>
                                     </div>
                                     <div class="p-2 bd-highlight">
-                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Data Jurnal PKL </a>
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Print Data Logbook </a>
                                     </div>
                                     <div class="p-2 bd-highlight">
-                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_dokumentasi_jurnal/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Lampiran Dokumentasi</a>
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_dokumentasi_jurnal/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Print Lampiran Dokumentasi</a>
                                     </div>
                                 </div>
 
@@ -94,7 +95,7 @@
                                                     <th style="text-align:center">Rujukan Kompetensi Dasar</th>
                                                     <th style="text-align:center">Status Validasi</th>
                                                     <th style="text-align:center">Catatan</th>
-                                                    <th style="text-align:center">Opsi</th>
+                                                    <th style="text-align:center">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Penilaian PKL');
+$pdf->SetTitle('Penilaian Prakerin');
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(false);
 $pdf->SetHeaderMargin(0);
@@ -10,7 +10,7 @@ $pdf->SetRightMargin(20);
 $pdf->SetLeftMargin(20);
 $pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(false);
-$pdf->SetAuthor('SMKN 1 Glagah');
+$pdf->SetAuthor('PT. Yuasa Baterry Indonesia');
 $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', '', 12, '', 'false');
 $pdf->AddPage();
@@ -214,4 +214,4 @@ $html = '
         </tr>
     </table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Penilaian PKL '  . $data_siswa->nama_siswa . '.pdf', 'I');
+$pdf->Output('Penilaian Prakerin '  . $data_siswa->nama_siswa . '.pdf', 'I');

@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Laporan Program PKL - '  . $data_program_pkl->nama_siswa);
+$pdf->SetTitle('Laporan Program Prakerin - '  . $data_program_pkl->nama_siswa);
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(true);
 $pdf->SetHeaderMargin(0);
@@ -14,13 +14,13 @@ $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', '', 11, '', 'false');
 $pdf->AddPage();
 $html = '
-    <h2 style="text-align:center;">PROGRAM PRAKTIK KERJA LAPANGAN (PKL)</h2>
+    <h2 style="text-align:center;">PROGRAM PRAKTIK KERJA INDUSTRI (PRAKERIN)</h2>
     <table>
     <tr>
     <td></td>
   </tr>
   <tr>
-    <td width="30%">Nama Peserta PKL</td>
+    <td width="30%">Nama Peserta Prakerin</td>
     <td> : ' . $data_program_pkl->nama_siswa . '</td>
   </tr>
   <tr>
@@ -44,7 +44,7 @@ $html = '
     <td> : ' . $data_program_pkl->alamat_dudi . '</td>
   </tr>
   <tr>
-    <td width="30%">Waktu PKL</td>
+    <td width="30%">Waktu Prakerin</td>
     <td> : ' . date("d-m-Y", strtotime($data_program_pkl->tanggal_masuk)) . ' - ' . date("d-m-Y", strtotime($data_program_pkl->tanggal_keluar)) . '</td>
   </tr>
     <tr>
@@ -71,4 +71,4 @@ foreach ($program_pkl as $row) {
 }
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Laporan Program PKL ' . $data_program_pkl->nama_siswa . '.pdf', 'I');
+$pdf->Output('Laporan Program Prakerin ' . $data_program_pkl->nama_siswa . '.pdf', 'I');

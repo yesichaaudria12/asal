@@ -17,7 +17,7 @@ class PengajuanPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Pengajuan PKL';
+        $data['title'] = 'Pengajuan Prakerin';
         $data['pengajuanpkl'] = $this->pengajuanpkl_model->getAll();
         $data['data_guru'] = $this->pengajuanpkl_model->get_data_guru();
         $this->load->view("admin/pengajuanpkl/listpengajuan", $data);

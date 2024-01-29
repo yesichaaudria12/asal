@@ -55,21 +55,22 @@
                             <div class="card-body">
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Anda tidak diizinkan mengakses menu ini!</strong></h4>
-                                    <p>Karena pengajuan PKL Anda masih berstatus
+                                    <p>Karena pengajuan Prakerin Anda masih berstatus
                                         <?php if (empty($pengajuanpkl->status_validasi)) { ?>
                                             <strong> Belum mengajukan. </strong>
                                         <?php } else { ?>
-                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.</p>
+                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.
+                                    </p>
                                 <?php } ?>
                                 <hr>
-                                <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
+                                <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
                             </div>
                         <?php } else { ?>
                             <?php foreach ($absensi as $absen) :
                                 if ($absen->tanggal_absensi == date('Y-m-d')) { ?>
                                     <div class="alert alert-success" role="alert">
-                                        Bagus, Anda sudah melaksanakan kegiatan PKL hari ini dan mengisi presensi PKL!
+                                        Bagus, Anda sudah melaksanakan kegiatan Prakerin hari ini dan mengisi presensi Prakerin!
                                     </div>
                                 <?php } else { ?>
                                     <div class="alert alert-danger" role="alert">
@@ -81,7 +82,7 @@
                             <div class="card mb-3">
                                 <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
                                     <div class="card-header d-flex justify-content-between mb-2">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Tambah Presensi PKL</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Tambah Presensi Prakerin</button>
                                     </div>
                                 <?php } ?>
                                 <div class="card-body">
@@ -95,7 +96,7 @@
                                                     <th style="text-align:center">Tanggal Presensi</th>
                                                     <th style="text-align:center">Keterangan</th>
                                                     <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
-                                                        <th style="text-align:center">Opsi</th>
+                                                        <th style="text-align:center">Aksi</th>
                                                     <?php } ?>
                                                 </tr>
                                             </thead>

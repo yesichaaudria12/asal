@@ -64,7 +64,7 @@
                                             <th style="text-align:center">No Telp Pimpinan</th>
                                             <th style="text-align:center">Kuota</th>
                                             <th style="text-align:center">Rujukan Jurusan</th>
-                                            <th style="text-align:center">Opsi</th>
+                                            <th style="text-align:center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>

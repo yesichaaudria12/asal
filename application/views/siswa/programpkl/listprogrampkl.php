@@ -46,20 +46,21 @@
                             <div class="card-body">
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Anda tidak diizinkan mengakses menu ini!</strong></h4>
-                                    <p>Karena pengajuan PKL Anda masih berstatus
+                                    <p>Karena pengajuan Prakerin Anda masih berstatus
                                         <?php if (empty($pengajuanpkl->status_validasi)) { ?>
                                             <strong> Belum mengajukan. </strong>
                                         <?php } else { ?>
-                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.</p>
+                                            <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.
+                                    </p>
                                 <?php } ?>
                                 <hr>
-                                <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
+                                <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
                             </div>
                         <?php } else { ?>
                             <div class="card-header d-flex justify-content-between">
-                                <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i class="fas fa-plus"></i> Tambah Data Program PKL</a>
-                                <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Cetak Data Program PKL</a>
+                                <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i class="fas fa-plus"></i> Add Data Program Prakerin</a>
+                                <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Print Data Program Prakerin</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -70,7 +71,7 @@
                                                 <th style="text-align:center">Tgl Pelaksanaan</th>
                                                 <th style="text-align:center">Topik Pekerjaan</th>
                                                 <th style="text-align:center">Rujukan Kompetensi Dasar</th>
-                                                <th style="text-align:center">Opsi</th>
+                                                <th style="text-align:center">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>

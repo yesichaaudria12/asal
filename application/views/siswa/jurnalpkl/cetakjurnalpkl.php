@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Laporan Jurnal PKL - ' . $data_jurnal_pkl->nama_siswa);
+$pdf->SetTitle('Laporan Logbook Prakerin - ' . $data_jurnal_pkl->nama_siswa);
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(true);
 $pdf->SetHeaderMargin(0);
@@ -9,18 +9,18 @@ $pdf->SetTopMargin(20);
 $pdf->SetRightMargin(20);
 $pdf->SetLeftMargin(30);
 $pdf->setFooterMargin(20);
-$pdf->SetAuthor('SMKN 1 Glagah');
+$pdf->SetAuthor('PT. Yuasa Battery Indonesia');
 $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', '', 11, '', 'false');
 $pdf->AddPage();
 $html = '
-<h2 style="text-align:center;">JURNAL KEGIATAN PRAKTIK KERJA LAPANGAN (PKL)</h2>
+<h2 style="text-align:center;">LOGBOOK KEGIATAN PRAKTIK KERJA INDUSTRI (PRAKERIN)</h2>
     <table>
     <tr>
     <td></td>
   </tr>
     <tr>
-    <td width="30%">Nama Peserta PKL</td>
+    <td width="30%">Nama Peserta Prakerin</td>
     <td> : ' . $data_jurnal_pkl->nama_siswa . '</td>
   </tr>
   <tr>
@@ -44,7 +44,7 @@ $html = '
     <td> : ' . $data_jurnal_pkl->alamat_dudi . '</td>
   </tr>
   <tr>
-    <td width="30%">Waktu PKL</td>
+    <td width="30%">Waktu Prakerin</td>
     <td> : ' . date("d-m-Y", strtotime($data_jurnal_pkl->tanggal_masuk)) . ' - ' . date("d-m-Y", strtotime($data_jurnal_pkl->tanggal_keluar)) . '</td>
   </tr>
   <tr>
@@ -69,4 +69,4 @@ foreach ($jurnal_pkl as $row) {
 }
 $html .= '</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Laporan Jurnal PKL '  . $data_jurnal_pkl->nama_siswa . '.pdf', 'I');
+$pdf->Output('Laporan Logbook Prakerin '  . $data_jurnal_pkl->nama_siswa . '.pdf', 'I');

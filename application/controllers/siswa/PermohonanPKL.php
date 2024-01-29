@@ -17,7 +17,7 @@ class PermohonanPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Permohonan Pelaksanaan PKL';
+        $data['title'] = 'Permohonan Pelaksanaan Prakerin';
         $data['permohonanpkl'] = $this->permohonanpkl_model->getAll();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getHistory();
         $data['data_dudi'] = $this->datadudi_model->getDataDUDI();

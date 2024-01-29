@@ -18,7 +18,7 @@ class ProgramPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Program PKL';
+        $data['title'] = 'Program Prakerin';
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data['program_pkl'] = $this->programpkl_model->getAll();
         $this->load->view("siswa/programpkl/listprogrampkl", $data);
@@ -35,7 +35,7 @@ class ProgramPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('siswa/ProgramPKL');
         }
-        $data['title'] = 'Tambah Data Program PKL';
+        $data['title'] = 'Add Data Program Prakerin';
         $data['mapel'] = $this->programpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/programpkl/tambahprogrampkl", $data);
@@ -60,7 +60,7 @@ class ProgramPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('siswa/ProgramPKL');
         }
-        $data['title'] = 'Ubah Data Jurnal PKL';
+        $data['title'] = 'Edit Data Logbook ';
         $data['mapel'] = $this->programpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data["programpkl"] = $programpkl->getId($id);

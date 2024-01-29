@@ -18,7 +18,7 @@ class JurnalPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Jurnal PKL';
+        $data['title'] = 'Logbook';
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data['jurnal_pkl'] = $this->jurnalpkl_model->getAll();
         $this->load->view("siswa/jurnalpkl/listjurnalpkl", $data);
@@ -35,7 +35,7 @@ class JurnalPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('siswa/JurnalPKL');
         }
-        $data['title'] = 'Tambah Data Jurnal PKL';
+        $data['title'] = 'Tambah Data Logbook ';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/jurnalpkl/tambahjurnalpkl", $data);
@@ -60,7 +60,7 @@ class JurnalPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('siswa/JurnalPKL');
         }
-        $data['title'] = 'Ubah Data Jurnal PKL';
+        $data['title'] = 'Edit Data Logbook';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data["jurnalpkl"] = $jurnalpkl->getId($id);
