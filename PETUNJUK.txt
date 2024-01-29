@@ -1,0 +1,21 @@
+REQ PASSWORD RAR
+HUB : 08179851011
+==================
+Aplikasi Managemen Siswa PKL
+=========================
+Framework : codeigniter
+=========================
+Recomendasi versi PHP :
+PHP 7.4
+
+=========================
+PETUNJUK :
+buat database
+sesuiakan nama database di aplication/config/database.php
+
+================
+ADMIN
+user : admin
+pass : admin
+
+
