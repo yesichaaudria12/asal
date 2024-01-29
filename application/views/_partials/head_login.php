@@ -1,7 +1,7 @@
-<title>Aplikasi PKL SMKN 1 Glagah - Login</title>
+<title>Aplikasi Manajemen Administrasi Presensi Terpadu Pada PT,Yuasa Battery Indonesia</title>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="<?= base_url('assets/'); ?>img/favicon.ico">
+<link rel="shortcut icon" href="<?= base_url('assets/'); ?>img/login.png">
 <style>
     body {
         background-image: url("<?= base_url('assets/'); ?>img/background.jpg");

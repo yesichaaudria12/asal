@@ -13,7 +13,7 @@
                 }; ?>
                 <div class="account-wall">
                     <img class="profile-img" src="<?= base_url('assets/'); ?>img/login.png" alt="">
-                    <h1 class="text-center login-title">Aplikasi PKL SMKN 1 Glagah</h1>
+                    <h1 class="text-center login-title">MANTAP- YUASA</h1>
                     <form class="form-signin" method="POST" action="<?php echo base_url() ?>login">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Nama pengguna" maxlength="15" autofocus>
