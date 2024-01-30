@@ -73,7 +73,7 @@
                             <div class="card mb-3">
                                 <div class="card-header d-flex bd-highlight">
                                     <div class="mr-auto p-2 bd-highlight">
-                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Add Data Logbook</a>
+                                        <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/tambahjurnalpkl") ?>"><i class="fas fa-plus"></i> Add New Data Logbook</a>
                                     </div>
                                     <div class="p-2 bd-highlight">
                                         <a class="btn btn-light" href="<?= base_url("siswa/JurnalPKL/cetak_jurnal_pkl/" . $this->session->userdata('id_siswa')) ?>"><i class="fas fa-print"></i> Print Data Logbook </a>

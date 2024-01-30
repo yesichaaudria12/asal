@@ -35,7 +35,7 @@ class JurnalPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('siswa/JurnalPKL');
         }
-        $data['title'] = 'Add Data Logbook ';
+        $data['title'] = 'Add New Data Logbook ';
         $data['mapel'] = $this->jurnalpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/jurnalpkl/tambahjurnalpkl", $data);

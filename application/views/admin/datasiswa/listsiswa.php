@@ -40,7 +40,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <a class="btn btn-light" href="<?= base_url("admin/DataSiswa/daftarsiswa") ?>"><i
-                                    class="fas fa-plus"></i> Add Data Siswa</a>
+                                    class="fas fa-plus"></i> Add New Data Prakerin</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

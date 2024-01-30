@@ -62,7 +62,7 @@
                         <?php } else { ?>
                         <div class="card-header d-flex justify-content-between">
                             <a class="btn btn-light" href="<?= base_url("siswa/ProgramPKL/tambahprogrampkl") ?>"><i
-                                    class="fas fa-plus"></i> Add Data Program Prakerin</a>
+                                    class="fas fa-plus"></i> Add New Data Program Prakerin</a>
                             <a class="btn btn-light"
                                 href="<?= base_url("siswa/ProgramPKL/cetak_program_pkl/" . $this->session->userdata('id_siswa')) ?>"><i
                                     class="fas fa-print"></i> Print Data Program Prakerin</a>

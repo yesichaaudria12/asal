@@ -45,8 +45,13 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
+<<<<<<< HEAD:application/views/admin/datamentor/listmentor.php
                             <a class="btn btn-light" href="<?= base_url("admin/DataMentor/daftarmentor") ?>"><i
                                     class="fas fa-plus"></i> Add Data Mentor</a>
+=======
+                            <a class="btn btn-light" href="<?= base_url("admin/DataDUDI/daftardudi") ?>"><i
+                                    class="fas fa-plus"></i> Add New Data Mentor</a>
+>>>>>>> 779645248555b9cfc5aa16490c7daf2c6d2f51c8:application/views/admin/datadudi/listdudi.php
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
