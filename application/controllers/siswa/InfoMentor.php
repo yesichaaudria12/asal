@@ -16,7 +16,7 @@ class InfoMentor extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Informasi Tempat PKL / Mentor';
+        $data['title'] = 'Informasi Tempat Prakerin / Mentor';
         $data['data_dudi'] = $this->datamentor_model->getInfoMentor();
         $this->load->view("siswa/mentor/infomentor", $data);
     }
