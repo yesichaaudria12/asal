@@ -10,7 +10,7 @@ $pdf->SetRightMargin(20);
 $pdf->SetLeftMargin(20);
 $pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(false);
-$pdf->SetAuthor('PT. Yuas Battery Indonesia');
+$pdf->SetAuthor('PT. Yuasa Battery Indonesia');
 $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', 'B', 12, '', 'false');
 $pdf->AddPage();

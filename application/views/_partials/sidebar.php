@@ -182,7 +182,7 @@
         </div>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'InfoMentor' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/InfMentor'); ?>">
+            <a class="nav-link" href=" <?= base_url('siswa/InfoMentor'); ?>">
                 <i class="fas fa-fw fa-info-circle"></i>
                 <span>Info Mentor</span></a>
         </li>
