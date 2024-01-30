@@ -117,7 +117,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="no_hp_orang_tua">No. HP Orang Tua</label>
+                                    <label for="no_hp_orang_tua">No. HP Orang Tua *</label>
                                     <input
                                         class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>"
                                         type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_hp_orang_tua"
