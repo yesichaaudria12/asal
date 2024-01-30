@@ -36,7 +36,7 @@
             <li class="nav-item <?php echo $this->uri->segment(2) == 'DataSiswa' ? 'active' : '' ?>">
                 <a class="nav-link" href="<?= base_url('admin/DataSiswa/'); ?>">
                     <i class="fas fa-fw fa-user-graduate"></i>
-                    <span>Data Siswa</span></a>
+                    <span>Data Prakerin</span></a>
             </li>
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'DataGuru' ? 'active' : '' ?>">
@@ -202,7 +202,7 @@
         <li class="nav-item <?php echo $this->uri->segment(2) == 'JurnalPKL' ? 'active' : '' ?>">
             <a class="nav-link" href=" <?= base_url('siswa/JurnalPKL'); ?>">
                 <i class="fas fa-fw fa-clipboard"></i>
-                <span>Jurnal Prakerin</span></a>
+                <span>Logbook Prakerin</span></a>
         </li>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'ProgramPKL' ? 'active' : '' ?>">

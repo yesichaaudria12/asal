@@ -46,7 +46,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <a class="btn btn-light" href="<?= base_url("admin/DataDUDI/daftardudi") ?>"><i
-                                    class="fas fa-plus"></i> Add Data Mentor</a>
+                                    class="fas fa-plus"></i> Add New Data Mentor</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

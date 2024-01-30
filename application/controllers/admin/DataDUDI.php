@@ -33,7 +33,7 @@ class DataDUDI extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('admin/DataDUDI');
         }
-        $data['title'] = 'Add Data Mentor';
+        $data['title'] = 'Add New Data Mentor';
         $this->load->view("admin/datadudi/daftardudi", $data);
     }
 
