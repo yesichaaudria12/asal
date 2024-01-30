@@ -98,7 +98,7 @@
                                                 <?php } ?>
                                                 <?php
                                                     if ($akun->role == 'admin_pkl') { ?>
-                                                Administrator PKL
+                                                Administrator Prakerin
                                                 <?php } ?>
                                             </td>
                                             <?php $i++ ?>
