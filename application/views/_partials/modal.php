@@ -31,7 +31,7 @@
                   </div>
                   <div class="modal-body">Klik tombol Logout untuk keluar dari sesi login ini.</div>
                   <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                       <a class="btn btn-primary" href="<?= base_url('login/logout') ?>">Logout</a>
                   </div>
               </div>
@@ -88,7 +88,7 @@
 
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                       <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                   </div>
                   </form>
@@ -150,7 +150,7 @@
                           </div>
 
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>
@@ -201,7 +201,7 @@
                           </div>
 
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>

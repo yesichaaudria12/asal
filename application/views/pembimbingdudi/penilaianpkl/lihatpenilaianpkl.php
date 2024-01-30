@@ -12,11 +12,11 @@ $pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(false);
 $pdf->SetAuthor('PT. Yuasa Baterry Indonesia');
 $pdf->SetDisplayMode('real', 'default');
-$pdf->SetFont('Arial', '', 12, '', 'false');
+$pdf->SetFont('Arial', 'B', 12, '', 'false');
 $pdf->AddPage();
 $i = 0;
 $html = '
-    <h2 style="text-align:center;">PENILAIAN HASIL KEGIATAN PRAKTIK KERJA LAPANGAN</h2>
+    <h2 style="text-align:center;">PENILAIAN HASIL KEGIATAN PRAKTIK KERJA INDUSTRI</h2>
     <table>
         <tr>
             <td>Nama Mentor</td>
@@ -27,8 +27,8 @@ $html = '
         <tr>
             <td>Bidang Usaha</td>
             <td>: ' . $data_siswa->jenis_usaha . '</td>
-            <td>NIS</td>
-            <td>: ' . $data_siswa->nis . '</td>
+            <td>NIS / NIM</td>
+            <td>: ' . $data_siswa->nis_nim . '</td>
         </tr>
         <tr>
             <td></td>
