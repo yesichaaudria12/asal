@@ -25,7 +25,7 @@ class PengajuanPKL extends CI_Controller
 
     public function editpengajuanpkl($id = null)
     {
-        $data['title'] = 'Ubah Pengajuan PKL';
+        $data['title'] = 'Edit Pengajuan PKL';
         if (!isset($id)) redirect('admin/pengajuanpkl');
         $pengajuanpkl = $this->pengajuanpkl_model;
         $validation = $this->form_validation;

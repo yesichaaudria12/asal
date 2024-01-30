@@ -91,10 +91,10 @@
                                                     <?php
                                                     if (!isset($dtsiswa->id_penilaian_pkl)) { ?>
                                                         <a href="<?= base_url('admin/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
-                                                            Tambah</a>
+                                                            Add</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('admin/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                        <a href="<?= base_url('admin/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a href="<?= base_url('admin/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> View</a>
                                                     <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>

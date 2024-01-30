@@ -12,8 +12,8 @@
                   </div>
                   <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
                   <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                      <a id="btn-delete" class="btn btn-danger" href="#">Hapus</a>
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                      <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
                   </div>
               </div>
           </div>
@@ -43,7 +43,7 @@
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tambah Akun Mentor</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Add Account Mentor</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
@@ -101,7 +101,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tambah Presensi Prakerin</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Add Presensi Prakerin</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>

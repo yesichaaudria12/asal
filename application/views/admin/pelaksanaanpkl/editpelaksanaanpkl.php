@@ -38,7 +38,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <a href="<?= base_url('admin/PelaksanaanPKL/') ?>"><i class="fas fa-arrow-left"></i>
-                                Kembali</a>
+                                Back</a>
                         </div>
                         <div class="card-body">
 

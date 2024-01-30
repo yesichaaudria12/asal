@@ -37,7 +37,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/DataSiswa/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/DataSiswa/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                         </div>
                         <div class="card-body">
 
@@ -68,10 +68,7 @@
 
                                 <div class="form-group">
                                     <label for="kelas">Kelas *</label>
-                                    <input
-                                        class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>"
-                                        name="kelas" placeholder="kelas*"
-                                        value="<?php echo $datasiswa->kelas ?>" />
+                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" type="text" name="kelas" placeholder="kelas*" value="<?php echo $datasiswa->kelas ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('kelas') ?>
                                     </div>
@@ -83,37 +80,41 @@
                                         class="form-control <?php echo form_error('id_jurusan') ? 'is-invalid' : '' ?>"
                                         name="id_jurusan">
                                         <option disabled selected value="">---Pilih Jurusan---</option>
-                                        <option value="1" <?php echo set_select('id_jurusan', '1', ($datasiswa->id_jurusan == '1')) ?>>
+                                        <option value="1"
+                                            <?php echo set_select('id_jurusan', '1', ($datasiswa->id_jurusan == '1')) ?>>
                                             Teknik Komputer dan Jaringan
                                         </option>
                                     </select>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('id_jurusan') ?>
-                                        </div>
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="jenis_kelamin">Jenis Kelamin *</label>
-                                        <select
+                                <div class="form-group">
+                                    <label for="jenis_kelamin">Jenis Kelamin *</label>
+                                    <select
                                         class="form-control <?php echo form_error('jenis_kelamin') ? 'is-invalid' : '' ?>"
                                         name="jenis_kelamin">
                                         <option disabled selected value="">---Pilih Jenis Kelamin---</option>
-                                        <option value="1" <?php echo set_select('jenis_kelamin', '1', ($datasiswa->jenis_kelamin == '1')) ?>>
-                                             Laki-Laki
+                                        <option value="1"
+                                            <?php echo set_select('jenis_kelamin', '1', ($datasiswa->jenis_kelamin == '1')) ?>>
+                                            Laki-Laki
                                         </option>
-                                        <option value="2" <?php echo set_select('jenis_kelamin', '2', ($datasiswa->jenis_kelamin == '2')) ?>>
-                                             Perempuan
+                                        <option value="2"
+                                            <?php echo set_select('jenis_kelamin', '2', ($datasiswa->jenis_kelamin == '2')) ?>>
+                                            Perempuan
                                         </option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            <?php echo form_error('jenis_kelamin') ?>
-                                            </div>
-                                        </div>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('jenis_kelamin') ?>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="hp_siswa">No. HP Siswa *</label>
                                     <input class="form-control <?php echo form_error('hp_siswa') ? 'is-invalid' : '' ?>"
-                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="hp_siswa" placeholder=""
+                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="hp_siswa"
+                                        placeholder=""
                                         value="<?php echo set_value('hp_siswa', $datasiswa->hp_siswa) ?>">
                                     <div class="invalid-feedback">
                                         <?php echo form_error('hp_siswa') ?>
@@ -134,7 +135,8 @@
                                     <label for="no_hp_orang_tua">No. HP Orang Tua</label>
                                     <input
                                         class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>"
-                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_hp_orang_tua" placeholder=""
+                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_hp_orang_tua"
+                                        placeholder=""
                                         value="<?php echo set_value('no_hp_orang_tua', $datasiswa->no_hp_orang_tua) ?>">
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_hp_orang_tua') ?>

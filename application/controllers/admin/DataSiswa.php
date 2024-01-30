@@ -50,7 +50,7 @@ class DataSiswa extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/DataSiswa');
         }
-        $data['title'] = 'Ubah Data Siswa';
+        $data['title'] = 'Edit Data Siswa';
         $data["datasiswa"] = $datasiswa->getById($id);
         if (!$data["datasiswa"]) show_404();
         $this->load->view("admin/datasiswa/editdatasiswa", $data);

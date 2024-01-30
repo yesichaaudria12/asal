@@ -82,7 +82,7 @@
                             <div class="card mb-3">
                                 <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
                                     <div class="card-header d-flex justify-content-between mb-2">
-                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Tambah Presensi Prakerin</button>
+                                        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahabsensi"><i class="fas fa-plus"></i> Add Presensi Prakerin</button>
                                     </div>
                                 <?php } ?>
                                 <div class="card-body">
@@ -122,7 +122,7 @@
                                                         </td>
                                                         <?php if ($pengajuanpkl->status_keanggotaan == 'Ketua Kelompok') { ?>
                                                             <td style="text-align:center">
-                                                                <a onclick="deleteConfirm('<?= base_url('siswa/PresensiPKL/hapuspresensipkl/' . $absen->id_absensi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                                <a onclick="deleteConfirm('<?= base_url('siswa/PresensiPKL/hapuspresensipkl/' . $absen->id_absensi) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Delete</a>
                                                             </td>
                                                         <?php } ?>
                                                         <?php $i++ ?>

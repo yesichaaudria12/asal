@@ -26,7 +26,7 @@ class PenilaianPKL extends CI_Controller
     {
         if (!isset($nama_siswa)) redirect('pembimbingdudi/PenilaianPKL');
         $data['siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
-        $data['title'] = 'Tambah Data Penilaian Prakerin';
+        $data['title'] = 'Add Data Penilaian Prakerin';
         $this->load->view("pembimbingdudi/penilaianpkl/tambahpenilaianpkl", $data);
     }
 
@@ -41,7 +41,7 @@ class PenilaianPKL extends CI_Controller
     public function editpenilaianpkl($nama_siswa = null)
     {
         if (!isset($nama_siswa)) redirect('pembimbingdudi/PenilaianPKL');
-        $data['title'] = 'Ubah Data Penilaian Prakerin';
+        $data['title'] = 'Edit Data Penilaian Prakerin';
         $data['data_siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
         $data['siswa'] = $this->penilaianpkl_model->getNilaiSiswa($nama_siswa);
         $this->load->view("pembimbingdudi/penilaianpkl/editpenilaianpkl", $data);

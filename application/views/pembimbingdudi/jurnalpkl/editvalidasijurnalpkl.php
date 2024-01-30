@@ -35,24 +35,28 @@
 
                     <!-- Content Row -->
                     <?php if ($this->session->flashdata('success')) : ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
                     <?php endif; ?>
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL/') ?>"><i
+                                    class="fas fa-arrow-left"></i> Back</a>
                         </div>
                         <div class="card-body">
 
                             <form action="" method="post">
 
-                                <input type="hidden" name="id_jurnal_pkl" value="<?php echo $jurnal_pkl->id_jurnal_pkl ?>" />
+                                <input type="hidden" name="id_jurnal_pkl"
+                                    value="<?php echo $jurnal_pkl->id_jurnal_pkl ?>" />
 
                                 <div class="form-group">
                                     <label for="nama_siswa">Nama Siswa</label>
-                                    <input class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>" name="nama_siswa" readonly value="<?php echo $jurnal_pkl->nama_siswa ?>" />
+                                    <input
+                                        class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>"
+                                        name="nama_siswa" readonly value="<?php echo $jurnal_pkl->nama_siswa ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama_siswa') ?>
                                     </div>
@@ -60,7 +64,8 @@
 
                                 <div class="form-group">
                                     <label for="kelas">Kelas</label>
-                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" name="kelas" readonly value="<?php echo $jurnal_pkl->kelas ?>" />
+                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>"
+                                        name="kelas" readonly value="<?php echo $jurnal_pkl->kelas ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('kelas') ?>
                                     </div>
@@ -68,7 +73,9 @@
 
                                 <div class="form-group">
                                     <label for="tanggal">Tanggal Pelaksanaan</label>
-                                    <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>" name="tanggal" readonly value="<?php echo date("d-m-Y", strtotime($jurnal_pkl->tanggal)) ?>" />
+                                    <input class="form-control <?php echo form_error('tanggal') ? 'is-invalid' : '' ?>"
+                                        name="tanggal" readonly
+                                        value="<?php echo date("d-m-Y", strtotime($jurnal_pkl->tanggal)) ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('tanggal') ?>
                                     </div>
@@ -76,7 +83,10 @@
 
                                 <div class="form-group">
                                     <label for="topik_pekerjaan">Topik Pekerjaan</label>
-                                    <textarea class="form-control <?php echo form_error('topik_pekerjaan') ? 'is-invalid' : '' ?>" type="text" name="topik_pekerjaan" readonly><?php echo $jurnal_pkl->topik_pekerjaan ?></textarea>
+                                    <textarea
+                                        class="form-control <?php echo form_error('topik_pekerjaan') ? 'is-invalid' : '' ?>"
+                                        type="text" name="topik_pekerjaan"
+                                        readonly><?php echo $jurnal_pkl->topik_pekerjaan ?></textarea>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('topik_pekerjaan') ?>
                                     </div>
@@ -84,8 +94,10 @@
 
                                 <div class="form-group">
                                     <label for="status">Status Validasi</label>
-                                    <select class="form-control <?php echo form_error('status') ? 'is-invalid' : '' ?>" name="status">
-                                        <option value="<?php echo $jurnal_pkl->status ?>">Status Validasi : <?php echo $jurnal_pkl->status ?></option>
+                                    <select class="form-control <?php echo form_error('status') ? 'is-invalid' : '' ?>"
+                                        name="status">
+                                        <option value="<?php echo $jurnal_pkl->status ?>">Status Validasi :
+                                            <?php echo $jurnal_pkl->status ?></option>
                                         <option value="Tervalidasi">Tervalidasi</option>
                                         <option value="Ditolak">Ditolak</option>
                                     </select>
@@ -96,7 +108,10 @@
 
                                 <div class="form-group">
                                     <label for="catatan">Catatan</label>
-                                    <textarea class="form-control <?php echo form_error('catatan') ? 'is-invalid' : '' ?>" type="text" name="catatan" value="<?php echo $jurnal_pkl->catatan ?>"></textarea>
+                                    <textarea
+                                        class="form-control <?php echo form_error('catatan') ? 'is-invalid' : '' ?>"
+                                        type="text" name="catatan"
+                                        value="<?php echo $jurnal_pkl->catatan ?>"></textarea>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('catatan') ?>
                                     </div>
@@ -104,7 +119,9 @@
 
                                 <label for="dokumentasi">Dokumentasi</label>
                                 <div class="form-group d-flex justify-content-center">
-                                    <img class="col-lg-6" src="<?php echo base_url('dokumentasi/' . $jurnal_pkl->dokumentasi) ?>" width="480" height="320" />
+                                    <img class="col-lg-6"
+                                        src="<?php echo base_url('dokumentasi/' . $jurnal_pkl->dokumentasi) ?>"
+                                        width="480" height="320" />
                                 </div>
 
                                 <input class="btn btn-primary" type="submit" name="btn" value="Save" />
@@ -124,6 +141,7 @@
 
             </div>
             <!-- End of Page Wrapper -->
+
 
         </div>
         <!-- Footer -->

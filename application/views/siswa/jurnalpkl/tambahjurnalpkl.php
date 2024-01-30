@@ -40,19 +40,19 @@
                             <div class="card-body">
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Anda tidak diizinkan mengakses menu ini!</strong></h4>
-                                    <p>Karena pengajuan PKL Anda masih berstatus
+                                    <p>Karena pengajuan Prakerin Anda masih berstatus
                                         <?php if (empty($pengajuanpkl->status_validasi)) { ?>
                                             <strong> Belum mengajukan. </strong>
                                         <?php } else { ?>
                                             <strong><?php echo $pengajuanpkl->status_validasi ?></strong>.</p>
                                 <?php } ?>
                                 <hr>
-                                <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
+                                <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                                 </div>
                             </div>
                         <?php } else { ?>
                             <div class="card-header">
-                                <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                             </div>
                             <div class="card-body">
                                 <form action="<?= base_url('siswa/JurnalPKL/tambahjurnalpkl') ?>" method="post" enctype="multipart/form-data">
