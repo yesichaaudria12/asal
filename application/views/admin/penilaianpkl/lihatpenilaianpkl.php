@@ -10,9 +10,9 @@ $pdf->SetRightMargin(20);
 $pdf->SetLeftMargin(20);
 $pdf->setFooterMargin(20);
 $pdf->SetAutoPageBreak(false);
-$pdf->SetAuthor('SMKN 1 Glagah');
+$pdf->SetAuthor('PT. Yuas Battery Indonesia');
 $pdf->SetDisplayMode('real', 'default');
-$pdf->SetFont('Arial', '', 12, '', 'false');
+$pdf->SetFont('Arial', 'B', 12, '', 'false');
 $pdf->AddPage();
 $i = 0;
 $html = '
