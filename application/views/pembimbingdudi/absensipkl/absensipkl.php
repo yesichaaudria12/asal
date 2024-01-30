@@ -34,7 +34,7 @@
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
-                    <form action="<?php echo base_url(); ?>pembimbingdudi/AbsensiPKL/" enctype="multipart/form-data" method="post">
+                    <form action="<?php echo base_url(); ?>pembimbingmentor/AbsensiPKL/" enctype="multipart/form-data" method="post">
                         <div class="form-group d-flex justify-content-end">
                             <select class="form-control col-lg-3" name="sort">
                                 <option disabled selected value="">Pilih bulan absensi</option>

@@ -84,7 +84,7 @@
                               </div>
                           </div>
 
-                          <input type="hidden" name="role" value="pembimbing_dudi" />
+                          <input type="hidden" name="role" value="pembimbing_mentor" />
 
                   </div>
                   <div class="modal-footer">

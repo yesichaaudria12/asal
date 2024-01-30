@@ -37,19 +37,19 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/DataDUDI/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+                            <a href="<?= base_url('admin/DataMentor/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                         </div>
                         <div class="card-body">
 
                             <form action="" method="post">
 
-                                <input type="hidden" name="id_dudi" value="<?php echo $datadudi->id_dudi ?>" />
+                                <input type="hidden" name="id_dudi" value="<?php echo $datamentor->id_dudi ?>" />
 
                                 <div class="form-group">
                                     <label for="nip">NIP *</label>
                                     <input class="form-control <?php echo form_error('nip') ? 'is-invalid' : '' ?>"
                                         type="text" name="nip" placeholder="NIP*"
-                                        value="<?php echo $datadudi->nip ?>" />
+                                        value="<?php echo $datamentor->nip ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nip') ?>
                                     </div>
@@ -59,8 +59,8 @@
                                     <label for="nama_dudi">Nama Mentor *</label>
                                     <input
                                         class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>"
-                                        type="text" name="nama_dudi" placeholder="Nama DUDI*"
-                                        value="<?php echo $datadudi->nama_dudi ?>" />
+                                        type="text" name="nama_dudi" placeholder="Nama Mentor*"
+                                        value="<?php echo $datamentor->nama_dudi ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama_dudi') ?>
                                     </div>
@@ -70,8 +70,8 @@
                                     <label for="alamat_dudi">Alamat Mentor *</label>
                                     <input
                                         class="form-control <?php echo form_error('alamat_dudi') ? 'is-invalid' : '' ?>"
-                                        name="alamat_dudi" placeholder="Alamat DUDI*"
-                                        value="<?php echo $datadudi->alamat_dudi ?>" />
+                                        name="alamat_dudi" placeholder="Alamat Mentor*"
+                                        value="<?php echo $datamentor->alamat_dudi ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('alamat_dudi') ?>
                                     </div>
@@ -82,8 +82,8 @@
                                     <input
                                         class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>"
                                         type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_dudi" min="0"
-                                        placeholder="No Telp DUDI"
-                                        value="<?php echo $datadudi->no_telp_dudi ?>"></input>
+                                        placeholder="No Telp Mentor"
+                                        value="<?php echo $datamentor->no_telp_dudi ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_dudi') ?>
                                     </div>
@@ -94,7 +94,7 @@
                                     <input
                                         class="form-control <?php echo form_error('jenis_usaha') ? 'is-invalid' : '' ?>"
                                         type="text" name="jenis_usaha" placeholder="Jenis Usaha*"
-                                        value="<?php echo $datadudi->jenis_usaha ?>"></input>
+                                        value="<?php echo $datamentor->jenis_usaha ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('jenis_usaha') ?>
                                     </div>
@@ -105,7 +105,7 @@
                                     <input
                                         class="form-control <?php echo form_error('nama_pimpinan') ? 'is-invalid' : '' ?>"
                                         type="text" name="nama_pimpinan" placeholder="Nama Pimpinan*"
-                                        value="<?php echo $datadudi->nama_pimpinan ?>"></input>
+                                        value="<?php echo $datamentor->nama_pimpinan ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama_pimpinan') ?>
                                     </div>
@@ -116,8 +116,8 @@
                                     <input
                                         class="form-control <?php echo form_error('no_telp_pimpinan') ? 'is-invalid' : '' ?>"
                                         type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_pimpinan"
-                                        min="0" placeholder="No Telp. Pembimbing DUDI"
-                                        value="<?php echo $datadudi->no_telp_pimpinan ?>" />
+                                        min="0" placeholder="No Telp. Pembimbing Mentor"
+                                        value="<?php echo $datamentor->no_telp_pimpinan ?>" />
                                     <div class="invalid-feedback">
                                         <?php echo form_error('no_telp_pimpinan') ?>
                                     </div>
@@ -126,8 +126,8 @@
                                 <div class="form-group">
                                     <label for="kuota">Kuota *</label>
                                     <input class="form-control <?php echo form_error('kuota') ? 'is-invalid' : '' ?>"
-                                        type="text" name="kuota" placeholder="Nama Pembimbing DUDI*"
-                                        value="<?php echo $datadudi->kuota ?>"></input>
+                                        type="text" name="kuota" placeholder="Nama Pembimbing Mentor*"
+                                        value="<?php echo $datamentor->kuota ?>"></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('kuota') ?>
                                     </div>
@@ -138,8 +138,8 @@
                                     <select
                                         class="form-control <?php echo form_error('id_jurusan') ? 'is-invalid' : '' ?>"
                                         name="id_jurusan">
-                                        <option value="<?php echo $datadudi->id_jurusan; ?>">---Pilih Jurusan-- :
-                                            <?php echo $datadudi->nama_jurusan; ?></option>
+                                        <option value="<?php echo $datamentor->id_jurusan; ?>">---Pilih Jurusan-- :
+                                            <?php echo $datamentor->nama_jurusan; ?></option>
                                         <option value="1">Teknik Komputer dan Jaringan</option>
                                     </select>
                                     <div class="invalid-feedback">

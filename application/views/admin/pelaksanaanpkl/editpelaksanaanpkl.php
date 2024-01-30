@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <label for="nama_dudi">Nama Mentor</label>
                                 <input class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>"
-                                    type="text" name="nama_dudi" readonly placeholder="Nama DUDI"
+                                    type="text" name="nama_dudi" readonly placeholder="Nama Mentor"
                                     value="<?php echo $pelaksanaan->nama_dudi ?>" />
                             </div>
                             <?php break; ?>

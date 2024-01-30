@@ -90,11 +90,11 @@
                                                 <td width="170" style="text-align:center">
                                                     <?php
                                                     if (!isset($dtsiswa->id_penilaian_pkl)) { ?>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
                                                             Add</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> View</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> View</a>
                                                     <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>

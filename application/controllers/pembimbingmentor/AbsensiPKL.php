@@ -9,7 +9,7 @@ class AbsensiPKL extends CI_Controller
         parent::__construct();
         $this->load->model("admin");
         $this->load->model("absensipkl_model");
-        if ($this->admin->is_role() != "pembimbing_dudi") {
+        if ($this->admin->is_role() != "pembimbing_mentor") {
             redirect("login/");
         }
     }
@@ -23,6 +23,6 @@ class AbsensiPKL extends CI_Controller
         } else {
             $data["absensi"] = $this->absensipkl_model->getAllByMonth($sort);
         }
-        $this->load->view("pembimbingdudi/absensipkl/absensipkl", $data);
+        $this->load->view("pembimbingmentor/absensipkl/absensipkl", $data);
     }
 }

@@ -19,7 +19,7 @@ class penilaianpkl_model extends CI_Model
         return $query->result();
     }
 
-    public function getAllForDUDI()
+    public function getAllForMentor()
     {
         $this->db->select('data_siswa.id_siswa, data_siswa.kelas, data_siswa.nama_siswa, jurusan.nama_jurusan, data_dudi.nama_dudi, penilaian_pkl.id_penilaian_pkl');
         $this->db->from('data_siswa');

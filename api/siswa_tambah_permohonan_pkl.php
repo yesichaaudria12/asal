@@ -19,12 +19,12 @@ if ($row['kuota'] != null) {
     $status_pesan = new emp();
     $status_pesan->kuota = $row['kuota'];
     $status_pesan->status_kode = 1;
-    $status_pesan->status_pesan = "Permohonan PKL diterima, cek aplikasi secara berkala untuk mengetahui penerimaan permohonan PKL";
+    $status_pesan->status_pesan = "Permohonan Prakerin diterima, cek aplikasi secara berkala untuk mengetahui penerimaan permohonan PKL";
     die(json_encode($status_pesan));
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Maaf, kuota pada DUDI yang Anda pilih sudah penuh, silahkan pilih DUDI lain atau hubungi Admin PKL";
+    $status_pesan->status_pesan = "Maaf, kuota pada Mentor yang Anda pilih sudah penuh, silahkan pilih Mentor lain atau hubungi Admin PKL";
     die(json_encode($status_pesan));
 }
 

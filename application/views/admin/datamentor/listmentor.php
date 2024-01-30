@@ -45,7 +45,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a class="btn btn-light" href="<?= base_url("admin/DataDUDI/daftardudi") ?>"><i
+                            <a class="btn btn-light" href="<?= base_url("admin/DataMentor/daftarmentor") ?>"><i
                                     class="fas fa-plus"></i> Add Data Mentor</a>
                         </div>
                         <div class="card-body">
@@ -108,11 +108,11 @@
                                                 <?php echo $dtdudi->nama_jurusan ?>
                                             </td>
                                             <td style="text-align:center">
-                                                <a href="<?= base_url('admin/DataDUDI/editdatadudi/' . $dtdudi->id_dudi) ?>"
+                                                <a href="<?= base_url('admin/DataMentor/editdatamentor/' . $dtdudi->id_dudi) ?>"
                                                     class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
-                                                <a onclick="deleteConfirm('<?= base_url('admin/DataDUDI/hapusdatadudi/' . $dtdudi->id_dudi) ?>')"
+                                                <a onclick="deleteConfirm('<?= base_url('admin/DataMentor/hapusdatamentor/' . $dtdudi->id_dudi) ?>')"
                                                     href="#!" class="btn btn-small text-danger"><i
-                                                        class="fas fa-trash"></i> Hapus</a>
+                                                        class="fas fa-trash"></i> Delete</a>
                                             </td>
                                             <?php $i++ ?>
                                         </tr>

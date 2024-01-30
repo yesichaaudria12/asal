@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct Scrip access allowed');
 
-class datadudi_model extends CI_Model
+class datamentor_model extends CI_Model
 {
     private $_table = "data_dudi";
 
@@ -76,7 +76,7 @@ class datadudi_model extends CI_Model
         return $query->result();
     }
 
-    public function getInfoDUDI()
+    public function getInfoMentor()
     {
         $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
         $this->db->order_by('nama_dudi', 'asc');
@@ -84,7 +84,7 @@ class datadudi_model extends CI_Model
         return $query->result();
     }
 
-    public function getDataDUDI()
+    public function getDataMentor()
     {
         $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
         $this->db->order_by('nama_dudi', 'asc');

@@ -16,8 +16,8 @@ class Login extends CI_Controller
         if ($this->session->userdata("role") == "admin_pkl") {
             redirect('admin/dashboard/');
         }
-        if ($this->session->userdata("role") == "pembimbing_dudi") {
-            redirect('pembimbingdudi/dashboard');
+        if ($this->session->userdata("role") == "pembimbing_mentor") {
+            redirect('pembimbingmentor/dashboard');
         }
         if ($this->session->userdata("role") == "siswa") {
             redirect('siswa/dashboard/');
@@ -50,8 +50,8 @@ class Login extends CI_Controller
                         $this->session->set_userdata($session_data);
                         if ($this->session->userdata("role") === "admin_pkl") {
                             redirect('admin/Dashboard/');
-                        } elseif ($this->session->userdata("role") === "pembimbing_dudi") {
-                            redirect('pembimbingdudi/Dashboard/');
+                        } elseif ($this->session->userdata("role") === "pembimbing_mentor") {
+                            redirect('pembimbingmentor/Dashboard/');
                         } else {
                             redirect('siswa/Dashboard/');
                         }
