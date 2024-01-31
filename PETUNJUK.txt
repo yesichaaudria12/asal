@@ -1,7 +1,7 @@
 REQ PASSWORD RAR
 HUB : 08179851011
 ==================
-Aplikasi Managemen Siswa PKL
+Aplikasi Managemen Siswa PRAKERIN
 =========================
 Framework : codeigniter
 =========================

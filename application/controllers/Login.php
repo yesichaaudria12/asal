@@ -13,7 +13,7 @@ class Login extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata("role") == "admin_pkl") {
+        if ($this->session->userdata("role") == "admin_prakerin") {
             redirect('admin/dashboard/');
         }
         if ($this->session->userdata("role") == "pembimbing_mentor") {
@@ -48,7 +48,7 @@ class Login extends CI_Controller
                             'role' => $dt->role
                         );
                         $this->session->set_userdata($session_data);
-                        if ($this->session->userdata("role") === "admin_pkl") {
+                        if ($this->session->userdata("role") === "admin_prakerin") {
                             redirect('admin/Dashboard/');
                         } elseif ($this->session->userdata("role") === "pembimbing_mentor") {
                             redirect('pembimbingmentor/Dashboard/');

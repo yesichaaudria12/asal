@@ -8,7 +8,7 @@ class emp
 
 $id_guru = $_GET['id_guru'];
 
-$query = mysqli_query($con, "SELECT * FROM `pengajuanpkl` where id_guru=$id_guru");
+$query = mysqli_query($con, "SELECT * FROM `pengajuanprakerin` where id_guru=$id_guru");
 
 $json = array();
 

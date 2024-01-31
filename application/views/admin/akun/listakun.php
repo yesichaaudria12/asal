@@ -97,7 +97,7 @@
                                                 Koordinator Jurusan
                                                 <?php } ?>
                                                 <?php
-                                                    if ($akun->role == 'admin_pkl') { ?>
+                                                    if ($akun->role == 'admin_prakerin') { ?>
                                                 Administrator Prakerin
                                                 <?php } ?>
                                             </td>

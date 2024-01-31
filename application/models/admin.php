@@ -22,7 +22,7 @@ class Admin extends CI_Model
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengguna.id', 'left');
         $this->db->join('data_peserta', 'data_peserta.id_peserta = pengguna.id', 'left');
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_peserta.id_jurusan', 'left');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = pengguna.id', 'left');
+        $this->db->join('pengajuanprakerin', 'pengajuanprakerin.id_peserta = pengguna.id', 'left');
         $this->db->where($field1);
         $this->db->where($field2);
         $this->db->limit(1);

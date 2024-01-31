@@ -10,7 +10,7 @@ class Akun extends CI_Controller
         $this->load->model("akun_model");
         $this->load->model('admin');
         $this->load->library('form_validation');
-        if ($this->admin->is_role() != "admin_pkl") {
+        if ($this->admin->is_role() != "admin_prakerin") {
             redirect("login/");
         }
     }

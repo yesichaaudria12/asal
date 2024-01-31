@@ -10,7 +10,7 @@ class DataGuru extends CI_Controller
         $this->load->model("dataguru_model");
         $this->load->library('form_validation');
         $this->load->model('admin');
-        if ($this->admin->is_role() != "admin_pkl") {
+        if ($this->admin->is_role() != "admin_prakerin") {
             redirect("login/");
         }
     }

@@ -8,8 +8,8 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('admin');
-        $this->load->model('pengajuanpkl_model');
-        if ($this->admin->is_role() != "admin_pkl") {
+        $this->load->model('pengajuanprakerin_model');
+        if ($this->admin->is_role() != "admin_prakerin") {
             redirect("login/");
         }
     }
@@ -17,14 +17,14 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
-        $data['total_pengajuan'] = $this->pengajuanpkl_model->getTotalPengajuan();
-        $data['total_peserta'] = $this->pengajuanpkl_model->getTotalPeserta();
-        $data['peserta_belum_mengajukan'] = $this->pengajuanpkl_model->getTotalPesertaBelumMengajukan();
-        $data['peserta_sudah_mengajukan'] = $this->pengajuanpkl_model->getTotalPesertaSudahMengajukan();
-        $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
-        $data['proses_pengajuan'] = $this->pengajuanpkl_model->getProsesPengajuan();
-        $data['diterima'] = $this->pengajuanpkl_model->getDiterima();
-        $data['ditolak'] = $this->pengajuanpkl_model->getDitolak();
+        $data['total_pengajuan'] = $this->pengajuanprakerin_model->getTotalPengajuan();
+        $data['total_peserta'] = $this->pengajuanprakerin_model->getTotalPeserta();
+        $data['peserta_belum_mengajukan'] = $this->pengajuanprakerin_model->getTotalPesertaBelumMengajukan();
+        $data['peserta_sudah_mengajukan'] = $this->pengajuanprakerin_model->getTotalPesertaSudahMengajukan();
+        $data['belum_tervalidasi'] = $this->pengajuanprakerin_model->getBelumTervalidasi();
+        $data['proses_pengajuan'] = $this->pengajuanprakerin_model->getProsesPengajuan();
+        $data['diterima'] = $this->pengajuanprakerin_model->getDiterima();
+        $data['ditolak'] = $this->pengajuanprakerin_model->getDitolak();
         $this->load->view("admin/dashboard", $data);
     }
 

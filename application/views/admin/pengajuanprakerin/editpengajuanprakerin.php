@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <?php $this->load->view("_partials/head.php") ?>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <?php $this->load->view("_partials/sidebar.php") ?>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <?php $this->load->view("_partials/navbar.php") ?>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <?php $this->load->view("_partials/breadcrumb.php") ?>
+
+                    <!-- Content Row -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-2">
+                        <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <a href="<?= base_url('admin/PengajuanPRAKERIN/') ?>"><i class="fas fa-arrow-left"></i>
+                                Back</a>
+                        </div>
+                        <div class="card-body">
+
+                            <form action="" method="post">
+
+                                <input type="hidden" name="id_pengajuanprakerin"
+                                    value="<?php echo $pengajuanprakerin->id_pengajuanprakerin ?>" />
+
+                                <div class="form-group">
+                                    <label for="nama_peserta">Nama Peserta</label>
+                                    <input
+                                        class="form-control <?php echo form_error('nama_peserta') ? 'is-invalid' : '' ?>"
+                                        name="nama_peserta" readonly value="<?php echo $pengajuanprakerin->nama_peserta ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nama_peserta') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="kelas">Kelas</label>
+                                    <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>"
+                                        name="kelas" readonly value="<?php echo $pengajuanprakerin->kelas ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('kelas') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nama_mentor">Mentor yang dipilih</label>
+                                    <input
+                                        class="form-control <?php echo form_error('nama_mentor') ? 'is-invalid' : '' ?>"
+                                        name="nama_mentor" readonly value="<?php echo $pengajuanprakerin->nama_mentor ?>" />
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('nama_mentor') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row row-cols-1 row-cols-sm-2">
+
+                                    <div class="col">
+                                        <label for="tanggal_masuk">Tanggal Masuk</label>
+                                        <input
+                                            class="form-control <?php echo form_error('tanggal_masuk') ? 'is-invalid' : '' ?>"
+                                            type="date" id="datepicker" name="tanggal_masuk"
+                                            value="<?php echo $pengajuanprakerin->tanggal_masuk ?>" />
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('tanggal_masuk') ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <label for="tanggal_keluar">Tanggal Keluar</label>
+                                        <input
+                                            class="form-control <?php echo form_error('tanggal_keluar') ? 'is-invalid' : '' ?>"
+                                            type="date" id="datepicker" name="tanggal_keluar"
+                                            value="<?php echo $pengajuanprakerin->tanggal_keluar ?>" />
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('tanggal_keluar') ?>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="id_guru">Guru Pembimbing</label>
+                                    <select class="form-control <?php echo form_error('id_guru') ? 'is-invalid' : '' ?>"
+                                        name="id_guru">
+                                        <option value="<?php echo $pengajuanprakerin->id_guru; ?>">Pilih Guru :
+                                            <?php echo $pengajuanprakerin->nama_guru; ?> </option>
+                                        <?php foreach ($data_guru as $row) { ?>
+                                        <option value="<?php echo $row->id_guru; ?>"><?php echo $row->nama_guru; ?>
+                                        </option>
+                                        <?php } ?>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('id_guru') ?>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status_validasi">Status Validasi</label>
+                                    <select
+                                        class="form-control <?php echo form_error('status_validasi') ? 'is-invalid' : '' ?>"
+                                        name="status_validasi">
+                                        <option value="<?php echo $pengajuanprakerin->status_validasi; ?>">---Status
+                                            Validasi-- : <?php echo $pengajuanprakerin->status_validasi; ?></option>
+                                        <option value="Proses Pengajuan">Proses Pengajuan</option>
+                                        <option value="Diterima">Diterima</option>
+                                        <option value="Ditolak">Ditolak</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <?php echo form_error('status_validasi') ?>
+                                    </div>
+                                </div>
+
+                                <input class="btn btn-primary" type="submit" name="btn" value="Save" />
+                            </form>
+
+                        </div>
+
+                        <div class="card-footer small text-muted">
+                            * Wajib diisi
+                        </div>
+
+                    </div>
+                    <!-- End of Main Content -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+        </div>
+        <!-- Footer -->
+        <?php $this->load->view("_partials/footer.php") ?>
+        <!-- End of Footer -->
+
+        <!-- Scroll to Top Button-->
+        <?php $this->load->view("_partials/scrolltop.php") ?>
+
+        <!-- Logout Modal-->
+        <?php $this->load->view("_partials/modal.php") ?>
+
+        <!-- Bootstrap core JavaScript-->
+        <?php $this->load->view("_partials/js.php") ?>
+
+        <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+        </script>
+
+</body>
+
+</html>

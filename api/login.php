@@ -18,7 +18,7 @@ if ((empty($username)) || (empty($password))) {
 	die(json_encode($response));
 }
 
-$query = mysqli_query($con, "SELECT * FROM pengguna left join data_peserta on data_peserta.id_peserta=pengguna.id left join data_guru on data_guru.id_guru=pengguna.id left join jurusan on jurusan.id_jurusan=data_guru.id_jurusan or jurusan.id_jurusan=data_peserta.id_jurusan left join pengajuanpkl on pengajuanpkl.id_peserta=pengguna.id WHERE username='$username' AND password='$password'");
+$query = mysqli_query($con, "SELECT * FROM pengguna left join data_peserta on data_peserta.id_peserta=pengguna.id left join data_guru on data_guru.id_guru=pengguna.id left join jurusan on jurusan.id_jurusan=data_guru.id_jurusan or jurusan.id_jurusan=data_peserta.id_jurusan left join pengajuanprakerin on pengajuanprakerin.id_peserta=pengguna.id WHERE username='$username' AND password='$password'");
 
 $row = mysqli_fetch_array($query);
 

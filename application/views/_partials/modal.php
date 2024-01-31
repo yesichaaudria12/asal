@@ -107,8 +107,8 @@
                       </button>
                   </div>
                   <div class="modal-body">
-                      <?php if ($pengajuanpkl->status_keanggotaan == "Ketua Kelompok") { ?>
-                      <form action="<?= base_url('peserta/PresensiPKL/tambahpresensipkl') ?>" method="post">
+                      <?php if ($pengajuanprakerin->status_keanggotaan == "Ketua Kelompok") { ?>
+                      <form action="<?= base_url('peserta/PresensiPRAKERIN/tambahpresensiprakerin') ?>" method="post">
 
                           <div class="form-group">
                               <label for="tanggal_absensi">Tanggal Presensi</label>
@@ -161,20 +161,20 @@
           </div>
       </div>
 
-      <div class="modal fade" id="tambahpermohonanpkl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" id="tambahpermohonanprakerin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Form Permohonan PKL</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Form Permohonan PRAKERIN</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
                   </div>
                   <div class="modal-body">
-                      <?php if (empty($permohonanpkl->status_validasi) || $permohonanpkl->status_validasi == "Ditolak") { ?>
+                      <?php if (empty($permohonanprakerin->status_validasi) || $permohonanprakerin->status_validasi == "Ditolak") { ?>
 
-                      <form action="<?= base_url('peserta/PermohonanPKL/tambahpermohonanpkl') ?>" method="post">
+                      <form action="<?= base_url('peserta/PermohonanPRAKERIN/tambahpermohonanprakerin') ?>" method="post">
 
                           <div class="form-group">
                               <label for="id_mentor">Pilih Tujuan / Nama Mentor</label>
