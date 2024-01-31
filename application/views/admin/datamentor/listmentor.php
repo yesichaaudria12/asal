@@ -109,7 +109,7 @@
                                             </td>
                                             <td style="text-align:center">
                                                 <a href="<?= base_url('admin/DataMENTOR/editdatamentor/' . $dtmentor->id_mentor) ?>"
-                                                    class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 <a onclick="deleteConfirm('<?= base_url('admin/DataMENTOR/hapusdatamentor/' . $dtmentor->id_mentor) ?>')"
                                                     href="#!" class="btn btn-small text-danger"><i
                                                         class="fas fa-trash"></i> Delete</a>

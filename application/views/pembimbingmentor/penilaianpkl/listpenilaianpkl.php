@@ -93,7 +93,7 @@
                                                         <a href="<?= base_url('pembimbingmentor/PenilaianPKL/tambahpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
                                                             Tambah</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                         <a href="<?= base_url('pembimbingmentor/PenilaianPKL/lihatpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
                                                     <?php } ?>
                                                 </td>

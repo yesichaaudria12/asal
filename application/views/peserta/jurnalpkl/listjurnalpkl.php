@@ -136,8 +136,8 @@
                                                             <?php echo $jurnal->catatan ?>
                                                         </td>
                                                         <td style="text-align:center">
-                                                            <a href="<?= base_url('peserta/JurnalPKL/editjurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                            <a onclick="deleteConfirm('<?= base_url('peserta/JurnalPKL/hapusjurnalpkl/' . $jurnal->id_jurnal_pkl) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                                            <a href="<?= base_url('peserta/JurnalPKL/editjurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
+                                                            <a onclick="deleteConfirm('<?= base_url('peserta/JurnalPKL/hapusjurnalpkl/' . $jurnal->id_jurnal_pkl) ?>')" href="#!" class="btn btn-small text-danger"><i class="fas fa-trash"></i>Delete</a>
                                                         </td>
                                                         <?php $i++ ?>
                                                     </tr>

@@ -142,7 +142,7 @@
                                         pihak perusahaan <strong><?php echo $permohonanpkl->nama_mentor ?></strong>.</p>
                                     <p>Anda dapat menghapus permohonan Prakerin saat ini jika terdapat kesalahan memasukkan data
                                         permohonan Prakerin.</p>
-                                    <a onclick="deleteConfirm('<?= base_url('peserta/PermohonanPKL/hapuspermohonanpkl/' . $permohonanpkl->id_pengajuanpkl) ?>')" href="#!" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                    <a onclick="deleteConfirm('<?= base_url('peserta/PermohonanPKL/hapuspermohonanpkl/' . $permohonanpkl->id_pengajuanpkl) ?>')" href="#!" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</a>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin,
                                         Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>

@@ -50,7 +50,7 @@ class DataMENTOR extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/DataMENTOR');
         }
-        $data['title'] = 'Ubah Data Mentor';
+        $data['title'] = 'Edit Data Mentor';
         $data["datamentor"] = $datamentor->getById($id);
         if (!$data["datamentor"]) show_404();
         $this->load->view("admin/datamentor/editdatamentor", $data);

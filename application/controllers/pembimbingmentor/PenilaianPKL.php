@@ -41,7 +41,7 @@ class PenilaianPKL extends CI_Controller
     public function editpenilaianpkl($nama_peserta = null)
     {
         if (!isset($nama_peserta)) redirect('pembimbingmentor/PenilaianPKL');
-        $data['title'] = 'Ubah Data Penilaian Prakerin';
+        $data['title'] = 'Edit Data Penilaian Prakerin';
         $data['data_peserta'] = $this->penilaianpkl_model->getById($nama_peserta);
         $data['peserta'] = $this->penilaianpkl_model->getNilaiPeserta($nama_peserta);
         $this->load->view("pembimbingmentor/penilaianpkl/editpenilaianpkl", $data);
