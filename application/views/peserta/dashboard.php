@@ -42,7 +42,7 @@
                   <div class="span4"></div>
                 </div>
               </div>
-              <h5 class="card-title">Selamat Datang di Aplikasi Manajemen Administrasi Presensi Terpadu Pada PT.Yuasa Baterry Indonesia</h5>
+              <h5 class="card-title">Selamat Datang di Aplikasi Manajemen Administrasi Presensi Terpadu Pada PT. Yuasa Baterry Indonesia</h5>
               <p class="card-text">Hai, <?php echo $this->session->userdata('nama_peserta'); ?>.</p>
               <div class="span4"></div>
             </div>

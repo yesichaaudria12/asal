@@ -17,7 +17,7 @@ class CatatanKunjunganPKL extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Catatan Kunjungan Prakerin';
+        $data['title'] = ' Internship Visit Notes';
         $data['catatankunjunganpkl'] = $this->catatankunjunganpkl_model->getAll();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $data['data_guru'] = $this->catatankunjunganpkl_model->getGuruPembimbing();
