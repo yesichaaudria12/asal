@@ -44,7 +44,7 @@
                     <div class="card mb-3">
                         <div class="card-header d-flex justify-content-between mb-2">
                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahakun"><i
-                                    class="fas fa-plus"></i> Add Akun Mentor</button>
+                                    class="fas fa-plus"></i> Add New Akun</button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -54,8 +54,8 @@
                                         <tr>
                                             <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Pengguna</th>
-                                            <th style="text-align:center">Nama Pengguna</th>
-                                            <th style="text-align:center">Kata Sandi</th>
+                                            <th style="text-align:center">Username</th>
+                                            <th style="text-align:center">Password</th>
                                             <th style="text-align:center">Role</th>
                                         </tr>
                                     </thead>

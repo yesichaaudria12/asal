@@ -28,6 +28,7 @@
                         <button class="btn btn-lg btn-primary btn-block" name="btn-login" id="btn-login" type="submit">
                             Login</button>
                         <div id="error" style="margin-top: 10px"></div>
+                        <div class="text-sm text-center mt-[1.6rem]">Don't have an account yet? <a class="text-sm text-[#7747ff]" href="#">Sign up for free!</a></div>
                 </div>
             </div>
         </div>
