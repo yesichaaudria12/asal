@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class DataMentor extends CI_Controller
+class DataMENTOR extends CI_Controller
 {
     public function __construct()
     {
@@ -18,7 +18,7 @@ class DataMentor extends CI_Controller
     public function index()
     {
         $data['title'] = 'Data Mentor';
-        $data['data_dudi'] = $this->datamentor_model->getAll();
+        $data['data_mentor'] = $this->datamentor_model->getAll();
         $this->load->view("admin/datamentor/listmentor", $data);
     }
 
@@ -31,16 +31,16 @@ class DataMentor extends CI_Controller
         if ($validation->run()) {
             $datamentor->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            redirect('admin/DataMentor');
+            redirect('admin/DataMENTOR');
         }
-        $data['title'] = 'Add Data Mentor';
+        $data['title'] = 'Tambah Data Mentor';
         $this->load->view("admin/datamentor/daftarmentor", $data);
     }
 
     public function editdatamentor($id = null)
     {
 
-        if (!isset($id)) redirect('admin/DataMentor');
+        if (!isset($id)) redirect('admin/DataMENTOR');
         $datamentor = $this->datamentor_model;
         $validation = $this->form_validation;
         $validation->set_rules($datamentor->rules());
@@ -48,9 +48,9 @@ class DataMentor extends CI_Controller
         if ($validation->run()) {
             $datamentor->update();
             $this->session->set_flashdata('success', 'Berhasil diubah');
-            redirect('admin/DataMentor');
+            redirect('admin/DataMENTOR');
         }
-        $data['title'] = 'Edit Data Mentor';
+        $data['title'] = 'Ubah Data Mentor';
         $data["datamentor"] = $datamentor->getById($id);
         if (!$data["datamentor"]) show_404();
         $this->load->view("admin/datamentor/editdatamentor", $data);
@@ -61,7 +61,7 @@ class DataMentor extends CI_Controller
         if (!isset($id)) show_404();
         if ($this->datamentor_model->delete($id)) {
             $this->session->set_flashdata('success', 'Berhasil dihapus');
-            redirect('admin/DataMentor');
+            redirect('admin/DataMENTOR');
         }
     }
 }
