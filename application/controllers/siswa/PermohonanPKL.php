@@ -8,7 +8,7 @@ class PermohonanPKL extends CI_Controller
     {
         parent::__construct();
         $this->load->model('permohonanpkl_model');
-        $this->load->model('datadudi_model');
+        $this->load->model('datamentor_model');
         $this->load->model('admin');
         if ($this->admin->is_role() != "siswa") {
             redirect("login/");
@@ -20,7 +20,7 @@ class PermohonanPKL extends CI_Controller
         $data['title'] = 'Permohonan Pelaksanaan Prakerin';
         $data['permohonanpkl'] = $this->permohonanpkl_model->getAll();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getHistory();
-        $data['data_dudi'] = $this->datadudi_model->getDataDUDI();
+        $data['data_mentor'] = $this->datamentor_model->getDataMENTOR();
         $this->load->view("siswa/permohonanpkl/permohonanpkl", $data);
     }
 

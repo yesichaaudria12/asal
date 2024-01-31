@@ -57,8 +57,8 @@
                               <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>"
                                   required="required" name="id">
                                   <option disabled selected value="">Pilih Nama Mentor : </option>
-                                  <?php foreach ($data_dudi as $row) { ?>
-                                  <option value="<?php echo $row->id_dudi; ?>"><?php echo $row->nama_dudi ?></option>
+                                  <?php foreach ($data_mentor as $row) { ?>
+                                  <option value="<?php echo $row->id_mentor; ?>"><?php echo $row->nama_mentor ?></option>
                                   <?php } ?>
                               </select>
                               <div class="invalid-feedback">
@@ -84,7 +84,7 @@
                               </div>
                           </div>
 
-                          <input type="hidden" name="role" value="pembimbing_dudi" />
+                          <input type="hidden" name="role" value="pembimbing_mentor" />
 
                   </div>
                   <div class="modal-footer">
@@ -177,16 +177,16 @@
                       <form action="<?= base_url('siswa/PermohonanPKL/tambahpermohonanpkl') ?>" method="post">
 
                           <div class="form-group">
-                              <label for="id_dudi">Pilih Tujuan / Nama Mentor</label>
-                              <select class="form-control <?php echo form_error('id_dudi') ? 'is-invalid' : '' ?>"
-                                  required="required" name="id_dudi">
-                                  <?php foreach ($data_dudi as $row) { ?>
+                              <label for="id_mentor">Pilih Tujuan / Nama Mentor</label>
+                              <select class="form-control <?php echo form_error('id_mentor') ? 'is-invalid' : '' ?>"
+                                  required="required" name="id_mentor">
+                                  <?php foreach ($data_mentor as $row) { ?>
                                   <?php if ($row->kuota > 0) { ?>
-                                  <option class="font-weight-bold" value="<?php echo $row->id_dudi; ?>">
-                                      <?php echo $row->nama_dudi ?>, kuota : <?php echo $row->kuota ?> </option>
+                                  <option class="font-weight-bold" value="<?php echo $row->id_mentor; ?>">
+                                      <?php echo $row->nama_mentor ?>, kuota : <?php echo $row->kuota ?> </option>
                                   <?php } else { ?>
-                                  <option class="font-italic" disabled selected value="<?php echo $row->id_dudi; ?>">
-                                      <?php echo $row->nama_dudi ?> (Kuota penuh)</option>
+                                  <option class="font-italic" disabled selected value="<?php echo $row->id_mentor; ?>">
+                                      <?php echo $row->nama_mentor ?> (Kuota penuh)</option>
                                   <?php } ?>
                                   <?php } ?>
                                   <option disabled selected value="">Pilih Mentor : </option>
@@ -196,7 +196,7 @@
                                   value="<?php echo $this->session->userdata('id') ?>" />
 
                               <div class="invalid-feedback">
-                                  <?php echo form_error('id_dudi') ?>
+                                  <?php echo form_error('id_mentor') ?>
                               </div>
                           </div>
 

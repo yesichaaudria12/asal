@@ -28,7 +28,7 @@
             </div>
 
             <li class="nav-item <?php echo $this->uri->segment(2) == 'DataMentor' ? 'active' : '' ?>">
-                <a class="nav-link" href="<?= base_url('admin/DataDUDI/'); ?>">
+                <a class="nav-link" href="<?= base_url('admin/DataMENTOR/'); ?>">
                     <i class="fas fa-fw fa-newspaper"></i>
                     <span>Data Mentor</span></a>
             </li>
@@ -106,10 +106,10 @@
 
     <?php  } ?>
 
-    <?php if ($this->session->userdata("role") === "pembimbing_dudi") { ?>
+    <?php if ($this->session->userdata("role") === "pembimbing_mentor") { ?>
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pembimbingdudi/Dashboard/'); ?>">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('pembimbingmentor/Dashboard/'); ?>">
             <div class="sidebar-brand-icon">
                 <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
             </div>
@@ -125,13 +125,13 @@
         </div>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/ValidasiJurnalPKL'); ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingmentor/ValidasiJurnalPKL'); ?>">
                 <i class="fas fa-fw fa-tasks"></i>
                 <span>Validasi Logbook Prakerin</span></a>
         </li>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/AbsensiPKL'); ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingmentor/AbsensiPKL'); ?>">
                 <i class="fas fa-fw fa-clipboard-check"></i>
                 <span>Absensi Siswa Prakarin</span></a>
         </li>
@@ -143,7 +143,7 @@
         </div>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'PenilaianPKL' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('pembimbingdudi/PenilaianPKL/'); ?>">
+            <a class="nav-link" href="<?= base_url('pembimbingmentor/PenilaianPKL/'); ?>">
                 <i class="fas fa-fw fa-pen-square"></i>
                 <span>Penilaian Prakerin</span></a>
         </li>
@@ -182,7 +182,7 @@
         </div>
 
         <li class="nav-item <?php echo $this->uri->segment(2) == 'InfoMentor' ? 'active' : '' ?>">
-            <a class="nav-link" href=" <?= base_url('siswa/InfoDUDI'); ?>">
+            <a class="nav-link" href=" <?= base_url('siswa/InfoMENTOR'); ?>">
                 <i class="fas fa-fw fa-info-circle"></i>
                 <span>Info Mentor</span></a>
         </li>

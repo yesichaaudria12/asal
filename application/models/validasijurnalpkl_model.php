@@ -26,7 +26,7 @@ class validasijurnalpkl_model extends CI_Model
         $this->db->from('jurnal_pkl');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = jurnal_pkl.id_siswa');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $query = $this->db->get();
         return $query->result();
     }

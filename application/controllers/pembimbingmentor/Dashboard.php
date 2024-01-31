@@ -8,7 +8,7 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->model('admin');
-        if ($this->admin->is_role() != "pembimbing_dudi") {
+        if ($this->admin->is_role() != "pembimbing_mentor") {
             redirect("login/");
         }
     }
@@ -16,7 +16,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
-        $this->load->view("pembimbingdudi/dashboard", $data);
+        $this->load->view("pembimbingmentor/dashboard", $data);
     }
 
     public function logout()

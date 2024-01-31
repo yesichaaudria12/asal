@@ -37,12 +37,12 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('pembimbingdudi/PenilaianPKL/') ?>"><i class="fas fa-arrow-left"></i>
+                            <a href="<?= base_url('pembimbingmentor/PenilaianPKL/') ?>"><i class="fas fa-arrow-left"></i>
                                 Kembali</a>
                         </div>
                         <div class="card-body">
 
-                            <form action="<?= base_url('pembimbingdudi/PenilaianPKL/editnilaipkl') ?>" method="post">
+                            <form action="<?= base_url('pembimbingmentor/PenilaianPKL/editnilaipkl') ?>" method="post">
                                 <div class="row">
                                     <div class="form-group col">
                                         <label>Nama Siswa</label>
@@ -66,7 +66,7 @@
                                     <div class="form-group col">
                                         <label>Nama Mentor</label>
                                         <input class="form-control" readonly
-                                            value="<?php echo $data_siswa->nama_dudi ?>" />
+                                            value="<?php echo $data_siswa->nama_mentor ?>" />
                                     </div>
                                 </div>
 

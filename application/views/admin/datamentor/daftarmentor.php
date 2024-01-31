@@ -37,11 +37,11 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/DataDUDI/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/DataMENTOR/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                         <div class="card-body">
 
-                            <form action="<?= base_url('admin/DataDUDI/daftardudi') ?>" method="post">
+                            <form action="<?= base_url('admin/DataMENTOR/daftarmentor') ?>" method="post">
 
                                 <div class="form-group">
                                     <label for="nip">NIP *</label>
@@ -53,33 +53,33 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nama_dudi">Nama Mentor *</label>
+                                    <label for="nama_mentor">Nama Mentor *</label>
                                     <input
-                                        class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>"
-                                        type="text" name="nama_dudi" placeholder="" />
+                                        class="form-control <?php echo form_error('nama_mentor') ? 'is-invalid' : '' ?>"
+                                        type="text" name="nama_mentor" placeholder="" />
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('nama_dudi') ?>
+                                        <?php echo form_error('nama_mentor') ?>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="alamat_dudi">Alamat Mentor *</label>
+                                    <label for="alamat_mentor">Alamat Mentor *</label>
                                     <input
-                                        class="form-control <?php echo form_error('alamat_dudi') ? 'is-invalid' : '' ?>"
-                                        type="text" name="alamat_dudi" placeholder=""></input>
+                                        class="form-control <?php echo form_error('alamat_mentor') ? 'is-invalid' : '' ?>"
+                                        type="text" name="alamat_mentor" placeholder=""></input>
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('alamat_dudi') ?>
+                                        <?php echo form_error('alamat_mentor') ?>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="no_telp_dudi">No Telpon Mentor *</label>
+                                    <label for="no_telp_mentor">No Telpon Mentor *</label>
                                     <input
-                                        class="form-control <?php echo form_error('no_telp_dudi') ? 'is-invalid' : '' ?>"
-                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_dudi" min="0"
+                                        class="form-control <?php echo form_error('no_telp_mentor') ? 'is-invalid' : '' ?>"
+                                        type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_telp_mentor" min="0"
                                         placeholder=""></input>
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('no_telp_dudi') ?>
+                                        <?php echo form_error('no_telp_mentor') ?>
                                     </div>
                                 </div>
 

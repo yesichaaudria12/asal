@@ -44,10 +44,10 @@
 
                             <?php foreach ($pelaksanaanpkl as $pelaksanaan) : ?>
                             <div class="form-group">
-                                <label for="nama_dudi">Nama Mentor</label>
-                                <input class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>"
-                                    type="text" name="nama_dudi" readonly placeholder="Nama DUDI"
-                                    value="<?php echo $pelaksanaan->nama_dudi ?>" />
+                                <label for="nama_mentor">Nama Mentor</label>
+                                <input class="form-control <?php echo form_error('nama_mentor') ? 'is-invalid' : '' ?>"
+                                    type="text" name="nama_mentor" readonly placeholder="Nama MENTOR"
+                                    value="<?php echo $pelaksanaan->nama_mentor ?>" />
                             </div>
                             <?php break; ?>
                             <?php endforeach; ?>

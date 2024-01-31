@@ -19,7 +19,7 @@ class Akun extends CI_Controller
     {
         $data['title'] = 'Akun Pengguna';
         $data['pengguna'] = $this->akun_model->getAll();
-        $data['data_dudi'] = $this->akun_model->getAkun();
+        $data['data_mentor'] = $this->akun_model->getAkun();
         $this->load->view("admin/akun/listakun", $data);
     }
 

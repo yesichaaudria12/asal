@@ -20,7 +20,7 @@ $html = '
     <table>
         <tr>
             <td>Nama Mentor</td>
-            <td>: ' . $data_siswa->nama_dudi . ' </td>
+            <td>: ' . $data_siswa->nama_mentor . ' </td>
             <td>Nama Siswa</td>
             <td>: ' . $data_siswa->nama_siswa . '</td>
         </tr>

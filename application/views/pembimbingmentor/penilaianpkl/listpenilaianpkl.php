@@ -77,7 +77,7 @@
                                                     <?php echo $dtsiswa->nama_jurusan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $dtsiswa->nama_dudi ?>
+                                                    <?php echo $dtsiswa->nama_mentor ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php
@@ -90,11 +90,11 @@
                                                 <td width="170" style="text-align:center">
                                                     <?php
                                                     if (!isset($dtsiswa->id_penilaian_pkl)) { ?>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
                                                             Tambah</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                        <a href="<?= base_url('pembimbingdudi/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
                                                     <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>

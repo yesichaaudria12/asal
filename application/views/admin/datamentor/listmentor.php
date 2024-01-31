@@ -33,10 +33,21 @@
                         <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
 
-                    <?php $this->load->view("_partials/breadcrumb.php") ?>
+                    <?php if ($this->session->flashdata('success')) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
 
+                    <?php $this->load->view("_partials/breadcrumb.php") ?>
                     <!-- Content Row -->
+
                     <div class="card mb-3">
+                        <div class="card-header">
+                            <a class="btn btn-light" href="<?= base_url("admin/DataMENTOR/daftarmentor") ?>"><i
+                                    class="fas fa-plus"></i> Tambah Data Mentor</a>
+                        </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="table_id" class="table table-striped table-bordered" cellspacing="0"
@@ -44,6 +55,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
+                                            <th style="text-align:center">NIP</th>
                                             <th style="text-align:center">Nama Mentor</th>
                                             <th style="text-align:center">Alamat Mentor</th>
                                             <th style="text-align:center">No Telp. Mentor</th>
@@ -51,60 +63,76 @@
                                             <th style="text-align:center">Nama Pimpinan</th>
                                             <th style="text-align:center">No Telp Pimpinan</th>
                                             <th style="text-align:center">Kuota</th>
+                                            <th style="text-align:center">Rujukan Jurusan</th>
+                                            <th style="text-align:center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($data_dudi as $dtdudi) : ?>
+                                        foreach ($data_mentor as $dtmentor) : ?>
                                         <tr>
-                                            <td style="text-align:center">
+                                            <td width="25" style="text-align:center">
                                                 <?php echo $i ?>
                                             </td>
                                             <td>
-                                                <?php echo $dtdudi->nama_dudi ?>
+                                                <?php echo $dtmentor->nip ?>
                                             </td>
                                             <td>
-                                                <?php echo $dtdudi->alamat_dudi ?>
+                                                <?php echo $dtmentor->nama_mentor ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $dtmentor->alamat_mentor ?>
                                             </td>
                                             <td style="text-align:center">
-                                                <?php echo $dtdudi->no_telp_dudi ?>
+                                                <?php echo $dtmentor->no_telp_mentor ?>
                                             </td>
                                             <td style="text-align:center">
-                                                <?php echo $dtdudi->jenis_usaha ?>
+                                                <?php echo $dtmentor->jenis_usaha ?>
                                             </td>
                                             <td style="text-align:center">
-                                                <?php echo $dtdudi->nama_pimpinan ?>
+                                                <?php echo $dtmentor->nama_pimpinan ?>
                                             </td>
                                             <td style="text-align:center">
-                                                <?php echo $dtdudi->no_telp_pimpinan ?>
+                                                <?php echo $dtmentor->no_telp_pimpinan ?>
                                             </td>
                                             <td style="text-align:center">
                                                 <?php
-                                                    if ($dtdudi->kuota == 0) { ?>
+                                                    if ($dtmentor->kuota == 0) { ?>
                                                 <span class="badge badge-success">Kuota Terpenuhi</span>
                                                 <?php } else { ?>
-                                                <?php echo $dtdudi->kuota; ?>
+                                                <?php echo $dtmentor->kuota; ?>
                                                 <?php } ?>
                                             </td>
+                                            <td style="text-align:center">
+                                                <?php echo $dtmentor->nama_jurusan ?>
+                                            </td>
+                                            <td style="text-align:center">
+                                                <a href="<?= base_url('admin/DataMENTOR/editdatamentor/' . $dtmentor->id_mentor) ?>"
+                                                    class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                <a onclick="deleteConfirm('<?= base_url('admin/DataMENTOR/hapusdatamentor/' . $dtmentor->id_mentor) ?>')"
+                                                    href="#!" class="btn btn-small text-danger"><i
+                                                        class="fas fa-trash"></i> Hapus</a>
+                                            </td>
                                             <?php $i++ ?>
-                                            <?php endforeach; ?>
+                                        </tr>
+                                        <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End of Main Content -->
+                <!-- End of Page Content -->
 
             </div>
-            <!-- End of Content Fluid -->
+            <!-- End of Main Content -->
 
         </div>
-        <!-- End of Main Content -->
+        <!-- End of Page Wrapper -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
     <!-- Footer -->
     <?php $this->load->view("_partials/footer.php") ?>

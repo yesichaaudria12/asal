@@ -2,15 +2,15 @@
 include "connection.php";
 
 $id_siswa = $_GET['id_siswa'];
-$id_dudi = $_GET['id_dudi'];
+$id_mentor = $_GET['id_mentor'];
 
 class emp
 {
 }
 
-$Sql_Query = "INSERT INTO pengajuanpkl (id_siswa, id_dudi) values ('$id_siswa','$id_dudi')";
+$Sql_Query = "INSERT INTO pengajuanpkl (id_siswa, id_mentor) values ('$id_siswa','$id_mentor')";
 
-$query = mysqli_query($con, "SELECT * from data_dudi where id_dudi = $id_dudi and kuota > 0");
+$query = mysqli_query($con, "SELECT * from data_mentor where id_mentor = $id_mentor and kuota > 0");
 
 $row = mysqli_fetch_array($query);
 
@@ -24,7 +24,7 @@ if ($row['kuota'] != null) {
 } else {
     $status_pesan = new emp();
     $status_pesan->status_kode = 0;
-    $status_pesan->status_pesan = "Maaf, kuota pada DUDI yang Anda pilih sudah penuh, silahkan pilih DUDI lain atau hubungi Admin PKL";
+    $status_pesan->status_pesan = "Maaf, kuota pada MENTOR yang Anda pilih sudah penuh, silahkan pilih MENTOR lain atau hubungi Admin PKL";
     die(json_encode($status_pesan));
 }
 

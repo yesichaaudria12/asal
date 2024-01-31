@@ -31,7 +31,7 @@ if (!empty($row)) {
 	$response->username = $row['username'];
 	$response->nama_siswa = $row['nama_siswa'];
 	$response->nama_guru = $row['nama_guru'];
-	$response->id_dudi = $row['id_dudi'];
+	$response->id_mentor = $row['id_mentor'];
 	$response->id_jurusan = $row['id_jurusan'];
 
 	$response->message = "Selamat Datang, " . $row['nama_siswa'] . $row['nama_guru'];

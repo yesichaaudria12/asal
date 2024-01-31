@@ -45,7 +45,7 @@
                             </div>
                             <h5 class="card-title">Selamat Datang di Aplikasi Manajemen Administrasi Presensi Terpadu di
                                 PT. Yuasa Battery Indonesia - Pembimbing Mentor</h5>
-                            <p class="card-text">Hai, <?php echo $this->session->userdata('nama_dudi'); ?></p>
+                            <p class="card-text">Hai, <?php echo $this->session->userdata('nama_mentor'); ?></p>
                             <div class="span4"></div>
                         </div>
                     </div>

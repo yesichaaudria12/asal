@@ -1,10 +1,10 @@
 <?php
 include "connection.php";
 
-$nama_dudi = $_GET['nama_dudi'];
+$nama_mentor = $_GET['nama_mentor'];
 $id_jurusan = $_GET['id_jurusan'];
 
-$query = mysqli_query($con, "SELECT * FROM data_dudi where nama_dudi like '%$nama_dudi%' and id_jurusan='$id_jurusan' ORDER BY nama_dudi ASC");
+$query = mysqli_query($con, "SELECT * FROM data_mentor where nama_mentor like '%$nama_mentor%' and id_jurusan='$id_jurusan' ORDER BY nama_mentor ASC");
 
 $json = array();
 

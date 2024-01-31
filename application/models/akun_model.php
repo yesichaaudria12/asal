@@ -25,7 +25,7 @@ class akun_model extends CI_Model
         $this->db->join('data_guru', 'data_guru.id_guru = pengguna.id', 'left');
         $this->db->join('data_staf_tu', 'data_staf_tu.id_staf_tu = pengguna.id', 'left');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = pengguna.id', 'left');
-        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengguna.id', 'left');
+        $this->db->join('data_mentor', 'data_mentor.id_mentor = pengguna.id', 'left');
         $this->db->order_by('id', 'asc');
         $query = $this->db->get($this->_table);
         return $query->result();
@@ -33,8 +33,8 @@ class akun_model extends CI_Model
 
     public function getAkun()
     {
-        $tabel_dudi = $this->db->query("SELECT * FROM `data_dudi` left join pengguna on pengguna.id = data_dudi.id_dudi where pengguna.id is null");
-        return $tabel_dudi->result();
+        $tabel_mentor = $this->db->query("SELECT * FROM `data_mentor` left join pengguna on pengguna.id = data_mentor.id_mentor where pengguna.id is null");
+        return $tabel_mentor->result();
     }
 
     public function save()

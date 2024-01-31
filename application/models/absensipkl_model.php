@@ -27,7 +27,7 @@ class absensipkl_model extends CI_Model
         $this->db->from('absensi');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id_dudi'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id_mentor'));
         $query = $this->db->get();
         return $query->result();
     }
@@ -38,7 +38,7 @@ class absensipkl_model extends CI_Model
         $this->db->from('absensi');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $this->db->where('MONTH(absensi.tanggal_absensi)', $sort);
         $this->db->where_not_in('absensi.keterangan', 'Hadir');
         $query = $this->db->get();
@@ -51,7 +51,7 @@ class absensipkl_model extends CI_Model
         $this->db->from('absensi');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $this->db->where_not_in('absensi.keterangan', 'Hadir');
         $query = $this->db->get();
         return $query->result();
@@ -63,7 +63,7 @@ class absensipkl_model extends CI_Model
         $this->db->from('pengajuanpkl');
         $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
         $this->db->where('pengajuanpkl.status_validasi', 'Diterima');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id_dudi'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id_mentor'));
         $query = $this->db->get();
         return $query->result();
     }

@@ -67,12 +67,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nama_dudi">Mentor yang dipilih</label>
+                                    <label for="nama_mentor">Mentor yang dipilih</label>
                                     <input
-                                        class="form-control <?php echo form_error('nama_dudi') ? 'is-invalid' : '' ?>"
-                                        name="nama_dudi" readonly value="<?php echo $pengajuanpkl->nama_dudi ?>" />
+                                        class="form-control <?php echo form_error('nama_mentor') ? 'is-invalid' : '' ?>"
+                                        name="nama_mentor" readonly value="<?php echo $pengajuanpkl->nama_mentor ?>" />
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('nama_dudi') ?>
+                                        <?php echo form_error('nama_mentor') ?>
                                     </div>
                                 </div>
 

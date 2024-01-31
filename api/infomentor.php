@@ -1,10 +1,9 @@
 <?php
-
-include_once "connection.php";
+include "connection.php";
 
 $id_jurusan = $_GET['id_jurusan'];
 
-$query = mysqli_query($con, "SELECT id_dudi, nama_dudi FROM data_dudi where id_jurusan='$id_jurusan' ORDER BY id_dudi ASC");
+$query = mysqli_query($con, "SELECT * FROM data_mentor where id_jurusan='$id_jurusan' ORDER BY nama_mentor ASC");
 
 $json = array();
 

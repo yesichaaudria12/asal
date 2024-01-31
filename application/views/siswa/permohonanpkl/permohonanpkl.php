@@ -82,7 +82,7 @@
                                 <div class="alert alert-success" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan Prakerin Anda diterima!</h4>
                                     <p>Selamat, permohonan Prakerin Anda telah diterima oleh pihak perusahaan
-                                        <strong><?php echo $permohonanpkl->nama_dudi ?></strong>, berikut adalah keterangan
+                                        <strong><?php echo $permohonanpkl->nama_mentor ?></strong>, berikut adalah keterangan
                                         terkait pelaksanaan Prakerin :
                                     </p>
                                     <p><strong>Tanggal Masuk Pelaksanaan Prakerin :
@@ -109,7 +109,7 @@
                                 <div class="alert alert-warning" role="alert">
                                     <h4 class="alert-heading">Selamat, Permohonan Prakerin sedang diproses!</h4>
                                     <p>Permohonan Prakerin Anda sedang diproses oleh Koordinator Prakerin dan akan diteruskan kepada
-                                        pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
+                                        pihak perusahaan <strong><?php echo $permohonanpkl->nama_mentor ?></strong>.</p>
                                     <p>Silahkan menunggu proses validasi berikutnya.</p>
                                     <hr>
                                     <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin,
@@ -121,7 +121,7 @@
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Permohonan Prakerin Anda ditolak!</strong></h4>
                                     <p>Maaf, permohonan Prakerin Anda ditolak oleh pihak perusahaan
-                                        <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.
+                                        <strong><?php echo $permohonanpkl->nama_mentor ?></strong>.
                                     </p>
                                     <p>Silahkan mengajukan permohonan Prakerin kembali.</p>
                                     <hr>
@@ -134,7 +134,7 @@
                                 <div class="alert alert-secondary" role="alert">
                                     <h4 class="alert-heading">Permohonan Prakerin Anda telah masuk dalam sistem!</h4>
                                     <p>Permohonan Prakerin Anda akan diproses oleh Koordinator Prakerin dan akan diteruskan kepada
-                                        pihak perusahaan <strong><?php echo $permohonanpkl->nama_dudi ?></strong>.</p>
+                                        pihak perusahaan <strong><?php echo $permohonanpkl->nama_mentor ?></strong>.</p>
                                     <p>Anda dapat menghapus permohonan Prakerin saat ini jika terdapat kesalahan memasukkan data
                                         permohonan Prakerin.</p>
                                     <a onclick="deleteConfirm('<?= base_url('siswa/PermohonanPKL/hapuspermohonanpkl/' . $permohonanpkl->id_pengajuanpkl) ?>')" href="#!" class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</a>
@@ -170,7 +170,7 @@
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $pengajuan->nama_dudi; ?>
+                                                    <?php echo $pengajuan->nama_mentor; ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo date("d-m-Y", strtotime($pengajuan->tanggal_pengajuan)) ?>

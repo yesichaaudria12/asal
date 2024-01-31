@@ -16,8 +16,8 @@ class Login extends CI_Controller
         if ($this->session->userdata("role") == "admin_pkl") {
             redirect('admin/dashboard/');
         }
-        if ($this->session->userdata("role") == "pembimbing_dudi") {
-            redirect('pembimbingdudi/dashboard');
+        if ($this->session->userdata("role") == "pembimbing_mentor") {
+            redirect('pembimbingmentor/dashboard');
         }
         if ($this->session->userdata("role") == "siswa") {
             redirect('siswa/dashboard/');
@@ -38,20 +38,20 @@ class Login extends CI_Controller
                         $session_data = array(
                             'id' => $dt->id,
                             'id_siswa'   => $dt->id_siswa,
-                            'id_dudi' => $dt->id_dudi,
+                            'id_mentor' => $dt->id_mentor,
                             'id_jurusan' => $dt->id_jurusan,
                             'username' => $dt->username,
                             'nama_siswa' => $dt->nama_siswa,
                             'nama_staf_tu' => $dt->nama_staf_tu,
-                            'nama_dudi' => $dt->nama_dudi,
+                            'nama_mentor' => $dt->nama_mentor,
                             'password' => $dt->password,
                             'role' => $dt->role
                         );
                         $this->session->set_userdata($session_data);
                         if ($this->session->userdata("role") === "admin_pkl") {
                             redirect('admin/Dashboard/');
-                        } elseif ($this->session->userdata("role") === "pembimbing_dudi") {
-                            redirect('pembimbingdudi/Dashboard/');
+                        } elseif ($this->session->userdata("role") === "pembimbing_mentor") {
+                            redirect('pembimbingmentor/Dashboard/');
                         } else {
                             redirect('siswa/Dashboard/');
                         }

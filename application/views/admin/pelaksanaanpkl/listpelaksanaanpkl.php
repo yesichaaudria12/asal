@@ -67,7 +67,7 @@
                                                 <?php echo $i ?>
                                             </td>
                                             <td>
-                                                <?php echo $pelaksanaan->nama_dudi; ?>
+                                                <?php echo $pelaksanaan->nama_mentor; ?>
                                             </td>
                                             <td style="text-align:center">
                                                 <?php echo date("d-m-Y", strtotime($pelaksanaan->tanggal_masuk)); ?>
@@ -87,7 +87,7 @@
                                                 <?php echo $pelaksanaan->jumlah_siswa; ?>
                                             </td>
                                             <td width="175" style="text-align:center">
-                                                <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_dudi) ?>"
+                                                <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_mentor) ?>"
                                                     class="btn btn-small"><i class="fas fa-user-cog"></i> Atur
                                                     Kelompok</a>
                                             </td>

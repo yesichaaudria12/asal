@@ -1,14 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct Scrip access allowed');
 
-class datadudi_model extends CI_Model
+class datamentor_model extends CI_Model
 {
-    private $_table = "data_dudi";
+    private $_table = "data_mentor";
 
-    public $id_dudi;
+    public $id_mentor;
 	public $nip;
-    public $nama_dudi;
-    public $alamat_dudi;
-    public $no_telp_dudi;
+    public $nama_mentor;
+    public $alamat_mentor;
+    public $no_telp_mentor;
     public $jenis_usaha;
     public $nama_pimpinan;
     public $no_telp_pimpinan;
@@ -24,19 +24,19 @@ class datadudi_model extends CI_Model
             ],
 			
             [
-                'field' => 'nama_dudi',
+                'field' => 'nama_mentor',
                 'label' => 'Nama Mentor',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'alamat_dudi',
+                'field' => 'alamat_mentor',
                 'label' => 'Alamat Mentor',
                 'rules' => 'required'
             ],
 
             [
-                'field' => 'no_telp_dudi',
+                'field' => 'no_telp_mentor',
                 'label' => 'No Telpon Mentor',
                 'rules' => 'numeric'
             ],
@@ -70,41 +70,41 @@ class datadudi_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->join('jurusan', 'jurusan.id_jurusan = data_dudi.id_jurusan');
-        $this->db->order_by('nama_dudi', 'ASC');
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_mentor.id_jurusan');
+        $this->db->order_by('nama_mentor', 'ASC');
         $query = $this->db->get($this->_table);
         return $query->result();
     }
 
-    public function getInfoDUDI()
+    public function getInfoMENTOR()
     {
         $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
-        $this->db->order_by('nama_dudi', 'asc');
+        $this->db->order_by('nama_mentor', 'asc');
         $query = $this->db->get($this->_table);
         return $query->result();
     }
 
-    public function getDataDUDI()
+    public function getDataMENTOR()
     {
         $this->db->where('id_jurusan', $this->session->userdata('id_jurusan'));
-        $this->db->order_by('nama_dudi', 'asc');
+        $this->db->order_by('nama_mentor', 'asc');
         $query = $this->db->get($this->_table);
         return $query->result();
     }
 
-    public function getById($id_dudi)
+    public function getById($id_mentor)
     {
-        $this->db->join('jurusan', 'jurusan.id_jurusan = data_dudi.id_jurusan');
-        return $this->db->get_where($this->_table, ["id_dudi" => $id_dudi])->row();
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_mentor.id_jurusan');
+        return $this->db->get_where($this->_table, ["id_mentor" => $id_mentor])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
 		$this->nip = $post["nip"];
-        $this->nama_dudi = $post["nama_dudi"];
-        $this->alamat_dudi = $post["alamat_dudi"];
-        $this->no_telp_dudi = $post["no_telp_dudi"];
+        $this->nama_mentor = $post["nama_mentor"];
+        $this->alamat_mentor = $post["alamat_mentor"];
+        $this->no_telp_mentor = $post["no_telp_mentor"];
         $this->jenis_usaha = $post["jenis_usaha"];
         $this->nama_pimpinan = $post["nama_pimpinan"];
         $this->no_telp_pimpinan = $post["no_telp_pimpinan"];
@@ -117,20 +117,20 @@ class datadudi_model extends CI_Model
     {
         $post = $this->input->post();
 		$this->nip = $post["nip"];
-        $this->id_dudi = $post["id_dudi"];
-        $this->nama_dudi = $post["nama_dudi"];
-        $this->alamat_dudi = $post["alamat_dudi"];
-        $this->no_telp_dudi = $post["no_telp_dudi"];
+        $this->id_mentor = $post["id_mentor"];
+        $this->nama_mentor = $post["nama_mentor"];
+        $this->alamat_mentor = $post["alamat_mentor"];
+        $this->no_telp_mentor = $post["no_telp_mentor"];
         $this->jenis_usaha = $post["jenis_usaha"];
         $this->nama_pimpinan = $post["nama_pimpinan"];
         $this->no_telp_pimpinan = $post["no_telp_pimpinan"];
         $this->kuota = $post["kuota"];
         $this->id_jurusan = $post["id_jurusan"];
-        return $this->db->update($this->_table, $this, array("id_dudi" => $post["id_dudi"]));
+        return $this->db->update($this->_table, $this, array("id_mentor" => $post["id_mentor"]));
     }
 
-    public function delete($id_dudi)
+    public function delete($id_mentor)
     {
-        return $this->db->delete($this->_table, array("id_dudi" => $id_dudi));
+        return $this->db->delete($this->_table, array("id_mentor" => $id_mentor));
     }
 }

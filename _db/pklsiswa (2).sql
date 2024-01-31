@@ -57,16 +57,16 @@ CREATE TABLE `catatan_kunjungan_pkl` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_dudi`
+-- Table structure for table `data_mentor`
 --
 
-CREATE TABLE `data_dudi` (
-  `id_dudi` int(11) NOT NULL,
+CREATE TABLE `data_mentor` (
+  `id_mentor` int(11) NOT NULL,
   `id_jurusan` int(11) NOT NULL,
   `nip` varchar(255) NOT NULL,
-  `nama_dudi` varchar(255) NOT NULL,
-  `alamat_dudi` varchar(255) NOT NULL,
-  `no_telp_dudi` int(15) NOT NULL DEFAULT 0,
+  `nama_mentor` varchar(255) NOT NULL,
+  `alamat_mentor` varchar(255) NOT NULL,
+  `no_telp_mentor` int(15) NOT NULL DEFAULT 0,
   `jenis_usaha` varchar(255) NOT NULL DEFAULT '-',
   `nama_pimpinan` varchar(255) NOT NULL DEFAULT '-',
   `no_telp_pimpinan` int(15) NOT NULL DEFAULT 0,
@@ -74,10 +74,10 @@ CREATE TABLE `data_dudi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_dudi`
+-- Dumping data for table `data_mentor`
 --
 
-INSERT INTO `data_dudi` (`id_dudi`, `id_jurusan`, `nip`, `nama_dudi`, `alamat_dudi`, `no_telp_dudi`, `jenis_usaha`, `nama_pimpinan`, `no_telp_pimpinan`, `kuota`) VALUES
+INSERT INTO `data_mentor` (`id_mentor`, `id_jurusan`, `nip`, `nama_mentor`, `alamat_mentor`, `no_telp_mentor`, `jenis_usaha`, `nama_pimpinan`, `no_telp_pimpinan`, `kuota`) VALUES
 (1, 1, '', 'Asterix Komputer', 'Jl. Dr. Soetomo No. 72 Banyuwangi', 0, '-', '-', 0, 7),
 (2, 1, '', 'Bina Usaha Komputer', 'Jl. KH. Wahid Hasyim Genteng', 0, '', '', 0, 0),
 (3, 1, '', 'BPS Komputer', 'Jl. Achmad Yani Banyuwangi', 0, '-', '', 0, -3),
@@ -695,7 +695,7 @@ INSERT INTO `mapel` (`id`, `nama_mapel`) VALUES
 CREATE TABLE `pengajuanpkl` (
   `id_pengajuanpkl` int(11) NOT NULL,
   `id_siswa` int(11) NOT NULL,
-  `id_dudi` int(11) NOT NULL,
+  `id_mentor` int(11) NOT NULL,
   `tanggal_pengajuan` datetime NOT NULL DEFAULT current_timestamp(),
   `tanggal_masuk` date DEFAULT '2020-01-01',
   `tanggal_keluar` date DEFAULT '2020-01-01',
@@ -709,7 +709,7 @@ CREATE TABLE `pengajuanpkl` (
 -- Dumping data for table `pengajuanpkl`
 --
 
-INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_siswa`, `id_dudi`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
+INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_siswa`, `id_mentor`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
 (5, 18867, 1, '2020-08-22 17:26:57', '2020-01-22', '2020-07-31', 521, 'Anggota', 'Diterima', 1),
 (6, 18868, 1, '2020-08-23 17:28:20', '2020-01-01', '2020-01-01', 521, 'Ketua Kelompok', 'Diterima', 1);
 
@@ -717,16 +717,16 @@ INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_siswa`, `id_dudi`, `tanggal_p
 -- Triggers `pengajuanpkl`
 --
 DELIMITER $$
-CREATE TRIGGER `TG_kuota_dudi` AFTER INSERT ON `pengajuanpkl` FOR EACH ROW BEGIN
-	UPDATE data_dudi SET kuota=kuota-NEW.kuota
-    WHERE id_dudi = NEW.id_dudi;
+CREATE TRIGGER `TG_kuota_mentor` AFTER INSERT ON `pengajuanpkl` FOR EACH ROW BEGIN
+	UPDATE data_mentor SET kuota=kuota-NEW.kuota
+    WHERE id_mentor = NEW.id_mentor;
     END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `TG_kuota_dudi1` AFTER DELETE ON `pengajuanpkl` FOR EACH ROW BEGIN
-	UPDATE data_dudi SET kuota=kuota+OLD.kuota
-    WHERE id_dudi = OLD.id_dudi;
+CREATE TRIGGER `TG_kuota_mentor1` AFTER DELETE ON `pengajuanpkl` FOR EACH ROW BEGIN
+	UPDATE data_mentor SET kuota=kuota+OLD.kuota
+    WHERE id_mentor = OLD.id_mentor;
     END
 $$
 DELIMITER ;
@@ -742,7 +742,7 @@ CREATE TABLE `pengguna` (
   `id` int(15) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` enum('siswa','admin_pkl','pembimbing_dudi','koordinator_jurusan','guru') NOT NULL
+  `role` enum('siswa','admin_pkl','pembimbing_mentor','koordinator_jurusan','guru') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -830,57 +830,57 @@ INSERT INTO `pengguna` (`id_pengguna`, `id`, `username`, `password`, `role`) VAL
 (78, 713, 'Herdian', 'Herdian', 'guru'),
 (79, 724, 'Singgih', 'Singgih', 'guru'),
 (80, 234, 'admin', 'admin', 'admin_pkl'),
-(81, 1, 'Asterix', 'Asterix', 'pembimbing_dudi'),
-(82, 2, 'Bina', 'Bina', 'pembimbing_dudi'),
-(83, 3, 'BPS', 'BPS', 'pembimbing_dudi'),
-(84, 4, 'CakraKom', 'CakraKom', 'pembimbing_dudi'),
-(85, 5, 'CakraNet', 'CakraNet', 'pembimbing_dudi'),
-(86, 6, 'Indokomtel', 'Indokomtel', 'pembimbing_dudi'),
-(87, 7, 'SIC', 'SIC', 'pembimbing_dudi'),
-(88, 8, 'Talenta', 'Talenta', 'pembimbing_dudi'),
-(89, 9, 'DDTech', 'DDTech', 'pembimbing_dudi'),
-(90, 10, 'Kominfo', 'Kominfo', 'pembimbing_dudi'),
-(91, 11, 'DocKom', 'DocKom', 'pembimbing_dudi'),
-(92, 12, 'Elcom', 'Elcom', 'pembimbing_dudi'),
-(93, 13, 'Escape', 'Escape', 'pembimbing_dudi'),
-(94, 14, 'Genius', 'Genius', 'pembimbing_dudi'),
-(95, 15, 'Haris', 'Haris', 'pembimbing_dudi'),
-(96, 16, 'IDCom', 'IDCom', 'pembimbing_dudi'),
-(97, 17, 'Intan', 'Intan', 'pembimbing_dudi'),
-(98, 18, 'JTVBWI', 'JTVBWI', 'pembimbing_dudi'),
-(99, 19, 'CamatBWI', 'CamatBWI', 'pembimbing_dudi'),
-(100, 20, 'Kesyah', 'Kesyah', 'pembimbing_dudi'),
-(101, 21, 'UPBU', 'UPBU', 'pembimbing_dudi'),
-(102, 22, 'Galllery', 'Galllery', 'pembimbing_dudi'),
-(103, 23, 'LKP', 'LKP', 'pembimbing_dudi'),
-(104, 24, 'MircroDB', 'MircroDB', 'pembimbing_dudi'),
-(105, 25, 'Multikom', 'Multikom', 'pembimbing_dudi'),
-(106, 26, 'PENS', 'PENS', 'pembimbing_dudi'),
-(107, 27, 'Blambangan', 'Blambangan', 'pembimbing_dudi'),
-(108, 28, 'Lundin', 'Lundin', 'pembimbing_dudi'),
-(109, 29, 'ASDP', 'ASDP', 'pembimbing_dudi'),
-(110, 30, 'Retalindo', 'Retalindo', 'pembimbing_dudi'),
-(111, 31, 'Mulia', 'Mulia', 'pembimbing_dudi'),
-(112, 32, 'Pelindo', 'Pelindo', 'pembimbing_dudi'),
-(113, 33, 'Pertamina', 'Pertamina', 'pembimbing_dudi'),
-(114, 34, 'PJB', 'PJB', 'pembimbing_dudi'),
-(115, 35, 'Selindo', 'Selindo', 'pembimbing_dudi'),
-(116, 36, 'TelkomAkses', 'TelkomAkses', 'pembimbing_dudi'),
-(117, 37, 'TelkomSBY', 'TelkomSBY', 'pembimbing_dudi'),
-(118, 38, 'TelkomBWI', 'TelkomBWI', 'pembimbing_dudi'),
-(119, 39, 'Trion', 'Trion', 'pembimbing_dudi'),
-(120, 40, 'TunasJaya', 'TunasJaya', 'pembimbing_dudi'),
-(121, 41, 'WBS', 'WBS', 'pembimbing_dudi'),
-(122, 42, 'PutriKuning', 'PutriKuning', 'pembimbing_dudi'),
-(123, 43, 'Raya', 'Raya', 'pembimbing_dudi'),
-(124, 44, 'RSUDBlb', 'RSUDBlb', 'pembimbing_dudi'),
-(125, 45, 'SahabatKom', 'SahabatKom', 'pembimbing_dudi'),
-(126, 46, 'STIKOM', 'STIKOM', 'pembimbing_dudi'),
-(127, 47, 'TCTC', 'TCTC', 'pembimbing_dudi'),
-(128, 48, 'Tri', 'Tri', 'pembimbing_dudi'),
-(129, 49, 'USBKom', 'USBKom', 'pembimbing_dudi'),
-(130, 50, 'ViolaKom', 'ViolaKom', 'pembimbing_dudi'),
-(131, 51, 'VistaKom', 'VistaKom', 'pembimbing_dudi');
+(81, 1, 'Asterix', 'Asterix', 'pembimbing_mentor'),
+(82, 2, 'Bina', 'Bina', 'pembimbing_mentor'),
+(83, 3, 'BPS', 'BPS', 'pembimbing_mentor'),
+(84, 4, 'CakraKom', 'CakraKom', 'pembimbing_mentor'),
+(85, 5, 'CakraNet', 'CakraNet', 'pembimbing_mentor'),
+(86, 6, 'Indokomtel', 'Indokomtel', 'pembimbing_mentor'),
+(87, 7, 'SIC', 'SIC', 'pembimbing_mentor'),
+(88, 8, 'Talenta', 'Talenta', 'pembimbing_mentor'),
+(89, 9, 'DDTech', 'DDTech', 'pembimbing_mentor'),
+(90, 10, 'Kominfo', 'Kominfo', 'pembimbing_mentor'),
+(91, 11, 'DocKom', 'DocKom', 'pembimbing_mentor'),
+(92, 12, 'Elcom', 'Elcom', 'pembimbing_mentor'),
+(93, 13, 'Escape', 'Escape', 'pembimbing_mentor'),
+(94, 14, 'Genius', 'Genius', 'pembimbing_mentor'),
+(95, 15, 'Haris', 'Haris', 'pembimbing_mentor'),
+(96, 16, 'IDCom', 'IDCom', 'pembimbing_mentor'),
+(97, 17, 'Intan', 'Intan', 'pembimbing_mentor'),
+(98, 18, 'JTVBWI', 'JTVBWI', 'pembimbing_mentor'),
+(99, 19, 'CamatBWI', 'CamatBWI', 'pembimbing_mentor'),
+(100, 20, 'Kesyah', 'Kesyah', 'pembimbing_mentor'),
+(101, 21, 'UPBU', 'UPBU', 'pembimbing_mentor'),
+(102, 22, 'Galllery', 'Galllery', 'pembimbing_mentor'),
+(103, 23, 'LKP', 'LKP', 'pembimbing_mentor'),
+(104, 24, 'MircroDB', 'MircroDB', 'pembimbing_mentor'),
+(105, 25, 'Multikom', 'Multikom', 'pembimbing_mentor'),
+(106, 26, 'PENS', 'PENS', 'pembimbing_mentor'),
+(107, 27, 'Blambangan', 'Blambangan', 'pembimbing_mentor'),
+(108, 28, 'Lundin', 'Lundin', 'pembimbing_mentor'),
+(109, 29, 'ASDP', 'ASDP', 'pembimbing_mentor'),
+(110, 30, 'Retalindo', 'Retalindo', 'pembimbing_mentor'),
+(111, 31, 'Mulia', 'Mulia', 'pembimbing_mentor'),
+(112, 32, 'Pelindo', 'Pelindo', 'pembimbing_mentor'),
+(113, 33, 'Pertamina', 'Pertamina', 'pembimbing_mentor'),
+(114, 34, 'PJB', 'PJB', 'pembimbing_mentor'),
+(115, 35, 'Selindo', 'Selindo', 'pembimbing_mentor'),
+(116, 36, 'TelkomAkses', 'TelkomAkses', 'pembimbing_mentor'),
+(117, 37, 'TelkomSBY', 'TelkomSBY', 'pembimbing_mentor'),
+(118, 38, 'TelkomBWI', 'TelkomBWI', 'pembimbing_mentor'),
+(119, 39, 'Trion', 'Trion', 'pembimbing_mentor'),
+(120, 40, 'TunasJaya', 'TunasJaya', 'pembimbing_mentor'),
+(121, 41, 'WBS', 'WBS', 'pembimbing_mentor'),
+(122, 42, 'PutriKuning', 'PutriKuning', 'pembimbing_mentor'),
+(123, 43, 'Raya', 'Raya', 'pembimbing_mentor'),
+(124, 44, 'RSUDBlb', 'RSUDBlb', 'pembimbing_mentor'),
+(125, 45, 'SahabatKom', 'SahabatKom', 'pembimbing_mentor'),
+(126, 46, 'STIKOM', 'STIKOM', 'pembimbing_mentor'),
+(127, 47, 'TCTC', 'TCTC', 'pembimbing_mentor'),
+(128, 48, 'Tri', 'Tri', 'pembimbing_mentor'),
+(129, 49, 'USBKom', 'USBKom', 'pembimbing_mentor'),
+(130, 50, 'ViolaKom', 'ViolaKom', 'pembimbing_mentor'),
+(131, 51, 'VistaKom', 'VistaKom', 'pembimbing_mentor');
 
 -- --------------------------------------------------------
 
@@ -976,10 +976,10 @@ ALTER TABLE `catatan_kunjungan_pkl`
   ADD PRIMARY KEY (`id_catatan_kunjungan_pkl`);
 
 --
--- Indexes for table `data_dudi`
+-- Indexes for table `data_mentor`
 --
-ALTER TABLE `data_dudi`
-  ADD PRIMARY KEY (`id_dudi`);
+ALTER TABLE `data_mentor`
+  ADD PRIMARY KEY (`id_mentor`);
 
 --
 -- Indexes for table `data_guru`
@@ -1064,10 +1064,10 @@ ALTER TABLE `catatan_kunjungan_pkl`
   MODIFY `id_catatan_kunjungan_pkl` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `data_dudi`
+-- AUTO_INCREMENT for table `data_mentor`
 --
-ALTER TABLE `data_dudi`
-  MODIFY `id_dudi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+ALTER TABLE `data_mentor`
+  MODIFY `id_mentor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `data_guru`

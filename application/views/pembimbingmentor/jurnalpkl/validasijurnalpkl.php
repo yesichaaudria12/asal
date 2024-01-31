@@ -33,27 +33,13 @@
                     </div>
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
-                    <!-- Content Row -->
-                    <form action="<?php echo base_url(); ?>pembimbingdudi/AbsensiPKL/" enctype="multipart/form-data" method="post">
-                        <div class="form-group d-flex justify-content-end">
-                            <select class="form-control col-lg-3" name="sort">
-                                <option disabled selected value="">Pilih bulan absensi</option>
-                                <option value="1">Januari</option>
-                                <option value="2">Februari</option>
-                                <option value="3">Maret</option>
-                                <option value="4">April</option>
-                                <option value="5">Mei</option>
-                                <option value="6">Juni</option>
-                                <option value="7">Juli</option>
-                                <option value="8">Agustus</option>
-                                <option value="9">September</option>
-                                <option value="10">Oktober</option>
-                                <option value="11">November</option>
-                                <option value="12">Desember</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary"><span class="fa fa-search"> </span></button>
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
                         </div>
-                    </form>
+                    <?php endif; ?>
+
+                    <!-- Content Row -->
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -63,29 +49,56 @@
                                             <th style="text-align:center">No.</th>
                                             <th style="text-align:center">Nama Siswa</th>
                                             <th style="text-align:center">Kelas</th>
-                                            <th style="text-align:center">Tanggal Absensi</th>
-                                            <th style="text-align:center">Keterangan</th>
+                                            <th style="text-align:center">Tgl Pelaksanaan</th>
+                                            <th style="text-align:center">Topik Pekerjaan</th>
+                                            <th style="text-align:center">Dokumentasi</th>
+                                            <th style="text-align:center">Validasi</th>
+                                            <th style="text-align:center">Catatan</th>
+                                            <th style="text-align:center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($absensi as $absen) : ?>
+                                        foreach ($jurnal_pkl as $jurnal) : ?>
                                             <tr>
                                                 <td style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $absen->nama_siswa ?>
+                                                    <?php echo $jurnal->nama_siswa ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $absen->kelas ?>
+                                                    <?php echo $jurnal->kelas ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo date("d-m-Y", strtotime($absen->tanggal_absensi)) ?>
+                                                    <?php echo date("d-m-Y", strtotime($jurnal->tanggal)) ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $jurnal->topik_pekerjaan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $absen->keterangan ?>
+                                                    <img src="<?php echo base_url('dokumentasi/' . $jurnal->dokumentasi) ?>" width="250" height="250" />
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <?php
+                                                    if ($jurnal->status == 'Tervalidasi') { ?>
+                                                        <span class="badge badge-success"><?php echo $jurnal->status; ?></span>
+                                                    <?php } ?>
+                                                    <?php
+                                                    if ($jurnal->status == 'Ditolak') { ?>
+                                                        <span class=" badge badge-danger"><?php echo $jurnal->status; ?></span>
+                                                    <?php } ?>
+                                                    <?php
+                                                    if ($jurnal->status == 'Belum Tervalidasi') { ?>
+                                                        <span class="badge badge-warning"><?php echo $jurnal->status; ?></span>
+                                                    <?php } ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $jurnal->catatan ?>
+                                                </td>
+                                                <td style="text-align:center">
+                                                    <a href="<?= base_url('pembimbingmentor/ValidasiJurnalPKL/editvalidasijurnalpkl/' . $jurnal->id_jurnal_pkl) ?>" class="btn btn-primary text-white"><i class="fas fa-clipboard-check"></i> Validasi</a>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>

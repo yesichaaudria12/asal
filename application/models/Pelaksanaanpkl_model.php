@@ -20,13 +20,13 @@ class pelaksanaanpkl_model extends CI_Model
 
     public function getAll()
     {
-        $query = $this->db->query('SELECT *, count(pengajuanpkl.id_siswa) as jumlah_siswa FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa = pengajuanpkl.id_siswa join data_guru on data_guru.id_guru = pengajuanpkl.id_guru join data_dudi on data_dudi.id_dudi = pengajuanpkl.id_dudi where pengajuanpkl.status_validasi = "Diterima" group by pengajuanpkl.id_dudi order by pengajuanpkl.id_dudi');
+        $query = $this->db->query('SELECT *, count(pengajuanpkl.id_siswa) as jumlah_siswa FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa = pengajuanpkl.id_siswa join data_guru on data_guru.id_guru = pengajuanpkl.id_guru join data_mentor on data_mentor.id_mentor = pengajuanpkl.id_mentor where pengajuanpkl.status_validasi = "Diterima" group by pengajuanpkl.id_mentor order by pengajuanpkl.id_mentor');
         return $query->result();
     }
 
-    public function getById($id_dudi)
+    public function getById($id_mentor)
     {
-        $query = $this->db->query('SELECT * FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa = pengajuanpkl.id_siswa join jurusan on jurusan.id_jurusan = data_siswa.id_jurusan join data_guru on data_guru.id_guru = pengajuanpkl.id_guru join data_dudi on data_dudi.id_dudi = pengajuanpkl.id_dudi where pengajuanpkl.status_validasi = "Diterima" and pengajuanpkl.id_dudi = ' . $id_dudi . ' order by status_keanggotaan desc');
+        $query = $this->db->query('SELECT * FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa = pengajuanpkl.id_siswa join jurusan on jurusan.id_jurusan = data_siswa.id_jurusan join data_guru on data_guru.id_guru = pengajuanpkl.id_guru join data_mentor on data_mentor.id_mentor = pengajuanpkl.id_mentor where pengajuanpkl.status_validasi = "Diterima" and pengajuanpkl.id_mentor = ' . $id_mentor . ' order by status_keanggotaan desc');
         return $query->result();
     }
 

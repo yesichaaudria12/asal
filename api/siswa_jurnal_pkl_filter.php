@@ -4,7 +4,7 @@ include "connection.php";
 $id_siswa = $_GET['id_siswa'];
 $tanggal = $_GET['tanggal'];
 
-$query = mysqli_query($con, "SELECT * FROM jurnal_pkl join pengajuanpkl join data_dudi on data_dudi.id_dudi=pengajuanpkl.id_dudi join kompetensi_dasar on kompetensi_dasar.id=jurnal_pkl.id_kompetensi_dasar join data_siswa on data_siswa.id_siswa=jurnal_pkl.id_siswa where jurnal_pkl.id_siswa='$id_siswa' and jurnal_pkl.tanggal='$tanggal' group by jurnal_pkl.id_jurnal_pkl desc");
+$query = mysqli_query($con, "SELECT * FROM jurnal_pkl join pengajuanpkl join data_mentor on data_mentor.id_mentor=pengajuanpkl.id_mentor join kompetensi_dasar on kompetensi_dasar.id=jurnal_pkl.id_kompetensi_dasar join data_siswa on data_siswa.id_siswa=jurnal_pkl.id_siswa where jurnal_pkl.id_siswa='$id_siswa' and jurnal_pkl.tanggal='$tanggal' group by jurnal_pkl.id_jurnal_pkl desc");
 
 $json = array();
 

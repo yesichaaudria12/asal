@@ -77,7 +77,7 @@
                                                     <?php echo $dtsiswa->nama_jurusan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $dtsiswa->nama_dudi ?>
+                                                    <?php echo $dtsiswa->nama_mentor ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php

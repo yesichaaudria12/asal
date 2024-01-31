@@ -37,11 +37,11 @@ $html = '
   </tr>
   <tr>
     <td width="30%">Nama Mentor</td>
-    <td> : ' . $data_program_pkl->nama_dudi . '</td>
+    <td> : ' . $data_program_pkl->nama_mentor . '</td>
   </tr>
   <tr>
     <td width="30%">Alamat</td>
-    <td> : ' . $data_program_pkl->alamat_dudi . '</td>
+    <td> : ' . $data_program_pkl->alamat_mentor . '</td>
   </tr>
   <tr>
     <td width="30%">Waktu Prakerin</td>
@@ -66,7 +66,7 @@ foreach ($program_pkl as $row) {
                             <td style="text-align:justify;">' . $row['kompetensi_dasar'] . '</td>
                             <td style="text-align:justify;">' . $row['topik_pekerjaan'] . '</td>
                             <td align="center">' . date("d-m-Y", strtotime($row['tanggal'])) . '</td>
-                            <td align="center">' . $row['nama_dudi'] . '</td>
+                            <td align="center">' . $row['nama_mentor'] . '</td>
                         </tr>';
 }
 $html .= '</table>';

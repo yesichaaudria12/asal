@@ -2,9 +2,9 @@
 
 include_once "connection.php";
 
-$id_dudi = $_GET['id_dudi'];
+$id_mentor = $_GET['id_mentor'];
 
-$query = mysqli_query($con, "SELECT * FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa=pengajuanpkl.id_siswa where pengajuanpkl.status_validasi='Diterima' and pengajuanpkl.id_dudi='$id_dudi'");
+$query = mysqli_query($con, "SELECT * FROM `pengajuanpkl` join data_siswa on data_siswa.id_siswa=pengajuanpkl.id_siswa where pengajuanpkl.status_validasi='Diterima' and pengajuanpkl.id_mentor='$id_mentor'");
 
 $json = array();
 

@@ -75,7 +75,7 @@
                                                     <?php echo $pengajuan->kelas; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $pengajuan->nama_dudi; ?>
+                                                    <?php echo $pengajuan->nama_mentor; ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo date("d-m-Y", strtotime($pengajuan->tanggal_pengajuan)); ?>

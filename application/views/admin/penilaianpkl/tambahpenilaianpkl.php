@@ -64,7 +64,7 @@
 
                                     <div class="form-group col">
                                         <label>Nama Mentor</label>
-                                        <input class="form-control" readonly value="<?php echo $siswa->nama_dudi ?>" />
+                                        <input class="form-control" readonly value="<?php echo $siswa->nama_mentor ?>" />
                                     </div>
                                 </div>
 

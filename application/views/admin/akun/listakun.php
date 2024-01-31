@@ -71,7 +71,7 @@
                                                 <?php echo $akun->nama_siswa ?>
                                                 <?php echo $akun->nama_guru ?>
                                                 <?php echo $akun->nama_staf_tu ?>
-                                                <?php echo $akun->nama_dudi ?>
+                                                <?php echo $akun->nama_mentor ?>
                                             </td>
                                             <td style="text-align:center">
                                                 <?php echo $akun->username ?>
@@ -85,7 +85,7 @@
                                                 Siswa
                                                 <?php } ?>
                                                 <?php
-                                                    if ($akun->role == 'pembimbing_dudi') { ?>
+                                                    if ($akun->role == 'pembimbing_mentor') { ?>
                                                 Pembimbing Mentor
                                                 <?php } ?>
                                                 <?php

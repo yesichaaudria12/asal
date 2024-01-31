@@ -8,10 +8,10 @@ class penilaianpkl_model extends CI_Model
 
     public function getAll()
     {
-        $this->db->select('data_siswa.id_siswa, data_siswa.kelas, data_siswa.nama_siswa, jurusan.nama_jurusan, data_dudi.nama_dudi, penilaian_pkl.id_penilaian_pkl');
+        $this->db->select('data_siswa.id_siswa, data_siswa.kelas, data_siswa.nama_siswa, jurusan.nama_jurusan, data_mentor.nama_mentor, penilaian_pkl.id_penilaian_pkl');
         $this->db->from('data_siswa');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = data_siswa.id_siswa', 'left');
-        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi', 'left');
+        $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor', 'left');
         $this->db->join('penilaian_pkl', 'penilaian_pkl.id_siswa = data_siswa.id_siswa', 'left');
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
         $this->db->where('pengajuanpkl.status_validasi', 'Diterima');
@@ -19,16 +19,16 @@ class penilaianpkl_model extends CI_Model
         return $query->result();
     }
 
-    public function getAllForDUDI()
+    public function getAllForMENTOR()
     {
-        $this->db->select('data_siswa.id_siswa, data_siswa.kelas, data_siswa.nama_siswa, jurusan.nama_jurusan, data_dudi.nama_dudi, penilaian_pkl.id_penilaian_pkl');
+        $this->db->select('data_siswa.id_siswa, data_siswa.kelas, data_siswa.nama_siswa, jurusan.nama_jurusan, data_mentor.nama_mentor, penilaian_pkl.id_penilaian_pkl');
         $this->db->from('data_siswa');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = data_siswa.id_siswa', 'left');
-        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi', 'left');
+        $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor', 'left');
         $this->db->join('penilaian_pkl', 'penilaian_pkl.id_siswa = data_siswa.id_siswa', 'left');
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
         $this->db->where('pengajuanpkl.status_validasi', 'Diterima');
-        $this->db->where('pengajuanpkl.id_dudi', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $query = $this->db->get();
         return $query->result();
     }
@@ -37,7 +37,7 @@ class penilaianpkl_model extends CI_Model
     {
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
         $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = data_siswa.id_siswa');
-        $this->db->join('data_dudi', 'data_dudi.id_dudi = pengajuanpkl.id_dudi');
+        $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
         return $this->db->get_where($this->_table, ["data_siswa.id_siswa" => $nama_siswa])->row();
     }
 
