@@ -1,8 +1,8 @@
 ###################
-Aplikasi PKL SMKN 1 Glagah
+Aplikasi MANTAP YUASA Battery 
 ###################
 
-Pengembangan Aplikasi SMKN 1 Glagah berbasis web menggunakan
+Pengembangan Aplikasi Manajemen Administrasi Presensi Terpadu DI PT. Yuasa Battery Indonesia berbasis web menggunakan
 Framework Codeigniter 3
 
 *******************

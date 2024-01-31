@@ -40,7 +40,7 @@
                             <div class="card-body">
                                 <div class="alert alert-danger" role="alert">
                                     <h4 class="alert-heading"><strong>Maaf, Anda tidak diizinkan mengakses menu ini!</strong></h4>
-                                    <p>Karena pengajuan PKL Anda masih berstatus
+                                    <p>Karena pengajuan Prakerin Anda masih berstatus
                                         <?php if (empty($pengajuanpkl->status_validasi)) { ?>
                                             <strong> Belum mengajukan. </strong>
                                         <?php } else { ?>
@@ -48,7 +48,7 @@
                                 <?php } ?>
                                 <hr>
                                 </div>
-                                <p class="mb-0">Jika terdapat pernyataan terkait PKL, silahkan hubungi Koordinator PKL, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
+                                <p class="mb-0">Jika terdapat pernyataan terkait Prakerin, silahkan hubungi Koordinator Prakerin, Bapak/Ibu Guru, atau Koordinator Jurusan di Program Studi Anda</p>
                             </div>
                         <?php } else { ?>
                             <div class="card-header">
