@@ -9,7 +9,7 @@ $pdf->SetTopMargin(20);
 $pdf->SetRightMargin(20);
 $pdf->SetLeftMargin(30);
 $pdf->setFooterMargin(30);
-$pdf->SetAuthor('SMKN 1 Glagah');
+$pdf->SetAuthor('PT.Yuasa Battery Indonesia');
 $pdf->SetDisplayMode('real', 'default');
 $pdf->SetFont('Arial', '', 11, '', 'false');
 $pdf->AddPage();

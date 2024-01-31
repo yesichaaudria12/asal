@@ -5,7 +5,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="<?= base_url('assets/'); ?>img/login.png">
 
-<title>Aplikasi Manajemen Administrasi Presensi Terpadu pada PT.Yuasa Battery Indonesia - <?php echo $title ?></title>
+<title>Aplikasi Manajemen Administrasi Presensi Terpadu Pada PT.Yuasa Battery Indonesia - <?php echo $title ?></title>
 
 <!-- Custom fonts for this template-->
 <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
