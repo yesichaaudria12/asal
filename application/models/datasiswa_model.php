@@ -33,7 +33,7 @@ class datasiswa_model extends CI_Model
             [
                 'field' => 'kelas',
                 'label' => 'Kelas',
-                'rules' => 'numeric'
+                'rules' => 'required'
             ],
 
 			[

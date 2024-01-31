@@ -17,7 +17,7 @@ class DataSiswa extends CI_Controller
 
     public function index()
     {
-        $data['title'] = 'Data Siswa';
+        $data['title'] = 'Data Prakerin';
         $data['data_siswa'] = $this->datasiswa_model->getAll();
         $this->load->view("admin/datasiswa/listsiswa", $data);
     }
@@ -50,7 +50,7 @@ class DataSiswa extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil diubah');
             redirect('admin/DataSiswa');
         }
-        $data['title'] = 'Ubah Data Siswa';
+        $data['title'] = 'Edit Data Prakerin';
         $data["datasiswa"] = $datasiswa->getById($id);
         if (!$data["datasiswa"]) show_404();
         $this->load->view("admin/datasiswa/editdatasiswa", $data);

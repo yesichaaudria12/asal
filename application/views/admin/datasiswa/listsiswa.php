@@ -40,7 +40,7 @@
                     <div class="card mb-3">
                         <div class="card-header">
                             <a class="btn btn-light" href="<?= base_url("admin/DataSiswa/daftarsiswa") ?>"><i
-                                    class="fas fa-plus"></i> Tambah Data Siswa</a>
+                                    class="fas fa-plus"></i> Add New Data Prakerin</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -94,10 +94,10 @@
                                             </td>
                                             <td style="text-align:center">
                                                 <a href="<?= base_url('admin/DataSiswa/editdatasiswa/' . $dtsiswa->id_siswa) ?>"
-                                                    class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 <a onclick="deleteConfirm('<?= base_url('admin/DataSiswa/hapusdatasiswa/' . $dtsiswa->id_siswa) ?>')"
                                                     href="#!" class="btn btn-small text-danger"><i
-                                                        class="fas fa-trash"></i> Hapus</a>
+                                                        class="fas fa-trash"></i> Delete</a>
                                             </td>
                                             <?php $i++ ?>
                                         </tr>

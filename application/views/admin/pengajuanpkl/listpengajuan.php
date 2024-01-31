@@ -121,7 +121,7 @@
                                                     <?php } ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                    <a href="<?= base_url('admin/PengajuanPKL/editpengajuanpkl/' . $pengajuan->id_pengajuanpkl) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Edit</a>
                                                 </td>
                                                 <?php $i++ ?>
                                             </tr>

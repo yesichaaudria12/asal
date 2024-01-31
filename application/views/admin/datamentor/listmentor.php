@@ -112,7 +112,7 @@
                                                     class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
                                                 <a onclick="deleteConfirm('<?= base_url('admin/DataMENTOR/hapusdatamentor/' . $dtmentor->id_mentor) ?>')"
                                                     href="#!" class="btn btn-small text-danger"><i
-                                                        class="fas fa-trash"></i> Hapus</a>
+                                                        class="fas fa-trash"></i> Delete</a>
                                             </td>
                                             <?php $i++ ?>
                                         </tr>

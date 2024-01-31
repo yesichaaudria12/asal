@@ -44,7 +44,7 @@
                     <div class="card mb-3">
                         <div class="card-header d-flex justify-content-between mb-2">
                             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#tambahakun"><i
-                                    class="fas fa-plus"></i> Tambah Akun Mentor</button>
+                                    class="fas fa-plus"></i> Add Akun Mentor</button>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -98,7 +98,7 @@
                                                 <?php } ?>
                                                 <?php
                                                     if ($akun->role == 'admin_pkl') { ?>
-                                                Administrator PKL
+                                                Administrator Prakerin
                                                 <?php } ?>
                                             </td>
                                             <?php $i++ ?>

@@ -37,7 +37,7 @@
 
                     <div class="card mb-3">
                         <div class="card-header">
-                            <a href="<?= base_url('admin/DataSiswa/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url('admin/DataSiswa/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                         </div>
                         <div class="card-body">
 
@@ -64,7 +64,7 @@
                                 <div class="form-group">
                                     <label for="kelas">Kelas *</label>
                                     <input class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>"
-                                        type="number" name="kelas" placeholder=""></input>
+                                        type="text" name="kelas" placeholder=""></input>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('kelas') ?>
                                     </div>
@@ -117,7 +117,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="no_hp_orang_tua">No. HP Orang Tua</label>
+                                    <label for="no_hp_orang_tua">No. HP Orang Tua *</label>
                                     <input
                                         class="form-control <?php echo form_error('no_hp_orang_tua') ? 'is-invalid' : '' ?>"
                                         type="number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="no_hp_orang_tua"

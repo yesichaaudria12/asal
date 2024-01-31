@@ -12,8 +12,8 @@
                   </div>
                   <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
                   <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-                      <a id="btn-delete" class="btn btn-danger" href="#">Hapus</a>
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                      <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
                   </div>
               </div>
           </div>
@@ -31,7 +31,7 @@
                   </div>
                   <div class="modal-body">Klik tombol Logout untuk keluar dari sesi login ini.</div>
                   <div class="modal-footer">
-                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                       <a class="btn btn-primary" href="<?= base_url('login/logout') ?>">Logout</a>
                   </div>
               </div>
@@ -43,7 +43,7 @@
           <div class="modal-dialog" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tambah Akun Mentor</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Add New Account</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
@@ -88,7 +88,7 @@
 
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                       <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                   </div>
                   </form>
@@ -101,7 +101,7 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                   <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Tambah Presensi Prakerin</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Add Presensi Prakerin</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                       </button>
@@ -150,7 +150,7 @@
                           </div>
 
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>
@@ -201,13 +201,14 @@
                           </div>
 
                           <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <input class="btn btn-primary" type="submit" name="btn" value="Save" />
                           </div>
                       </form>
 
                       <?php } else { ?>
-                      Maaf, Anda sudah mengajukan permohonan Prakerin sebelumnya, silahkan menunggu validasi permohonan Prakerin
+                      Maaf, Anda sudah mengajukan permohonan Prakerin sebelumnya, silahkan menunggu validasi permohonan
+                      Prakerin
                       dari Koordinator Prakerin.
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

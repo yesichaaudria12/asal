@@ -35,7 +35,7 @@ class ProgramPKL extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('siswa/ProgramPKL');
         }
-        $data['title'] = 'Add Data Program Prakerin';
+        $data['title'] = 'Add New Data Program Prakerin';
         $data['mapel'] = $this->programpkl_model->getMapel();
         $data['pengajuanpkl'] = $this->permohonanpkl_model->getAll();
         $this->load->view("siswa/programpkl/tambahprogrampkl", $data);

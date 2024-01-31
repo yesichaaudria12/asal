@@ -52,7 +52,7 @@
                             </div>
                         <?php } else { ?>
                             <div class="card-header">
-                                <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
+                                <a href="<?= base_url('siswa/JurnalPKL/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
                             </div>
                             <div class="card-body">
                                 <form action="" method="post" enctype="multipart/form-data">
