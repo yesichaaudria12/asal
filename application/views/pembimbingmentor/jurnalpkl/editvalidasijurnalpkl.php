@@ -52,12 +52,12 @@
                                     value="<?php echo $jurnal_pkl->id_jurnal_pkl ?>" />
 
                                 <div class="form-group">
-                                    <label for="nama_siswa">Nama Siswa</label>
+                                    <label for="nama_peserta">Nama Peserta</label>
                                     <input
-                                        class="form-control <?php echo form_error('nama_siswa') ? 'is-invalid' : '' ?>"
-                                        name="nama_siswa" readonly value="<?php echo $jurnal_pkl->nama_siswa ?>" />
+                                        class="form-control <?php echo form_error('nama_peserta') ? 'is-invalid' : '' ?>"
+                                        name="nama_peserta" readonly value="<?php echo $jurnal_pkl->nama_peserta ?>" />
                                     <div class="invalid-feedback">
-                                        <?php echo form_error('nama_siswa') ?>
+                                        <?php echo form_error('nama_peserta') ?>
                                     </div>
                                 </div>
 

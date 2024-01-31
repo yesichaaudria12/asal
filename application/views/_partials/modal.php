@@ -54,7 +54,7 @@
 
                           <div class="form-group">
                               <label for="id">Nama Mentor</label>
-                              <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>"
+                              <select class="form-control <?php echo form_error('id_peserta') ? 'is-invalid' : '' ?>"
                                   required="required" name="id">
                                   <option disabled selected value="">Pilih Nama Mentor : </option>
                                   <?php foreach ($data_mentor as $row) { ?>
@@ -108,7 +108,7 @@
                   </div>
                   <div class="modal-body">
                       <?php if ($pengajuanpkl->status_keanggotaan == "Ketua Kelompok") { ?>
-                      <form action="<?= base_url('siswa/PresensiPKL/tambahpresensipkl') ?>" method="post">
+                      <form action="<?= base_url('peserta/PresensiPKL/tambahpresensipkl') ?>" method="post">
 
                           <div class="form-group">
                               <label for="tanggal_absensi">Tanggal Presensi</label>
@@ -122,16 +122,16 @@
                           </div>
 
                           <div class="form-group">
-                              <label for="id_siswa">Pilih Siswa</label>
-                              <select class="form-control <?php echo form_error('id_siswa') ? 'is-invalid' : '' ?>"
-                                  required="required" name="id_siswa">
-                                  <option disabled selected value="">Pilih Siswa : </option>
-                                  <?php foreach ($data_siswa as $row) { ?>
-                                  <option value="<?php echo $row->id_siswa; ?>"><?php echo $row->nama_siswa ?></option>
+                              <label for="id_peserta">Pilih Peserta</label>
+                              <select class="form-control <?php echo form_error('id_peserta') ? 'is-invalid' : '' ?>"
+                                  required="required" name="id_peserta">
+                                  <option disabled selected value="">Pilih Peserta : </option>
+                                  <?php foreach ($data_peserta as $row) { ?>
+                                  <option value="<?php echo $row->id_peserta; ?>"><?php echo $row->nama_peserta ?></option>
                                   <?php } ?>
                               </select>
                               <div class="invalid-feedback">
-                                  <?php echo form_error('id_siswa') ?>
+                                  <?php echo form_error('id_peserta') ?>
                               </div>
                           </div>
 
@@ -174,7 +174,7 @@
                   <div class="modal-body">
                       <?php if (empty($permohonanpkl->status_validasi) || $permohonanpkl->status_validasi == "Ditolak") { ?>
 
-                      <form action="<?= base_url('siswa/PermohonanPKL/tambahpermohonanpkl') ?>" method="post">
+                      <form action="<?= base_url('peserta/PermohonanPKL/tambahpermohonanpkl') ?>" method="post">
 
                           <div class="form-group">
                               <label for="id_mentor">Pilih Tujuan / Nama Mentor</label>
@@ -192,7 +192,7 @@
                                   <option disabled selected value="">Pilih Mentor : </option>
                               </select>
 
-                              <input type="hidden" name="id_siswa"
+                              <input type="hidden" name="id_peserta"
                                   value="<?php echo $this->session->userdata('id') ?>" />
 
                               <div class="invalid-feedback">

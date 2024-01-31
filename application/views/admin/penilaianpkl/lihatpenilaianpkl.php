@@ -1,7 +1,7 @@
 <?php
 
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('Penilaian Prakerin - ' . $data_siswa->nama_siswa);
+$pdf->SetTitle('Penilaian Prakerin - ' . $data_peserta->nama_peserta);
 $pdf->SetPrintHeader(false);
 $pdf->SetPrintFooter(false);
 $pdf->SetHeaderMargin(0);
@@ -20,15 +20,15 @@ $html = '
     <table>
         <tr>
             <td>Nama Mentor</td>
-            <td>: ' . $data_siswa->nama_mentor . ' </td>
-            <td>Nama Siswa</td>
-            <td>: ' . $data_siswa->nama_siswa . '</td>
+            <td>: ' . $data_peserta->nama_mentor . ' </td>
+            <td>Nama Peserta</td>
+            <td>: ' . $data_peserta->nama_peserta . '</td>
         </tr>
         <tr>
             <td>Bidang Usaha</td>
-            <td>: ' . $data_siswa->jenis_usaha . '</td>
+            <td>: ' . $data_peserta->jenis_usaha . '</td>
             <td>NIS / NIM</td>
-            <td>: ' . $data_siswa->nis_nim . '</td>
+            <td>: ' . $data_peserta->nis_nim . '</td>
         </tr>
         <tr>
             <td></td>
@@ -52,73 +52,73 @@ $html = '
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">1.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_1 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_1 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_1 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_1 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">2.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_2 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_2 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_2 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_2 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">3.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_3 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_3 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_3 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_3 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">4.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_4 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_4 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_4 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_4 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">5.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_5 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_5 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_5 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_5 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">6.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_6 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_6 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_6 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_6 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">7.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_7 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_7 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_7 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_7 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">8.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_8 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_8 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_8 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_8 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">9.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_9 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_9 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_9 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_9 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">10.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_10 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_10 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_10 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_10 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">11.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_11 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_11 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_11 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_11 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">12.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_12 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_12 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_12 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_12 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">13.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_13 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_13 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_13 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_13 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">14.</td>
-    <td style="width: 75%">' . $siswa->aspek_teknis_14 . '</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_astek_14 . '</td>
+    <td style="width: 75%">' . $peserta->aspek_teknis_14 . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_astek_14 . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td colspan="3">B. ASPEK NON TEKNIS</td>
@@ -126,29 +126,29 @@ $html = '
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">1.</td>
     <td>Disiplin</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_disiplin . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_nontek_disiplin . '</td>
   </tr>
   <tr bgcolor="#ffffff">
     <td style="width: 5%; text-align:center;">2.</td>
     <td>Kerjasama</td>
-    <td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_kerjasama . '</td>
+    <td style="width: 20%; text-align:center;">' . $peserta->nilai_nontek_kerjasama . '</td>
   </tr>
   <tr bgcolor="#ffffff">
   <td style="width: 5%; text-align:center;">3.</td>
   <td>Inisiatif</td>
-  <td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_inisiatif . '</td>
+  <td style="width: 20%; text-align:center;">' . $peserta->nilai_nontek_inisiatif . '</td>
 </tr>
 <tr bgcolor="#ffffff">
   <td style="width: 5%; text-align:center;">4.</td>
   <td>Tanggung Jawab</td>
-  <td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_tanggungjawab . '</td>
+  <td style="width: 20%; text-align:center;">' . $peserta->nilai_nontek_tanggungjawab . '</td>
 </tr>
 <tr bgcolor="#ffffff">
 <td style="width: 5%; text-align:center;">5.</td>
 <td>Kebersihan/Kerapian</td>
-<td style="width: 20%; text-align:center;">' . $siswa->nilai_nontek_kebersihan_kerapian . '</td>
+<td style="width: 20%; text-align:center;">' . $peserta->nilai_nontek_kebersihan_kerapian . '</td>
 </tr>
 </tbody>
 </table>';
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('Penilaian Prakerin '  . $data_siswa->nama_siswa . ' .pdf', 'I');
+$pdf->Output('Penilaian Prakerin '  . $data_peserta->nama_peserta . ' .pdf', 'I');

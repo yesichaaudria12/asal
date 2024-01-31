@@ -26,16 +26,16 @@ class permohonanpkl_model extends CI_Model
         $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
         $this->db->order_by('pengajuanpkl.id_pengajuanpkl', 'desc');
-        return $this->db->get_where($this->_table, ["pengajuanpkl.id_siswa" => $this->session->userdata('id')])->row();
+        return $this->db->get_where($this->_table, ["pengajuanpkl.id_peserta" => $this->session->userdata('id')])->row();
     }
 
     public function getHistory()
     {
         $this->db->select('*');
         $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
-        $this->db->where('pengajuanpkl.id_siswa', $this->session->userdata('id'));
+        $this->db->where('pengajuanpkl.id_peserta', $this->session->userdata('id'));
         $this->db->order_by('id_pengajuanpkl', 'desc');
         return $this->db->get($this->_table)->result();
     }
@@ -43,7 +43,7 @@ class permohonanpkl_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_siswa = $post['id_siswa'];
+        $this->id_peserta = $post['id_peserta'];
         $this->id_mentor = $post["id_mentor"];
         return $this->db->insert($this->_table, $this);
     }

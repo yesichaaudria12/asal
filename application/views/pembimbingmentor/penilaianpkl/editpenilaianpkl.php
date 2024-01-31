@@ -45,14 +45,14 @@
                             <form action="<?= base_url('pembimbingmentor/PenilaianPKL/editnilaipkl') ?>" method="post">
                                 <div class="row">
                                     <div class="form-group col">
-                                        <label>Nama Siswa</label>
+                                        <label>Nama Peserta</label>
                                         <input class="form-control" readonly
-                                            value="<?php echo $data_siswa->nama_siswa ?>" />
+                                            value="<?php echo $data_peserta->nama_peserta ?>" />
                                     </div>
 
                                     <div class="form-group col">
                                         <label>Kelas</label>
-                                        <input class="form-control" readonly value="<?php echo $data_siswa->kelas ?>" />
+                                        <input class="form-control" readonly value="<?php echo $data_peserta->kelas ?>" />
                                     </div>
                                 </div>
 
@@ -60,20 +60,20 @@
                                     <div class="form-group col">
                                         <label>Jurusan</label>
                                         <input class="form-control" readonly
-                                            value="<?php echo $data_siswa->nama_jurusan ?>" />
+                                            value="<?php echo $data_peserta->nama_jurusan ?>" />
                                     </div>
 
                                     <div class="form-group col">
                                         <label>Nama Mentor</label>
                                         <input class="form-control" readonly
-                                            value="<?php echo $data_siswa->nama_mentor ?>" />
+                                            value="<?php echo $data_peserta->nama_mentor ?>" />
                                     </div>
                                 </div>
 
                                 <label style="text-align: center;" class="mt-4" for="aspek_teknis_1"><strong>PEKERJAAN /
                                         KEGIATAN</strong></label>
 
-                                <input type="hidden" name="id_siswa" value="<?php echo $data_siswa->id_siswa ?>" />
+                                <input type="hidden" name="id_peserta" value="<?php echo $data_peserta->id_peserta ?>" />
 
                                 <div class="d-flex justify-content-between">
                                     <div class="form-group w-75">
@@ -82,7 +82,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_1') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_1" placeholder="1."
-                                            value="<?php echo $siswa->aspek_teknis_1 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_1 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_1') ?>
                                         </div>
@@ -93,7 +93,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_1') ? 'is-invalid' : '' ?>"
                                             type="number" name="nilai_astek_1" max="100"
-                                            value="<?php echo $siswa->nilai_astek_1 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_1 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_1') ?>
                                         </div>
@@ -105,7 +105,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_2') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_2" placeholder="2."
-                                            value="<?php echo $siswa->aspek_teknis_2 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_2 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_2') ?>
                                         </div>
@@ -115,7 +115,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_2') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_2"
-                                            value="<?php echo $siswa->nilai_astek_2 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_2 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_2') ?>
                                         </div>
@@ -127,7 +127,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_3') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_3" placeholder="3."
-                                            value="<?php echo $siswa->aspek_teknis_3 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_3 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_3') ?>
                                         </div>
@@ -137,7 +137,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_3') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_3"
-                                            value="<?php echo $siswa->nilai_astek_3 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_3 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_3') ?>
                                         </div>
@@ -149,7 +149,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_4') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_4" placeholder="4."
-                                            value="<?php echo $siswa->aspek_teknis_4 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_4 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_4') ?>
                                         </div>
@@ -159,7 +159,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_4') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_4"
-                                            value="<?php echo $siswa->nilai_astek_4 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_4 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_4') ?>
                                         </div>
@@ -171,7 +171,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_5') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_5" placeholder="5."
-                                            value="<?php echo $siswa->aspek_teknis_5 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_5 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_5') ?>
                                         </div>
@@ -181,7 +181,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_5') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_5"
-                                            value="<?php echo $siswa->nilai_astek_5 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_5 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_5') ?>
                                         </div>
@@ -193,7 +193,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_6') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_6" placeholder="6."
-                                            value="<?php echo $siswa->aspek_teknis_6 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_6 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_6') ?>
                                         </div>
@@ -203,7 +203,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_6') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_6"
-                                            value="<?php echo $siswa->nilai_astek_6 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_6 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_6') ?>
                                         </div>
@@ -215,7 +215,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_7') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_7" placeholder="7."
-                                            value="<?php echo $siswa->aspek_teknis_7 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_7 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_7') ?>
                                         </div>
@@ -225,7 +225,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_7') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_7"
-                                            value="<?php echo $siswa->nilai_astek_7 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_7 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_7') ?>
                                         </div>
@@ -237,7 +237,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_8') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_8" placeholder="8."
-                                            value="<?php echo $siswa->aspek_teknis_8 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_8 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_8') ?>
                                         </div>
@@ -247,7 +247,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_8') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_8"
-                                            value="<?php echo $siswa->nilai_astek_8 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_8 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_8') ?>
                                         </div>
@@ -259,7 +259,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_9') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_9" placeholder="9."
-                                            value="<?php echo $siswa->aspek_teknis_9 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_9 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_9') ?>
                                         </div>
@@ -269,7 +269,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_9') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_9"
-                                            value="<?php echo $siswa->nilai_astek_9 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_9 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_9') ?>
                                         </div>
@@ -281,7 +281,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_10') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_10" placeholder="10."
-                                            value="<?php echo $siswa->aspek_teknis_10 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_10 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_10') ?>
                                         </div>
@@ -291,7 +291,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_10') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_10"
-                                            value="<?php echo $siswa->nilai_astek_10 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_10 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_10') ?>
                                         </div>
@@ -303,7 +303,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_11') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_11" placeholder="11."
-                                            value="<?php echo $siswa->aspek_teknis_11 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_11 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_11') ?>
                                         </div>
@@ -313,7 +313,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_11') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_11"
-                                            value="<?php echo $siswa->nilai_astek_11 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_11 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_11') ?>
                                         </div>
@@ -325,7 +325,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_12') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_12" placeholder="12."
-                                            value="<?php echo $siswa->aspek_teknis_12 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_12 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_12') ?>
                                         </div>
@@ -335,7 +335,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_12') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_12"
-                                            value="<?php echo $siswa->nilai_astek_12 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_12 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_12') ?>
                                         </div>
@@ -347,7 +347,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_13') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_13" placeholder="13."
-                                            value="<?php echo $siswa->aspek_teknis_13 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_13 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_13') ?>
                                         </div>
@@ -357,7 +357,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_13') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_13"
-                                            value="<?php echo $siswa->nilai_astek_13 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_13 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_13') ?>
                                         </div>
@@ -369,7 +369,7 @@
                                         <input
                                             class="form-control <?php echo form_error('aspek_teknis_14') ? 'is-invalid' : '' ?>"
                                             type="text" name="aspek_teknis_14" placeholder="14."
-                                            value="<?php echo $siswa->aspek_teknis_14 ?>"></input>
+                                            value="<?php echo $peserta->aspek_teknis_14 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('aspek_teknis_14') ?>
                                         </div>
@@ -379,7 +379,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_astek_14') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_astek_14"
-                                            value="<?php echo $siswa->nilai_astek_14 ?>"></input>
+                                            value="<?php echo $peserta->nilai_astek_14 ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_astek_14') ?>
                                         </div>
@@ -398,7 +398,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_nontek_disiplin') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_nontek_disiplin" placeholder=""
-                                            value="<?php echo $siswa->nilai_nontek_disiplin ?>"></input>
+                                            value="<?php echo $peserta->nilai_nontek_disiplin ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_nontek_disiplin') ?>
                                         </div>
@@ -414,7 +414,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_nontek_kerjasama') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_nontek_kerjasama" placeholder=""
-                                            value="<?php echo $siswa->nilai_nontek_kerjasama ?>"></input>
+                                            value="<?php echo $peserta->nilai_nontek_kerjasama ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_nontek_kerjasama') ?>
                                         </div>
@@ -430,7 +430,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_nontek_inisiatif') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_nontek_inisiatif" placeholder=""
-                                            value="<?php echo $siswa->nilai_nontek_inisiatif ?>"></input>
+                                            value="<?php echo $peserta->nilai_nontek_inisiatif ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_nontek_inisiatif') ?>
                                         </div>
@@ -446,7 +446,7 @@
                                         <input
                                             class="form-control <?php echo form_error('nilai_nontek_tanggungjawab') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_nontek_tanggungjawab" placeholder=""
-                                            value="<?php echo $siswa->nilai_nontek_tanggungjawab ?>"></input>
+                                            value="<?php echo $peserta->nilai_nontek_tanggungjawab ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_nontek_tanggungjawab') ?>
                                         </div>
@@ -463,7 +463,7 @@
                                             class="form-control <?php echo form_error('nilai_nontek_kebersihan_kerapian') ? 'is-invalid' : '' ?>"
                                             type="number" max="100" name="nilai_nontek_kebersihan_kerapian"
                                             placeholder=""
-                                            value="<?php echo $siswa->nilai_nontek_kebersihan_kerapian ?>"></input>
+                                            value="<?php echo $peserta->nilai_nontek_kebersihan_kerapian ?>"></input>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nilai_nontek_kebersihan_kerapian') ?>
                                         </div>

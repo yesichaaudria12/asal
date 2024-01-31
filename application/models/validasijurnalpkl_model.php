@@ -24,8 +24,8 @@ class validasijurnalpkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('jurnal_pkl');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = jurnal_pkl.id_siswa');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = jurnal_pkl.id_peserta');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $query = $this->db->get();
         return $query->result();
@@ -33,8 +33,8 @@ class validasijurnalpkl_model extends CI_Model
 
     public function getById($id_jurnal_pkl)
     {
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = jurnal_pkl.id_siswa');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = jurnal_pkl.id_peserta');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         return $this->db->get_where($this->_table, ["id_jurnal_pkl" => $id_jurnal_pkl])->row();
     }
 

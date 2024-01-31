@@ -49,7 +49,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
-                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Nama Peserta</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Nama Mentor</th>
                                             <th style="text-align:center">Tanggal Pengajuan</th>
@@ -69,7 +69,7 @@
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $pengajuan->nama_siswa; ?>
+                                                    <?php echo $pengajuan->nama_peserta; ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $pengajuan->kelas; ?>

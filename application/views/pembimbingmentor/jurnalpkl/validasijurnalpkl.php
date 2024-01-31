@@ -47,7 +47,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
-                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Nama Peserta</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Tgl Pelaksanaan</th>
                                             <th style="text-align:center">Topik Pekerjaan</th>
@@ -66,7 +66,7 @@
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $jurnal->nama_siswa ?>
+                                                    <?php echo $jurnal->nama_peserta ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php echo $jurnal->kelas ?>

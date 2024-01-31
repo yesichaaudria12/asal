@@ -34,8 +34,8 @@
                 <span>Data Mentor</span></a>
         </li>
 
-        <li class="nav-item <?php echo $this->uri->segment(2) == 'DataSiswa' ? 'active' : '' ?>">
-            <a class="nav-link" href="<?= base_url('admin/DataSiswa/'); ?>">
+        <li class="nav-item <?php echo $this->uri->segment(2) == 'DataPeserta' ? 'active' : '' ?>">
+            <a class="nav-link" href="<?= base_url('admin/DataPeserta/'); ?>">
                 <i class="fas fa-fw fa-user-graduate"></i>
                 <span>Data Prakerin</span></a>
         </li>
@@ -123,7 +123,7 @@
     <hr class="sidebar-divider">
 
     <div class="sidebar-heading" style="color: white;">
-        Catatan Kegiatan Prakerin Siswa
+        Catatan Kegiatan Prakerin Peserta
     </div>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'ValidasiJurnalPKL' ? 'active' : '' ?>">
@@ -135,7 +135,7 @@
     <li class="nav-item <?php echo $this->uri->segment(2) == 'AbsensiPKL' ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('pembimbingmentor/AbsensiPKL'); ?>">
             <i class="fas fa-fw fa-clipboard-check"></i>
-            <span>Absensi Siswa Prakarin</span></a>
+            <span>Absensi Peserta Prakarin</span></a>
     </li>
 
     <hr class="sidebar-divider">
@@ -165,16 +165,16 @@
 
     <?php } ?>
 
-    <?php if ($this->session->userdata("role") === "siswa") { ?>
+    <?php if ($this->session->userdata("role") === "peserta") { ?>
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center"
-        href="<?= base_url('siswa/Dashboard/'); ?>">
+        href="<?= base_url('peserta/Dashboard/'); ?>">
         <div class="sidebar-brand-icon">
             <img class="center mx-auto" width=50px src="<?= base_url('assets/img/login.png'); ?>" />
         </div>
     </a>
-    <p class="text-center text-white text-uppercase font-weight-bold">Halaman Siswa</p>
+    <p class="text-center text-white text-uppercase font-weight-bold">Halaman Peserta</p>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -185,13 +185,13 @@
     </div>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'InfoMentor' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/InfoMENTOR'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/InfoMENTOR'); ?>">
             <i class="fas fa-fw fa-info-circle"></i>
             <span>Info Mentor</span></a>
     </li>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'PermohonanPKL' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/PermohonanPKL'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/PermohonanPKL'); ?>">
             <i class="fas fa-fw fa-envelope-open-text"></i>
             <span>Permohonan Prakerin</span></a>
     </li>
@@ -203,25 +203,25 @@
     </div>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'JurnalPKL' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/JurnalPKL'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/JurnalPKL'); ?>">
             <i class="fas fa-fw fa-clipboard"></i>
             <span>Logbook Prakerin</span></a>
     </li>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'ProgramPKL' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/ProgramPKL'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/ProgramPKL'); ?>">
             <i class="fas fa-fw fa-clipboard"></i>
             <span>Program Prakerin</span></a>
     </li>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'PresensiPKL' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/PresensiPKL'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/PresensiPKL'); ?>">
             <i class="fas fa-fw fa-calendar-check"></i>
             <span>Presensi Prakerin</span></a>
     </li>
 
     <li class="nav-item <?php echo $this->uri->segment(2) == 'CatatanKunjunganPKL' ? 'active' : '' ?>">
-        <a class="nav-link" href=" <?= base_url('siswa/CatatanKunjunganPKL'); ?>">
+        <a class="nav-link" href=" <?= base_url('peserta/CatatanKunjunganPKL'); ?>">
             <i class="fas fa-fw fa-book-reader"></i>
             <span>Catatan Kunjungan Prakerin</span></a>
     </li>

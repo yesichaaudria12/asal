@@ -68,7 +68,7 @@
                                                 <?php echo $i ?>
                                             </td>
                                             <td>
-                                                <?php echo $akun->nama_siswa ?>
+                                                <?php echo $akun->nama_peserta ?>
                                                 <?php echo $akun->nama_guru ?>
                                                 <?php echo $akun->nama_staf_tu ?>
                                                 <?php echo $akun->nama_mentor ?>
@@ -81,8 +81,8 @@
                                             </td>
                                             <td style="text-align:center">
                                                 <?php
-                                                    if ($akun->role == 'siswa') { ?>
-                                                Siswa
+                                                    if ($akun->role == 'peserta') { ?>
+                                                Peserta
                                                 <?php } ?>
                                                 <?php
                                                     if ($akun->role == 'pembimbing_mentor') { ?>

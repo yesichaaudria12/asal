@@ -5,7 +5,7 @@ class programpkl_model extends CI_Model
     private $_table = "program_pkl";
 
     public $id_program_pkl;
-    public $id_siswa;
+    public $id_peserta;
     public $id_kompetensi_dasar;
     public $tanggal;
     public $topik_pekerjaan;
@@ -35,9 +35,9 @@ class programpkl_model extends CI_Model
     public function getAll()
     {
         $this->db->select('*');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = program_pkl.id_siswa');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = program_pkl.id_peserta');
         $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = program_pkl.id_kompetensi_dasar');
-        $this->db->where('program_pkl.id_siswa', $this->session->userdata('id'));
+        $this->db->where('program_pkl.id_peserta', $this->session->userdata('id'));
         $this->db->order_by('id_program_pkl', 'desc');
         return $this->db->get($this->_table)->result();
     }
@@ -45,24 +45,24 @@ class programpkl_model extends CI_Model
     public function getData()
     {
         $this->db->select('*');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = program_pkl.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = program_pkl.id_peserta');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = program_pkl.id_siswa');
-        $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = program_pkl.id_peserta');
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_peserta.id_jurusan');
         $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = program_pkl.id_kompetensi_dasar');
-        $this->db->where('program_pkl.id_siswa', $this->session->userdata('id'));
+        $this->db->where('program_pkl.id_peserta', $this->session->userdata('id'));
         $this->db->order_by('tanggal', 'asc');
         return $this->db->get($this->_table)->result_array();
     }
 
-    public function getById($id_siswa)
+    public function getById($id_peserta)
     {
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = program_pkl.id_siswa');
-        $this->db->join('jurusan', 'jurusan.id_jurusan = data_siswa.id_jurusan');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = program_pkl.id_peserta');
+        $this->db->join('jurusan', 'jurusan.id_jurusan = data_peserta.id_jurusan');
         $this->db->join('kompetensi_dasar', 'kompetensi_dasar.id = program_pkl.id_kompetensi_dasar');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = program_pkl.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = program_pkl.id_peserta');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
-        return $this->db->get_where($this->_table, ["program_pkl.id_siswa" => $id_siswa])->row();
+        return $this->db->get_where($this->_table, ["program_pkl.id_peserta" => $id_peserta])->row();
     }
 
     public function getId($id_program_pkl)
@@ -87,7 +87,7 @@ class programpkl_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_siswa = $post["id_siswa"];
+        $this->id_peserta = $post["id_peserta"];
         $this->id_kompetensi_dasar = $post["id_kompetensi_dasar"];
         $this->tanggal = $post["tanggal"];
         $this->topik_pekerjaan = $post["topik_pekerjaan"];
@@ -98,7 +98,7 @@ class programpkl_model extends CI_Model
     {
         $post = $this->input->post();
         $this->id_program_pkl = $post["id_program_pkl"];
-        $this->id_siswa = $post["id_siswa"];
+        $this->id_peserta = $post["id_peserta"];
         $this->tanggal = $post["tanggal"];
         $this->topik_pekerjaan = $post["topik_pekerjaan"];
         $this->id_kompetensi_dasar = $post["id_kompetensi_dasar"];

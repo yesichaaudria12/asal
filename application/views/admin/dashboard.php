@@ -139,11 +139,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                                Jumlah Siswa Keseluruhan</div>
+                                                Jumlah Peserta Keseluruhan</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $total_siswa; ?></div>
+                                                        <?php echo $total_peserta; ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,11 +161,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                                Jumlah Siswa Yang Belum Mengajukan Permohonan Prakerin</div>
+                                                Jumlah Peserta Yang Belum Mengajukan Permohonan Prakerin</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $siswa_belum_mengajukan; ?></div>
+                                                        <?php echo $peserta_belum_mengajukan; ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,11 +183,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Jumlah Siswa Yang Sudah Mengajukan Permohonan Prakerin</div>
+                                                Jumlah Peserta Yang Sudah Mengajukan Permohonan Prakerin</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        <?php echo $siswa_sudah_mengajukan; ?></div>
+                                                        <?php echo $peserta_sudah_mengajukan; ?></div>
                                                 </div>
                                             </div>
                                         </div>
