@@ -53,7 +53,7 @@
                                             <th style="text-align:center">Tanggal Masuk</th>
                                             <th style="text-align:center">Tanggal Keluar</th>
                                             <th style="text-align:center">Guru Pembimbing</th>
-                                            <th style="text-align:center">Jumlah Siswa</th>
+                                            <th style="text-align:center">Jumlah Peserta</th>
                                             <th style="text-align:center">Kelompok</th>
                                         </tr>
                                     </thead>
@@ -84,7 +84,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td width="100" style="text-align:center">
-                                                <?php echo $pelaksanaan->jumlah_siswa; ?>
+                                                <?php echo $pelaksanaan->jumlah_peserta; ?>
                                             </td>
                                             <td width="175" style="text-align:center">
                                                 <a href="<?= base_url('admin/PelaksanaanPKL/editpelaksanaanpkl/' . $pelaksanaan->id_mentor) ?>"

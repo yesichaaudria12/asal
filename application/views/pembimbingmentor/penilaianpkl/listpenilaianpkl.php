@@ -51,7 +51,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center">No.</th>
-                                            <th style="text-align:center">Nama Siswa</th>
+                                            <th style="text-align:center">Nama Peserta</th>
                                             <th style="text-align:center">Kelas</th>
                                             <th style="text-align:center">Jurusan</th>
                                             <th style="text-align:center">Nama Mentor</th>
@@ -62,26 +62,26 @@
                                     <tbody>
                                         <?php
                                         $i = 1;
-                                        foreach ($data_siswa as $dtsiswa) : ?>
+                                        foreach ($data_peserta as $dtpeserta) : ?>
                                             <tr>
                                                 <td width="25" style="text-align:center">
                                                     <?php echo $i ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $dtsiswa->nama_siswa ?>
+                                                    <?php echo $dtpeserta->nama_peserta ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $dtsiswa->kelas ?>
+                                                    <?php echo $dtpeserta->kelas ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $dtsiswa->nama_jurusan ?>
+                                                    <?php echo $dtpeserta->nama_jurusan ?>
                                                 </td>
                                                 <td style="text-align:center">
-                                                    <?php echo $dtsiswa->nama_mentor ?>
+                                                    <?php echo $dtpeserta->nama_mentor ?>
                                                 </td>
                                                 <td style="text-align:center">
                                                     <?php
-                                                    if ($dtsiswa->id_penilaian_pkl == null) { ?>
+                                                    if ($dtpeserta->id_penilaian_pkl == null) { ?>
                                                         <span class="badge badge-danger">Belum dinilai</span>
                                                     <?php } else { ?>
                                                         <span class=" badge badge-success">Ternilai</span>
@@ -89,12 +89,12 @@
                                                 </td>
                                                 <td width="170" style="text-align:center">
                                                     <?php
-                                                    if (!isset($dtsiswa->id_penilaian_pkl)) { ?>
-                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/tambahpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
+                                                    if (!isset($dtpeserta->id_penilaian_pkl)) { ?>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/tambahpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-fw fa-plus-square"></i>
                                                             Tambah</a>
                                                     <?php } else { ?>
-                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
-                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/lihatpenilaianpkl/' . $dtsiswa->id_siswa) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/editpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-edit"></i> Ubah</a>
+                                                        <a href="<?= base_url('pembimbingmentor/PenilaianPKL/lihatpenilaianpkl/' . $dtpeserta->id_peserta) ?>" class="btn btn-small"><i class="fas fa-clipboard"></i> Lihat</a>
                                                     <?php } ?>
                                                 </td>
                                                 <?php $i++ ?>

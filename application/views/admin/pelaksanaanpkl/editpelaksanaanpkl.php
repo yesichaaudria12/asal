@@ -60,7 +60,7 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label>Nama Siswa</label>
+                                    <label>Nama Peserta</label>
                                 </div>
                                 <div class="col">
                                     <label>Kelas</label>
@@ -77,7 +77,7 @@
                             <div class="form-group row">
                                 <div class="col">
                                     <input class="form-control" readonly type="text"
-                                        value="<?php echo $pelaksanaan->nama_siswa ?>" />
+                                        value="<?php echo $pelaksanaan->nama_peserta ?>" />
                                 </div>
                                 <div class="col">
                                     <input class="form-control" readonly type="text"
@@ -115,7 +115,7 @@
                                         <option disabled selected value="">Pilih Ketua Kelompok : </option>
                                         <?php foreach ($pelaksanaanpkl as $row) { ?>
                                         <option value="<?php echo $row->id_pengajuanpkl; ?>">
-                                            <?php echo $row->nama_siswa ?></option>
+                                            <?php echo $row->nama_peserta ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>

@@ -25,8 +25,8 @@ class absensipkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('absensi');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = absensi.id_peserta');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = absensi.id_peserta');
         $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id_mentor'));
         $query = $this->db->get();
         return $query->result();
@@ -36,8 +36,8 @@ class absensipkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('absensi');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = absensi.id_peserta');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = absensi.id_peserta');
         $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $this->db->where('MONTH(absensi.tanggal_absensi)', $sort);
         $this->db->where_not_in('absensi.keterangan', 'Hadir');
@@ -49,19 +49,19 @@ class absensipkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('absensi');
-        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_siswa = absensi.id_siswa');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = absensi.id_siswa');
+        $this->db->join('pengajuanpkl', 'pengajuanpkl.id_peserta = absensi.id_peserta');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = absensi.id_peserta');
         $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id'));
         $this->db->where_not_in('absensi.keterangan', 'Hadir');
         $query = $this->db->get();
         return $query->result();
     }
 
-    public function getDataSiswa()
+    public function getDataPeserta()
     {
         $this->db->select('*');
         $this->db->from('pengajuanpkl');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         $this->db->where('pengajuanpkl.status_validasi', 'Diterima');
         $this->db->where('pengajuanpkl.id_mentor', $this->session->userdata('id_mentor'));
         $query = $this->db->get();
@@ -71,7 +71,7 @@ class absensipkl_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
-        $this->id_siswa = $post['id_siswa'];
+        $this->id_peserta = $post['id_peserta'];
         $this->tanggal_absensi = $post['tanggal_absensi'];
         $this->keterangan = $post["keterangan"];
         return $this->db->insert($this->_table, $this);

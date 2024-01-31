@@ -39,7 +39,7 @@ class pengajuanpkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
         $this->db->order_by('nama_mentor', 'asc');
         return $this->db->get($this->_table)->result();
@@ -49,7 +49,7 @@ class pengajuanpkl_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->join('data_guru', 'data_guru.id_guru = pengajuanpkl.id_guru', 'left');
-        $this->db->join('data_siswa', 'data_siswa.id_siswa = pengajuanpkl.id_siswa');
+        $this->db->join('data_peserta', 'data_peserta.id_peserta = pengajuanpkl.id_peserta');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengajuanpkl.id_mentor');
         return $this->db->get_where($this->_table, ["id_pengajuanpkl" => $id_pengajuanpkl])->row();
     }
@@ -60,21 +60,21 @@ class pengajuanpkl_model extends CI_Model
         return $query->num_rows();
     }
 
-    public function getTotalSiswa()
+    public function getTotalPeserta()
     {
-        $query = $this->db->query('SELECT id_siswa FROM data_siswa');
+        $query = $this->db->query('SELECT id_peserta FROM data_peserta');
         return $query->num_rows();
     }
 
-    public function getTotalSiswaBelumMengajukan()
+    public function getTotalPesertaBelumMengajukan()
     {
-        $query = $this->db->query('SELECT data_siswa.id_siswa FROM data_siswa left join pengajuanpkl on pengajuanpkl.id_siswa = data_siswa.id_siswa where pengajuanpkl.status_validasi is null');
+        $query = $this->db->query('SELECT data_peserta.id_peserta FROM data_peserta left join pengajuanpkl on pengajuanpkl.id_peserta = data_peserta.id_peserta where pengajuanpkl.status_validasi is null');
         return $query->num_rows();
     }
 
-    public function getTotalSiswaSudahMengajukan()
+    public function getTotalPesertaSudahMengajukan()
     {
-        $query = $this->db->query('SELECT data_siswa.id_siswa FROM data_siswa join pengajuanpkl on pengajuanpkl.id_siswa = data_siswa.id_siswa');
+        $query = $this->db->query('SELECT data_peserta.id_peserta FROM data_peserta join pengajuanpkl on pengajuanpkl.id_peserta = data_peserta.id_peserta');
         return $query->num_rows();
     }
 

@@ -18,9 +18,9 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['total_pengajuan'] = $this->pengajuanpkl_model->getTotalPengajuan();
-        $data['total_siswa'] = $this->pengajuanpkl_model->getTotalSiswa();
-        $data['siswa_belum_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaBelumMengajukan();
-        $data['siswa_sudah_mengajukan'] = $this->pengajuanpkl_model->getTotalSiswaSudahMengajukan();
+        $data['total_peserta'] = $this->pengajuanpkl_model->getTotalPeserta();
+        $data['peserta_belum_mengajukan'] = $this->pengajuanpkl_model->getTotalPesertaBelumMengajukan();
+        $data['peserta_sudah_mengajukan'] = $this->pengajuanpkl_model->getTotalPesertaSudahMengajukan();
         $data['belum_tervalidasi'] = $this->pengajuanpkl_model->getBelumTervalidasi();
         $data['proses_pengajuan'] = $this->pengajuanpkl_model->getProsesPengajuan();
         $data['diterima'] = $this->pengajuanpkl_model->getDiterima();

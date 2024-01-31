@@ -45,13 +45,13 @@
                             <form action="<?= base_url('pembimbingmentor/PenilaianPKL/tambahnilaipkl') ?>" method="post">
                                 <div class="row">
                                     <div class="form-group col">
-                                        <label>Nama Siswa</label>
-                                        <input class="form-control" readonly value="<?php echo $siswa->nama_siswa ?>" />
+                                        <label>Nama Peserta</label>
+                                        <input class="form-control" readonly value="<?php echo $peserta->nama_peserta ?>" />
                                     </div>
 
                                     <div class="form-group col">
                                         <label>Kelas</label>
-                                        <input class="form-control" readonly value="<?php echo $siswa->kelas ?>" />
+                                        <input class="form-control" readonly value="<?php echo $peserta->kelas ?>" />
                                     </div>
                                 </div>
 
@@ -59,19 +59,19 @@
                                     <div class="form-group col">
                                         <label>Jurusan</label>
                                         <input class="form-control" readonly
-                                            value="<?php echo $siswa->nama_jurusan ?>" />
+                                            value="<?php echo $peserta->nama_jurusan ?>" />
                                     </div>
 
                                     <div class="form-group col">
                                         <label>Nama Mentor</label>
-                                        <input class="form-control" readonly value="<?php echo $siswa->nama_mentor ?>" />
+                                        <input class="form-control" readonly value="<?php echo $peserta->nama_mentor ?>" />
                                     </div>
                                 </div>
 
                                 <label style="text-align: center;" class="mt-4" for="aspek_teknis_1"><strong>PEKERJAAN /
                                         KEGIATAN</strong></label>
 
-                                <input type="hidden" name="id_siswa" value="<?php echo $siswa->id_siswa ?>" />
+                                <input type="hidden" name="id_peserta" value="<?php echo $peserta->id_peserta ?>" />
 
                                 <div class="d-flex justify-content-between">
                                     <div class="form-group w-75">

@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pklsiswa`
+-- Database: `pklpeserta`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `absensi` (
   `id_absensi` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_peserta` int(11) NOT NULL,
   `tanggal_absensi` date NOT NULL,
   `keterangan` enum('Hadir','Sakit','Izin','Tanpa Keterangan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `absensi` (
 -- Dumping data for table `absensi`
 --
 
-INSERT INTO `absensi` (`id_absensi`, `id_siswa`, `tanggal_absensi`, `keterangan`) VALUES
+INSERT INTO `absensi` (`id_absensi`, `id_peserta`, `tanggal_absensi`, `keterangan`) VALUES
 (1, 18867, '2020-08-01', 'Hadir');
 
 -- --------------------------------------------------------
@@ -163,13 +163,13 @@ INSERT INTO `data_guru` (`id_guru`, `id_jurusan`, `nip`, `nama_guru`, `jenis_kel
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_siswa`
+-- Table structure for table `data_peserta`
 --
 
-CREATE TABLE `data_siswa` (
-  `id_siswa` int(11) NOT NULL,
+CREATE TABLE `data_peserta` (
+  `id_peserta` int(11) NOT NULL,
   `nis_nim` varchar(255) NOT NULL,
-  `nama_siswa` varchar(255) NOT NULL,
+  `nama_peserta` varchar(255) NOT NULL,
   `id_jurusan` int(11) NOT NULL DEFAULT 1,
   `kelas` varchar(255) NOT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan','','') NOT NULL,
@@ -177,7 +177,7 @@ CREATE TABLE `data_siswa` (
   `tgl_lahir` date NOT NULL,
   `agama` varchar(255) NOT NULL,
   `alamat_rumah` varchar(255) NOT NULL,
-  `hp_siswa` varchar(255) NOT NULL,
+  `hp_peserta` varchar(255) NOT NULL,
   `ayah` varchar(255) NOT NULL,
   `ibu` varchar(255) NOT NULL,
   `alamat_orang_tua` varchar(255) NOT NULL,
@@ -185,10 +185,10 @@ CREATE TABLE `data_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `data_siswa`
+-- Dumping data for table `data_peserta`
 --
 
-INSERT INTO `data_siswa` (`id_siswa`, `nis_nim`, `nama_siswa`, `id_jurusan`, `kelas`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `agama`, `alamat_rumah`, `hp_siswa`, `ayah`, `ibu`, `alamat_orang_tua`, `no_hp_orang_tua`) VALUES
+INSERT INTO `data_peserta` (`id_peserta`, `nis_nim`, `nama_peserta`, `id_jurusan`, `kelas`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `agama`, `alamat_rumah`, `hp_peserta`, `ayah`, `ibu`, `alamat_orang_tua`, `no_hp_orang_tua`) VALUES
 (18867, '18867/514.066', 'ACHMAD REZA ZULQONI SUHERMAN', 1, 'XITKJ1', 'Laki-laki', '', '0000-00-00', '', 'Dusun Krajan Desa Rejosari Kec. Glagah Kab. Banyuwangi', '82140204362', '', '', 'Dusun Krajan Desa Rejosari Kec. Glagah Kab. Banyuwangi', '85259988126'),
 (18868, '18868/515.066', 'ADITYA FARID ANDIKA SARDANA', 1, 'XITKJ1', 'Laki-laki', 'TRENGGALEK', '0000-00-00', 'Islam', 'Perum Griya Indah Pakis Blok B.17', '895412000000', 'SARJU', 'FRANSIANA FLORIDA', 'Perum Griya Indah Pakis Blok B.17', '85236029828'),
 (18869, '18869/516.066', 'ADITYA RAMANDA FAUZI', 1, 'XITKJ1', 'Laki-laki', 'BANYUWANGI', '0000-00-00', 'Islam', 'Jl. K.H. Abdul Wahid,Link.krajan,RT/RW.03/02,Kec.Banyuwngi Kab.Banyuwangi', '81358277405', 'IMAM FAUZI', 'FITRI HANDAYANI', 'Kebagusan IV,RT/RW.001/004,Kebagusan,Kec.Pasar minggu,Jakarta selatan', '85211284210'),
@@ -221,7 +221,7 @@ INSERT INTO `data_siswa` (`id_siswa`, `nis_nim`, `nama_siswa`, `id_jurusan`, `ke
 (18896, '18896/543.066', 'FAJRINSYAH AKBAR RAMADHAN', 1, 'XITKJ1', 'Laki-laki', 'BANYUWANGI', '0000-00-00', 'Islam', 'Jl. Angklung Caruk 12', '82324766676', 'HERMANSYAH', 'RUSDIANA', 'Jl. Angklung Caruk 12', '82331623070'),
 (18897, '18897/544.066', 'FARHAN RAMADITA', 1, 'XITKJ1', 'Laki-laki', 'BANYUWANGI', '0000-00-00', 'Islam', 'Jl.Andalas,Singotrunan,RT/RW.04/03,Kec.Banyuwangi Kab.Banyuwangi', '82247002745', 'ABDURAHMAN', 'MAHMUDAH', 'Jl.Andalas,Singotrunan,RT/RW.04/03,Kec.Banyuwangi Kab.Banyuwangi', '85940770552'),
 (18898, '18898/545.066', 'FEBRI PUTRA PAMUNGKAS', 1, 'XITKJ1', 'Laki-laki', 'BANYUWANGI', '0000-00-00', 'Islam', 'Jl. Yos Sudarso, RT/RW.05/01, Klatak, Kec. Kalipuro Kab. Banyuwangi', '82132483043', 'BOARI', 'SOELIYATI', 'Jl.Yos sudarso, RT/RW.05/01, Klatak, Kec. Kalipuro Kab. Banyuwangi', '85331860832'),
-(18899, '18899/546.066', 'GIBRAN FITRATULLAH', 1, 'XITKJ1', 'Laki-laki', 'SURABAYA', '0000-00-00', 'Islam', 'Perum Griya Giri Mulya Blok W. 17 RT. 04 RW. 06 Klatak Kalipuro- Banyuwangi', '82236787707', 'SISWA PURWANTO', 'DWI JUNIATI SURJANI', 'Perum Griya Giri Mulya Blok W. 17 RT. 04 RW. 06 Klatak Kalipuro- Banyuwangi', '81233838514'),
+(18899, '18899/546.066', 'GIBRAN FITRATULLAH', 1, 'XITKJ1', 'Laki-laki', 'SURABAYA', '0000-00-00', 'Islam', 'Perum Griya Giri Mulya Blok W. 17 RT. 04 RW. 06 Klatak Kalipuro- Banyuwangi', '82236787707', 'peserta PURWANTO', 'DWI JUNIATI SURJANI', 'Perum Griya Giri Mulya Blok W. 17 RT. 04 RW. 06 Klatak Kalipuro- Banyuwangi', '81233838514'),
 (18900, '18900/547.066', 'HELEN DWI AYU WULANDARI', 1, 'XITKJ1', 'Perempuan', 'BANYUWANGI', '0000-00-00', 'Islam', 'Dsn: Timurjo, RT/RW.02/01, Ds. Aliyan, Kec: Rogojampi Kab. Banywangi', '81335194509', 'SUPAAT', 'SUGIARTI', 'Dsn: Timurjo, RT/RW.02/01, Ds. Aliyan, Kec: Rogojampi Kab. Banywangi', '82301636159'),
 (18901, '18901/548.066', 'HELMI SUWASTIKA', 1, 'XITKJ1', 'Laki-laki', '', '0000-00-00', '', '', '82236402347', '', '', '', '6282230292702'),
 (18902, '18902/549.066', 'ILHAM YUDHISTIRA', 1, 'XITKJ1', 'Laki-laki', 'BANYUWANGI', '0000-00-00', 'Islam', 'Jl. Srono', '87754724853', 'SLAMET HARIYONO', 'AINIYATUL MASUDAH', 'Jl. Srono', '85130310281'),
@@ -297,7 +297,7 @@ INSERT INTO `data_staf_tu` (`id_staf_tu`, `nama_staf_tu`, `jenis_kelamin`, `alam
 
 CREATE TABLE `jurnal_pkl` (
   `id_jurnal_pkl` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_peserta` int(11) NOT NULL,
   `id_kompetensi_dasar` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `topik_pekerjaan` varchar(255) NOT NULL,
@@ -310,7 +310,7 @@ CREATE TABLE `jurnal_pkl` (
 -- Dumping data for table `jurnal_pkl`
 --
 
-INSERT INTO `jurnal_pkl` (`id_jurnal_pkl`, `id_siswa`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`, `dokumentasi`, `status`, `catatan`) VALUES
+INSERT INTO `jurnal_pkl` (`id_jurnal_pkl`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`, `dokumentasi`, `status`, `catatan`) VALUES
 (2, 18867, 49, '2020-08-26', 'Menerapkan K3LH', 'default.jpg', 'Belum Tervalidasi', ''),
 (3, 18867, 135, '2020-08-26', 'Buat desain dari bitmap', 'default.jpg', 'Belum Tervalidasi', 'Belum ada catatan'),
 (4, 18867, 69, '2020-08-26', 'Mencoba menghidupkan komputer', 'default.jpg', 'Belum Tervalidasi', 'Belum ada catatan'),
@@ -694,7 +694,7 @@ INSERT INTO `mapel` (`id`, `nama_mapel`) VALUES
 
 CREATE TABLE `pengajuanpkl` (
   `id_pengajuanpkl` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_peserta` int(11) NOT NULL,
   `id_mentor` int(11) NOT NULL,
   `tanggal_pengajuan` datetime NOT NULL DEFAULT current_timestamp(),
   `tanggal_masuk` date DEFAULT '2020-01-01',
@@ -709,7 +709,7 @@ CREATE TABLE `pengajuanpkl` (
 -- Dumping data for table `pengajuanpkl`
 --
 
-INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_siswa`, `id_mentor`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
+INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_peserta`, `id_mentor`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
 (5, 18867, 1, '2020-08-22 17:26:57', '2020-01-22', '2020-07-31', 521, 'Anggota', 'Diterima', 1),
 (6, 18868, 1, '2020-08-23 17:28:20', '2020-01-01', '2020-01-01', 521, 'Ketua Kelompok', 'Diterima', 1);
 
@@ -742,7 +742,7 @@ CREATE TABLE `pengguna` (
   `id` int(15) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` enum('siswa','admin_pkl','pembimbing_mentor','koordinator_jurusan','guru') NOT NULL
+  `role` enum('peserta','admin_pkl','pembimbing_mentor','koordinator_jurusan','guru') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -750,77 +750,77 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id_pengguna`, `id`, `username`, `password`, `role`) VALUES
-(1, 18867, '18867', 'UeogQ', 'siswa'),
-(2, 18868, '18868', 'LybaF', 'siswa'),
-(3, 18869, '18869', 'MfrnX', 'siswa'),
-(4, 18870, '18870', 'NukzI', 'siswa'),
-(5, 18871, '18871', 'ZuheN', 'siswa'),
-(6, 18872, '18872', 'AurhM', 'siswa'),
-(7, 18873, '18873', 'ElyoJ', 'siswa'),
-(8, 18874, '18874', 'LgcyL', 'siswa'),
-(9, 18875, '18875', 'XtixF', 'siswa'),
-(10, 18876, '18876', 'TlekL', 'siswa'),
-(11, 18877, '18877', 'VutoR', 'siswa'),
-(12, 18878, '18878', 'DjxjS', 'siswa'),
-(13, 18879, '18879', 'DtcqF', 'siswa'),
-(14, 18880, '18880', 'OjzgW', 'siswa'),
-(15, 18881, '18881', 'RzulD', 'siswa'),
-(16, 18882, '18882', 'BtxkS', 'siswa'),
-(17, 18883, '18883', 'ArwdL', 'siswa'),
-(18, 18884, '18884', 'MxkcF', 'siswa'),
-(19, 18885, '18885', 'XjmsW', 'siswa'),
-(20, 18886, '18886', 'NyayP', 'siswa'),
-(21, 18887, '18887', 'KpbcW', 'siswa'),
-(22, 18888, '18888', 'TvjqD', 'siswa'),
-(23, 18889, '18889', 'BmcpM', 'siswa'),
-(24, 18890, '18890', 'DrfkX', 'siswa'),
-(25, 18891, '18891', 'QlomN', 'siswa'),
-(26, 18892, '18892', 'HwxwB', 'siswa'),
-(27, 18893, '18893', 'ItlwQ', 'siswa'),
-(28, 18894, '18894', 'XkmgF', 'siswa'),
-(29, 18895, '18895', 'XulvM', 'siswa'),
-(30, 18896, '18896', 'AgagW', 'siswa'),
-(31, 18897, '18897', 'ZdctT', 'siswa'),
-(32, 18898, '18898', 'BiivI', 'siswa'),
-(33, 18899, '18899', 'OdtpH', 'siswa'),
-(34, 18900, '18900', 'OnoaY', 'siswa'),
-(35, 18901, '18901', 'XlnnV', 'siswa'),
-(36, 18902, '18902', 'ZaviH', 'siswa'),
-(37, 18903, '18903', 'XcynC', 'siswa'),
-(38, 18904, '18904', 'SvzfS', 'siswa'),
-(39, 18905, '18905', 'FwggU', 'siswa'),
-(40, 18906, '18906', 'PuouA', 'siswa'),
-(41, 18907, '18907', 'OuehI', 'siswa'),
-(42, 18908, '18908', 'NteuE', 'siswa'),
-(43, 18909, '18909', 'QzljB', 'siswa'),
-(44, 18910, '18910', 'NwoyW', 'siswa'),
-(45, 18911, '18911', 'UiwbN', 'siswa'),
-(46, 18912, '18912', 'IsvwO', 'siswa'),
-(47, 18913, '18913', 'LdquC', 'siswa'),
-(48, 18914, '18914', 'OrjgH', 'siswa'),
-(49, 18915, '18915', 'RsshW', 'siswa'),
-(50, 18916, '18916', 'IwslG', 'siswa'),
-(51, 18917, '18917', 'ZmokZ', 'siswa'),
-(52, 18918, '18918', 'HxomR', 'siswa'),
-(53, 18919, '18919', 'TmzfM', 'siswa'),
-(54, 18920, '18920', 'HsznS', 'siswa'),
-(55, 18921, '18921', 'RqbdX', 'siswa'),
-(56, 18922, '18922', 'LubmW', 'siswa'),
-(57, 18923, '18923', 'WhpnP', 'siswa'),
-(58, 18924, '18924', 'EylnN', 'siswa'),
-(59, 18925, '18925', 'OtohT', 'siswa'),
-(60, 18926, '18926', 'PaczI', 'siswa'),
-(61, 18927, '18927', 'GdzqF', 'siswa'),
-(62, 18928, '18928', 'VxujL', 'siswa'),
-(63, 18929, '18929', 'KfpnX', 'siswa'),
-(64, 18930, '18930', 'QfkpR', 'siswa'),
-(65, 18931, '18931', 'MixkR', 'siswa'),
-(66, 18932, '18932', 'LelaK', 'siswa'),
-(67, 18933, '18933', 'LwtxE', 'siswa'),
-(68, 18934, '18934', 'YxjuP', 'siswa'),
-(69, 18935, '18935', 'EansE', 'siswa'),
-(70, 18936, '18936', 'JmynJ', 'siswa'),
-(71, 18937, '18937', 'GivzH', 'siswa'),
+(1, 18867, '18867', 'UeogQ', 'peserta'),
+(2, 18868, '18868', 'LybaF', 'peserta'),
+(3, 18869, '18869', 'MfrnX', 'peserta'),
+(4, 18870, '18870', 'NukzI', 'peserta'),
+(5, 18871, '18871', 'ZuheN', 'peserta'),
+(6, 18872, '18872', 'AurhM', 'peserta'),
+(7, 18873, '18873', 'ElyoJ', 'peserta'),
+(8, 18874, '18874', 'LgcyL', 'peserta'),
+(9, 18875, '18875', 'XtixF', 'peserta'),
+(10, 18876, '18876', 'TlekL', 'peserta'),
+(11, 18877, '18877', 'VutoR', 'peserta'),
+(12, 18878, '18878', 'DjxjS', 'peserta'),
+(13, 18879, '18879', 'DtcqF', 'peserta'),
+(14, 18880, '18880', 'OjzgW', 'peserta'),
+(15, 18881, '18881', 'RzulD', 'peserta'),
+(16, 18882, '18882', 'BtxkS', 'peserta'),
+(17, 18883, '18883', 'ArwdL', 'peserta'),
+(18, 18884, '18884', 'MxkcF', 'peserta'),
+(19, 18885, '18885', 'XjmsW', 'peserta'),
+(20, 18886, '18886', 'NyayP', 'peserta'),
+(21, 18887, '18887', 'KpbcW', 'peserta'),
+(22, 18888, '18888', 'TvjqD', 'peserta'),
+(23, 18889, '18889', 'BmcpM', 'peserta'),
+(24, 18890, '18890', 'DrfkX', 'peserta'),
+(25, 18891, '18891', 'QlomN', 'peserta'),
+(26, 18892, '18892', 'HwxwB', 'peserta'),
+(27, 18893, '18893', 'ItlwQ', 'peserta'),
+(28, 18894, '18894', 'XkmgF', 'peserta'),
+(29, 18895, '18895', 'XulvM', 'peserta'),
+(30, 18896, '18896', 'AgagW', 'peserta'),
+(31, 18897, '18897', 'ZdctT', 'peserta'),
+(32, 18898, '18898', 'BiivI', 'peserta'),
+(33, 18899, '18899', 'OdtpH', 'peserta'),
+(34, 18900, '18900', 'OnoaY', 'peserta'),
+(35, 18901, '18901', 'XlnnV', 'peserta'),
+(36, 18902, '18902', 'ZaviH', 'peserta'),
+(37, 18903, '18903', 'XcynC', 'peserta'),
+(38, 18904, '18904', 'SvzfS', 'peserta'),
+(39, 18905, '18905', 'FwggU', 'peserta'),
+(40, 18906, '18906', 'PuouA', 'peserta'),
+(41, 18907, '18907', 'OuehI', 'peserta'),
+(42, 18908, '18908', 'NteuE', 'peserta'),
+(43, 18909, '18909', 'QzljB', 'peserta'),
+(44, 18910, '18910', 'NwoyW', 'peserta'),
+(45, 18911, '18911', 'UiwbN', 'peserta'),
+(46, 18912, '18912', 'IsvwO', 'peserta'),
+(47, 18913, '18913', 'LdquC', 'peserta'),
+(48, 18914, '18914', 'OrjgH', 'peserta'),
+(49, 18915, '18915', 'RsshW', 'peserta'),
+(50, 18916, '18916', 'IwslG', 'peserta'),
+(51, 18917, '18917', 'ZmokZ', 'peserta'),
+(52, 18918, '18918', 'HxomR', 'peserta'),
+(53, 18919, '18919', 'TmzfM', 'peserta'),
+(54, 18920, '18920', 'HsznS', 'peserta'),
+(55, 18921, '18921', 'RqbdX', 'peserta'),
+(56, 18922, '18922', 'LubmW', 'peserta'),
+(57, 18923, '18923', 'WhpnP', 'peserta'),
+(58, 18924, '18924', 'EylnN', 'peserta'),
+(59, 18925, '18925', 'OtohT', 'peserta'),
+(60, 18926, '18926', 'PaczI', 'peserta'),
+(61, 18927, '18927', 'GdzqF', 'peserta'),
+(62, 18928, '18928', 'VxujL', 'peserta'),
+(63, 18929, '18929', 'KfpnX', 'peserta'),
+(64, 18930, '18930', 'QfkpR', 'peserta'),
+(65, 18931, '18931', 'MixkR', 'peserta'),
+(66, 18932, '18932', 'LelaK', 'peserta'),
+(67, 18933, '18933', 'LwtxE', 'peserta'),
+(68, 18934, '18934', 'YxjuP', 'peserta'),
+(69, 18935, '18935', 'EansE', 'peserta'),
+(70, 18936, '18936', 'JmynJ', 'peserta'),
+(71, 18937, '18937', 'GivzH', 'peserta'),
 (72, 501, 'korju', 'korju', 'koordinator_jurusan'),
 (73, 512, 'Apri', 'Apri', 'guru'),
 (74, 521, 'Dadang', 'Dadang', 'guru'),
@@ -890,7 +890,7 @@ INSERT INTO `pengguna` (`id_pengguna`, `id`, `username`, `password`, `role`) VAL
 
 CREATE TABLE `penilaian_pkl` (
   `id_penilaian_pkl` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_peserta` int(11) NOT NULL,
   `aspek_teknis_1` varchar(255) DEFAULT '-',
   `nilai_astek_1` varchar(3) DEFAULT NULL,
   `aspek_teknis_2` varchar(255) DEFAULT '-',
@@ -930,7 +930,7 @@ CREATE TABLE `penilaian_pkl` (
 -- Dumping data for table `penilaian_pkl`
 --
 
-INSERT INTO `penilaian_pkl` (`id_penilaian_pkl`, `id_siswa`, `aspek_teknis_1`, `nilai_astek_1`, `aspek_teknis_2`, `nilai_astek_2`, `aspek_teknis_3`, `nilai_astek_3`, `aspek_teknis_4`, `nilai_astek_4`, `aspek_teknis_5`, `nilai_astek_5`, `aspek_teknis_6`, `nilai_astek_6`, `aspek_teknis_7`, `nilai_astek_7`, `aspek_teknis_8`, `nilai_astek_8`, `aspek_teknis_9`, `nilai_astek_9`, `aspek_teknis_10`, `nilai_astek_10`, `aspek_teknis_11`, `nilai_astek_11`, `aspek_teknis_12`, `nilai_astek_12`, `aspek_teknis_13`, `nilai_astek_13`, `aspek_teknis_14`, `nilai_astek_14`, `nilai_nontek_disiplin`, `nilai_nontek_kerjasama`, `nilai_nontek_inisiatif`, `nilai_nontek_tanggungjawab`, `nilai_nontek_kebersihan_kerapian`) VALUES
+INSERT INTO `penilaian_pkl` (`id_penilaian_pkl`, `id_peserta`, `aspek_teknis_1`, `nilai_astek_1`, `aspek_teknis_2`, `nilai_astek_2`, `aspek_teknis_3`, `nilai_astek_3`, `aspek_teknis_4`, `nilai_astek_4`, `aspek_teknis_5`, `nilai_astek_5`, `aspek_teknis_6`, `nilai_astek_6`, `aspek_teknis_7`, `nilai_astek_7`, `aspek_teknis_8`, `nilai_astek_8`, `aspek_teknis_9`, `nilai_astek_9`, `aspek_teknis_10`, `nilai_astek_10`, `aspek_teknis_11`, `nilai_astek_11`, `aspek_teknis_12`, `nilai_astek_12`, `aspek_teknis_13`, `nilai_astek_13`, `aspek_teknis_14`, `nilai_astek_14`, `nilai_nontek_disiplin`, `nilai_nontek_kerjasama`, `nilai_nontek_inisiatif`, `nilai_nontek_tanggungjawab`, `nilai_nontek_kebersihan_kerapian`) VALUES
 (1, 18867, 'Merakit komputer', '100', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '80', '80', '80', '80', '80');
 
 -- --------------------------------------------------------
@@ -941,7 +941,7 @@ INSERT INTO `penilaian_pkl` (`id_penilaian_pkl`, `id_siswa`, `aspek_teknis_1`, `
 
 CREATE TABLE `program_pkl` (
   `id_program_pkl` int(11) NOT NULL,
-  `id_siswa` int(11) NOT NULL,
+  `id_peserta` int(11) NOT NULL,
   `id_kompetensi_dasar` int(11) NOT NULL,
   `tanggal` date NOT NULL,
   `topik_pekerjaan` varchar(255) NOT NULL
@@ -951,7 +951,7 @@ CREATE TABLE `program_pkl` (
 -- Dumping data for table `program_pkl`
 --
 
-INSERT INTO `program_pkl` (`id_program_pkl`, `id_siswa`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`) VALUES
+INSERT INTO `program_pkl` (`id_program_pkl`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`) VALUES
 (1, 18867, 127, '2020-08-25', 'Menyusun beberapa layouting dan pewarnaan pada poster promosi'),
 (2, 18867, 49, '2020-08-26', 'menerapkan k3lh saat merakit komputer'),
 (3, 18867, 37, '2020-08-26', 'menganalisis kebutuhan komputer untuk kebutuhan ukuran ram'),
@@ -988,10 +988,10 @@ ALTER TABLE `data_guru`
   ADD PRIMARY KEY (`id_guru`);
 
 --
--- Indexes for table `data_siswa`
+-- Indexes for table `data_peserta`
 --
-ALTER TABLE `data_siswa`
-  ADD PRIMARY KEY (`id_siswa`);
+ALTER TABLE `data_peserta`
+  ADD PRIMARY KEY (`id_peserta`);
 
 --
 -- Indexes for table `data_staf_tu`
@@ -1076,10 +1076,10 @@ ALTER TABLE `data_guru`
   MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=725;
 
 --
--- AUTO_INCREMENT for table `data_siswa`
+-- AUTO_INCREMENT for table `data_peserta`
 --
-ALTER TABLE `data_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18942;
+ALTER TABLE `data_peserta`
+  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18942;
 
 --
 -- AUTO_INCREMENT for table `jurnal_pkl`

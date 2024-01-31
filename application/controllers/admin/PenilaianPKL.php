@@ -18,14 +18,14 @@ class PenilaianPKL extends CI_Controller
     public function index()
     {
         $data['title'] = 'Penilaian Prakerin';
-        $data['data_siswa'] = $this->penilaianpkl_model->getAll();
+        $data['data_peserta'] = $this->penilaianpkl_model->getAll();
         $this->load->view("admin/penilaianpkl/listpenilaianpkl", $data);
     }
 
-    public function tambahpenilaianpkl($nama_siswa = null)
+    public function tambahpenilaianpkl($nama_peserta = null)
     {
-        if (!isset($nama_siswa)) redirect('admin/PenilaianPKL');
-        $data['siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
+        if (!isset($nama_peserta)) redirect('admin/PenilaianPKL');
+        $data['peserta'] = $this->penilaianpkl_model->getById($nama_peserta);
         $data['title'] = 'Add Data  New Penilaian Prakerin';
         $this->load->view("admin/penilaianpkl/tambahpenilaianpkl", $data);
     }
@@ -38,12 +38,12 @@ class PenilaianPKL extends CI_Controller
         redirect('admin/PenilaianPKL');
     }
 
-    public function editpenilaianpkl($nama_siswa = null)
+    public function editpenilaianpkl($nama_peserta = null)
     {
-        if (!isset($nama_siswa)) redirect('admin/PenilaianPKL');
+        if (!isset($nama_peserta)) redirect('admin/PenilaianPKL');
         $data['title'] = 'Edit Data Penilaian Prakerin';
-        $data['data_siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
-        $data['siswa'] = $this->penilaianpkl_model->getNilaiSiswa($nama_siswa);
+        $data['data_peserta'] = $this->penilaianpkl_model->getById($nama_peserta);
+        $data['peserta'] = $this->penilaianpkl_model->getNilaiPeserta($nama_peserta);
         $this->load->view("admin/penilaianpkl/editpenilaianpkl", $data);
     }
 
@@ -55,10 +55,10 @@ class PenilaianPKL extends CI_Controller
         redirect('admin/PenilaianPKL');
     }
 
-    public function lihatpenilaianpkl($nama_siswa)
+    public function lihatpenilaianpkl($nama_peserta)
     {
-        $data['data_siswa'] = $this->penilaianpkl_model->getById($nama_siswa);
-        $data['siswa'] = $this->penilaianpkl_model->getNilaiSiswa($nama_siswa);
+        $data['data_peserta'] = $this->penilaianpkl_model->getById($nama_peserta);
+        $data['peserta'] = $this->penilaianpkl_model->getNilaiPeserta($nama_peserta);
         $this->load->library('pdf');
         $this->load->view('admin/penilaianpkl/lihatpenilaianpkl', $data);
     }
