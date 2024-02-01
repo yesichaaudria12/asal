@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pklpeserta`
+-- Database: `prakerinpeserta`
 --
 
 -- --------------------------------------------------------
@@ -44,11 +44,11 @@ INSERT INTO `absensi` (`id_absensi`, `id_peserta`, `tanggal_absensi`, `keteranga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catatan_kunjungan_pkl`
+-- Table structure for table `catatan_kunjungan_prakerin`
 --
 
-CREATE TABLE `catatan_kunjungan_pkl` (
-  `id_catatan_kunjungan_pkl` int(11) NOT NULL,
+CREATE TABLE `catatan_kunjungan_prakerin` (
+  `id_catatan_kunjungan_prakerin` int(11) NOT NULL,
   `id_guru` int(11) NOT NULL,
   `tanggal_kunjungan` date NOT NULL,
   `catatan_pembimbing` varchar(255) NOT NULL
@@ -292,11 +292,11 @@ INSERT INTO `data_staf_tu` (`id_staf_tu`, `nama_staf_tu`, `jenis_kelamin`, `alam
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurnal_pkl`
+-- Table structure for table `jurnal_prakerin`
 --
 
-CREATE TABLE `jurnal_pkl` (
-  `id_jurnal_pkl` int(11) NOT NULL,
+CREATE TABLE `jurnal_prakerin` (
+  `id_jurnal_prakerin` int(11) NOT NULL,
   `id_peserta` int(11) NOT NULL,
   `id_kompetensi_dasar` int(11) NOT NULL,
   `tanggal` date NOT NULL,
@@ -307,10 +307,10 @@ CREATE TABLE `jurnal_pkl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `jurnal_pkl`
+-- Dumping data for table `jurnal_prakerin`
 --
 
-INSERT INTO `jurnal_pkl` (`id_jurnal_pkl`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`, `dokumentasi`, `status`, `catatan`) VALUES
+INSERT INTO `jurnal_prakerin` (`id_jurnal_prakerin`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`, `dokumentasi`, `status`, `catatan`) VALUES
 (2, 18867, 49, '2020-08-26', 'Menerapkan K3LH', 'default.jpg', 'Belum Tervalidasi', ''),
 (3, 18867, 135, '2020-08-26', 'Buat desain dari bitmap', 'default.jpg', 'Belum Tervalidasi', 'Belum ada catatan'),
 (4, 18867, 69, '2020-08-26', 'Mencoba menghidupkan komputer', 'default.jpg', 'Belum Tervalidasi', 'Belum ada catatan'),
@@ -689,11 +689,11 @@ INSERT INTO `mapel` (`id`, `nama_mapel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengajuanpkl`
+-- Table structure for table `pengajuanprakerin`
 --
 
-CREATE TABLE `pengajuanpkl` (
-  `id_pengajuanpkl` int(11) NOT NULL,
+CREATE TABLE `pengajuanprakerin` (
+  `id_pengajuanprakerin` int(11) NOT NULL,
   `id_peserta` int(11) NOT NULL,
   `id_mentor` int(11) NOT NULL,
   `tanggal_pengajuan` datetime NOT NULL DEFAULT current_timestamp(),
@@ -706,25 +706,25 @@ CREATE TABLE `pengajuanpkl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `pengajuanpkl`
+-- Dumping data for table `pengajuanprakerin`
 --
 
-INSERT INTO `pengajuanpkl` (`id_pengajuanpkl`, `id_peserta`, `id_mentor`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
+INSERT INTO `pengajuanprakerin` (`id_pengajuanprakerin`, `id_peserta`, `id_mentor`, `tanggal_pengajuan`, `tanggal_masuk`, `tanggal_keluar`, `id_guru`, `status_keanggotaan`, `status_validasi`, `kuota`) VALUES
 (5, 18867, 1, '2020-08-22 17:26:57', '2020-01-22', '2020-07-31', 521, 'Anggota', 'Diterima', 1),
 (6, 18868, 1, '2020-08-23 17:28:20', '2020-01-01', '2020-01-01', 521, 'Ketua Kelompok', 'Diterima', 1);
 
 --
--- Triggers `pengajuanpkl`
+-- Triggers `pengajuanprakerin`
 --
 DELIMITER $$
-CREATE TRIGGER `TG_kuota_mentor` AFTER INSERT ON `pengajuanpkl` FOR EACH ROW BEGIN
+CREATE TRIGGER `TG_kuota_mentor` AFTER INSERT ON `pengajuanprakerin` FOR EACH ROW BEGIN
 	UPDATE data_mentor SET kuota=kuota-NEW.kuota
     WHERE id_mentor = NEW.id_mentor;
     END
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `TG_kuota_mentor1` AFTER DELETE ON `pengajuanpkl` FOR EACH ROW BEGIN
+CREATE TRIGGER `TG_kuota_mentor1` AFTER DELETE ON `pengajuanprakerin` FOR EACH ROW BEGIN
 	UPDATE data_mentor SET kuota=kuota+OLD.kuota
     WHERE id_mentor = OLD.id_mentor;
     END
@@ -742,7 +742,7 @@ CREATE TABLE `pengguna` (
   `id` int(15) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` enum('peserta','admin_pkl','pembimbing_mentor','koordinator_jurusan','guru') NOT NULL
+  `role` enum('peserta','admin_prakerin','pembimbing_mentor','koordinator_jurusan','guru') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -829,7 +829,7 @@ INSERT INTO `pengguna` (`id_pengguna`, `id`, `username`, `password`, `role`) VAL
 (77, 614, 'Mursalin', 'Mursalin', 'guru'),
 (78, 713, 'Herdian', 'Herdian', 'guru'),
 (79, 724, 'Singgih', 'Singgih', 'guru'),
-(80, 234, 'admin', 'admin', 'admin_pkl'),
+(80, 234, 'admin', 'admin', 'admin_prakerin'),
 (81, 1, 'Asterix', 'Asterix', 'pembimbing_mentor'),
 (82, 2, 'Bina', 'Bina', 'pembimbing_mentor'),
 (83, 3, 'BPS', 'BPS', 'pembimbing_mentor'),
@@ -885,11 +885,11 @@ INSERT INTO `pengguna` (`id_pengguna`, `id`, `username`, `password`, `role`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penilaian_pkl`
+-- Table structure for table `penilaian_prakerin`
 --
 
-CREATE TABLE `penilaian_pkl` (
-  `id_penilaian_pkl` int(11) NOT NULL,
+CREATE TABLE `penilaian_prakerin` (
+  `id_penilaian_prakerin` int(11) NOT NULL,
   `id_peserta` int(11) NOT NULL,
   `aspek_teknis_1` varchar(255) DEFAULT '-',
   `nilai_astek_1` varchar(3) DEFAULT NULL,
@@ -927,20 +927,20 @@ CREATE TABLE `penilaian_pkl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penilaian_pkl`
+-- Dumping data for table `penilaian_prakerin`
 --
 
-INSERT INTO `penilaian_pkl` (`id_penilaian_pkl`, `id_peserta`, `aspek_teknis_1`, `nilai_astek_1`, `aspek_teknis_2`, `nilai_astek_2`, `aspek_teknis_3`, `nilai_astek_3`, `aspek_teknis_4`, `nilai_astek_4`, `aspek_teknis_5`, `nilai_astek_5`, `aspek_teknis_6`, `nilai_astek_6`, `aspek_teknis_7`, `nilai_astek_7`, `aspek_teknis_8`, `nilai_astek_8`, `aspek_teknis_9`, `nilai_astek_9`, `aspek_teknis_10`, `nilai_astek_10`, `aspek_teknis_11`, `nilai_astek_11`, `aspek_teknis_12`, `nilai_astek_12`, `aspek_teknis_13`, `nilai_astek_13`, `aspek_teknis_14`, `nilai_astek_14`, `nilai_nontek_disiplin`, `nilai_nontek_kerjasama`, `nilai_nontek_inisiatif`, `nilai_nontek_tanggungjawab`, `nilai_nontek_kebersihan_kerapian`) VALUES
+INSERT INTO `penilaian_prakerin` (`id_penilaian_prakerin`, `id_peserta`, `aspek_teknis_1`, `nilai_astek_1`, `aspek_teknis_2`, `nilai_astek_2`, `aspek_teknis_3`, `nilai_astek_3`, `aspek_teknis_4`, `nilai_astek_4`, `aspek_teknis_5`, `nilai_astek_5`, `aspek_teknis_6`, `nilai_astek_6`, `aspek_teknis_7`, `nilai_astek_7`, `aspek_teknis_8`, `nilai_astek_8`, `aspek_teknis_9`, `nilai_astek_9`, `aspek_teknis_10`, `nilai_astek_10`, `aspek_teknis_11`, `nilai_astek_11`, `aspek_teknis_12`, `nilai_astek_12`, `aspek_teknis_13`, `nilai_astek_13`, `aspek_teknis_14`, `nilai_astek_14`, `nilai_nontek_disiplin`, `nilai_nontek_kerjasama`, `nilai_nontek_inisiatif`, `nilai_nontek_tanggungjawab`, `nilai_nontek_kebersihan_kerapian`) VALUES
 (1, 18867, 'Merakit komputer', '100', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '80', '80', '80', '80', '80');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `program_pkl`
+-- Table structure for table `program_prakerin`
 --
 
-CREATE TABLE `program_pkl` (
-  `id_program_pkl` int(11) NOT NULL,
+CREATE TABLE `program_prakerin` (
+  `id_program_prakerin` int(11) NOT NULL,
   `id_peserta` int(11) NOT NULL,
   `id_kompetensi_dasar` int(11) NOT NULL,
   `tanggal` date NOT NULL,
@@ -948,10 +948,10 @@ CREATE TABLE `program_pkl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `program_pkl`
+-- Dumping data for table `program_prakerin`
 --
 
-INSERT INTO `program_pkl` (`id_program_pkl`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`) VALUES
+INSERT INTO `program_prakerin` (`id_program_prakerin`, `id_peserta`, `id_kompetensi_dasar`, `tanggal`, `topik_pekerjaan`) VALUES
 (1, 18867, 127, '2020-08-25', 'Menyusun beberapa layouting dan pewarnaan pada poster promosi'),
 (2, 18867, 49, '2020-08-26', 'menerapkan k3lh saat merakit komputer'),
 (3, 18867, 37, '2020-08-26', 'menganalisis kebutuhan komputer untuk kebutuhan ukuran ram'),
@@ -970,10 +970,10 @@ ALTER TABLE `absensi`
   ADD PRIMARY KEY (`id_absensi`);
 
 --
--- Indexes for table `catatan_kunjungan_pkl`
+-- Indexes for table `catatan_kunjungan_prakerin`
 --
-ALTER TABLE `catatan_kunjungan_pkl`
-  ADD PRIMARY KEY (`id_catatan_kunjungan_pkl`);
+ALTER TABLE `catatan_kunjungan_prakerin`
+  ADD PRIMARY KEY (`id_catatan_kunjungan_prakerin`);
 
 --
 -- Indexes for table `data_mentor`
@@ -1000,10 +1000,10 @@ ALTER TABLE `data_staf_tu`
   ADD PRIMARY KEY (`id_staf_tu`);
 
 --
--- Indexes for table `jurnal_pkl`
+-- Indexes for table `jurnal_prakerin`
 --
-ALTER TABLE `jurnal_pkl`
-  ADD PRIMARY KEY (`id_jurnal_pkl`);
+ALTER TABLE `jurnal_prakerin`
+  ADD PRIMARY KEY (`id_jurnal_prakerin`);
 
 --
 -- Indexes for table `jurusan`
@@ -1024,10 +1024,10 @@ ALTER TABLE `mapel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pengajuanpkl`
+-- Indexes for table `pengajuanprakerin`
 --
-ALTER TABLE `pengajuanpkl`
-  ADD PRIMARY KEY (`id_pengajuanpkl`);
+ALTER TABLE `pengajuanprakerin`
+  ADD PRIMARY KEY (`id_pengajuanprakerin`);
 
 --
 -- Indexes for table `pengguna`
@@ -1036,16 +1036,16 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indexes for table `penilaian_pkl`
+-- Indexes for table `penilaian_prakerin`
 --
-ALTER TABLE `penilaian_pkl`
-  ADD PRIMARY KEY (`id_penilaian_pkl`);
+ALTER TABLE `penilaian_prakerin`
+  ADD PRIMARY KEY (`id_penilaian_prakerin`);
 
 --
--- Indexes for table `program_pkl`
+-- Indexes for table `program_prakerin`
 --
-ALTER TABLE `program_pkl`
-  ADD PRIMARY KEY (`id_program_pkl`);
+ALTER TABLE `program_prakerin`
+  ADD PRIMARY KEY (`id_program_prakerin`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1058,10 +1058,10 @@ ALTER TABLE `absensi`
   MODIFY `id_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `catatan_kunjungan_pkl`
+-- AUTO_INCREMENT for table `catatan_kunjungan_prakerin`
 --
-ALTER TABLE `catatan_kunjungan_pkl`
-  MODIFY `id_catatan_kunjungan_pkl` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `catatan_kunjungan_prakerin`
+  MODIFY `id_catatan_kunjungan_prakerin` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `data_mentor`
@@ -1082,10 +1082,10 @@ ALTER TABLE `data_peserta`
   MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18942;
 
 --
--- AUTO_INCREMENT for table `jurnal_pkl`
+-- AUTO_INCREMENT for table `jurnal_prakerin`
 --
-ALTER TABLE `jurnal_pkl`
-  MODIFY `id_jurnal_pkl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `jurnal_prakerin`
+  MODIFY `id_jurnal_prakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
@@ -1106,10 +1106,10 @@ ALTER TABLE `mapel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `pengajuanpkl`
+-- AUTO_INCREMENT for table `pengajuanprakerin`
 --
-ALTER TABLE `pengajuanpkl`
-  MODIFY `id_pengajuanpkl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `pengajuanprakerin`
+  MODIFY `id_pengajuanprakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
@@ -1118,16 +1118,16 @@ ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
--- AUTO_INCREMENT for table `penilaian_pkl`
+-- AUTO_INCREMENT for table `penilaian_prakerin`
 --
-ALTER TABLE `penilaian_pkl`
-  MODIFY `id_penilaian_pkl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `penilaian_prakerin`
+  MODIFY `id_penilaian_prakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `program_pkl`
+-- AUTO_INCREMENT for table `program_prakerin`
 --
-ALTER TABLE `program_pkl`
-  MODIFY `id_program_pkl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `program_prakerin`
+  MODIFY `id_program_prakerin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
