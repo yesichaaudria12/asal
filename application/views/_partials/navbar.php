@@ -21,13 +21,13 @@
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->session->userdata('nama_peserta'); ?><?php echo $this->session->userdata('nama_staf_tu'); ?><?php echo $this->session->userdata('nama_mentor'); ?></span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->session->userdata('nama_peserta'); ?><?php echo $this->session->userdata('username'); ?><?php echo $this->session->userdata('nama_mentor'); ?></span>
                         <img class="img-profile rounded-circle" src="<?= base_url('assets/'); ?>img/user-solid.svg">
                     </a>
 
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ProfilModal">
+                        <a class="dropdown-item" href="<?= base_url('DataProfil/daftarprofil') ?>" data-toggle="modal" data-target="#ProfilModal">
                             <i class=" fas fa-user-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Profil
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

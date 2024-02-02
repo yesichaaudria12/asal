@@ -19,6 +19,84 @@
           </div>
       </div>
 
+      <!-- MODAL PROFIL -->
+      <div class="modal fade" id="ProfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">My Profil</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+
+                      <form action="<?= base_url('admin/Akun/tambahakun') ?>" method="post">
+
+                          <div class="form-group">
+                              <label for="username">Username</label>
+                              <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>"
+                                  required="required" type="text" name="username" placeholder="" value="<?php echo $this->session->userdata('username'); ?>"></input>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('username') ?>
+                              </div>
+                          </div>
+
+                          <!-- Tampilkan gambar profil saat ini -->
+                          <div class="form-group">
+                                    <label for="currentProfilePicture">Foto Profil</label><br>
+                                    <?php
+                                    $currentProfilePicture = $this->session->userdata('gambar');
+                                    if ($currentProfilePicture) {
+                                        echo '<img src="' . base_url('path/to/your/uploads/directory/' . $currentProfilePicture) . '" alt="Foto Profil" style="max-width: 100px; max-height: 100px;">';
+                                    } else {
+                                        // Tampilkan gambar default jika tidak ada gambar profil saat ini
+                                        echo '<img src="' . base_url('assets/img/user-solid.svg') . '" alt="Default Foto Profil" style="max-width: 100px; max-height: 100px;">';
+                                    }
+                                    ?>
+                            </div>
+
+                          <div class="form-group">
+                                <label for="gambar">Ubah Foto Profil</label>
+                                <input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid' : '' ?>" type="file" name="gambar" accept="image/*" required>
+
+                                    <div class="invalid-feedback">
+                                <?php echo form_error('gambar') ?>
+                            </div>
+                        </div>
+
+                          <div class="form-group">
+                              <label for="password">Kata Sandi</label>
+                              <input class="form-control <?php echo form_error('password') ? 'is-invalid' : '' ?>"
+                                  required="required" type="text" name="password" placeholder=""></input>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('password') ?>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                              <label for="confirmpassword">Confirm Kata Sandi</label>
+                              <input class="form-control <?php echo form_error('confirmpassword') ? 'is-invalid' : '' ?>"
+                                  required="required" type="text" name="confirmpassword" placeholder=""></input>
+                              <div class="invalid-feedback">
+                                  <?php echo form_error('password') ?>
+                              </div>
+                          </div>
+
+                          <input type="hidden" name="role" value="admin_prakerin" />
+
+                  </div>
+                  <div class="modal-footer">
+                      <input class="btn btn-primary" type="submit" name="btn" value="Save" />
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <!-- END MODAL PROFIL -->
+
       <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
