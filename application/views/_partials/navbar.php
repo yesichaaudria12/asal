@@ -27,7 +27,7 @@
 
                     <!-- Dropdown - User Information -->
                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="<?= base_url('DataProfil/daftarprofil') ?>" data-toggle="modal" data-target="#ProfilModal">
+                        <a class="dropdown-item" href="<?= base_url('DataProfil/daftarprofil') ?>
                             <i class=" fas fa-user-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Profil
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

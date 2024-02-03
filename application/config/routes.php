@@ -56,3 +56,4 @@ $route['dataprofil'] = 'dataprofil/Dashboard';
 $route['pembimbingmentor'] = 'pembimbingmentor/Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
