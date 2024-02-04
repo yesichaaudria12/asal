@@ -12,8 +12,9 @@ class MyProfile extends CI_Controller
         $this->load->library('session');
     }
 
-    public function showProfile($id_pengguna)
+    public function showprofile($id_pengguna)
     {
+		return "test";
         // Mengambil data profil pengguna berdasarkan ID pengguna
         $data['user_profile'] = $this->user_model->getById($id_pengguna);
 
