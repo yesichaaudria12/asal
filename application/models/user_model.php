@@ -57,7 +57,7 @@ class User_model extends CI_Model
 
     public function getById($id_pengguna)
     {
-        return $this->db->get_where($this->_table, ["id_pengguna" => $id_pengguna])->row();
+        return $this->db->get_where($this->_table, ["id" => $id_pengguna])->row();
     }
 
     public function save()

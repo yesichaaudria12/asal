@@ -12,11 +12,12 @@ class MyProfile extends CI_Controller
         $this->load->library('session');
     }
 
-    public function showprofile($id_pengguna)
+    public function showprofile()
     {
-		return "test";
-        // Mengambil data profil pengguna berdasarkan ID pengguna
-        $data['user_profile'] = $this->user_model->getById($id_pengguna);
+		$user_id = $this->session->userdata('id');
+		// Mengambil data profil pengguna berdasarkan ID pengguna
+        $data['user_profile'] = $this->user_model->getById($user_id);
+		$data["title"] = "My Profile";
 
         // Jika data profil tidak ditemukan, tampilkan error 404
         if (!$data['user_profile']) {
@@ -24,7 +25,7 @@ class MyProfile extends CI_Controller
         }
 
         // Mengirim data profil ke tampilan myprofile.php
-        $this->load->view("myprofile", $data);
+        $this->load->view("profile/myprofile", $data);
     }
 
     public function daftarprofil()
