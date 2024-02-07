@@ -104,7 +104,11 @@
 
                 </div>
                 <!-- End of Content Wrapper -->
+                </div>
+                <!-- End of Content Wrapper -->
 
+            </div>
+            <!-- End of Page Wrapper -->
             </div>
             <!-- End of Page Wrapper -->
 
@@ -112,17 +116,29 @@
         <!-- Footer -->
         <?php $this->load->view("_partials/footer.php") ?>
         <!-- End of Footer -->
+        </div>
+        <!-- Footer -->
+        <?php $this->load->view("_partials/footer.php") ?>
+        <!-- End of Footer -->
 
+        <!-- Scroll to Top Button-->
+        <?php $this->load->view("_partials/scrolltop.php") ?>
         <!-- Scroll to Top Button-->
         <?php $this->load->view("_partials/scrolltop.php") ?>
 
         <!-- Logout Modal-->
         <?php $this->load->view("_partials/modal.php") ?>
+        <!-- Logout Modal-->
+        <?php $this->load->view("_partials/modal.php") ?>
 
+        <!-- Bootstrap core JavaScript-->
+        <?php $this->load->view("_partials/js.php") ?>
         <!-- Bootstrap core JavaScript-->
         <?php $this->load->view("_partials/js.php") ?>
 
 </body>
+
+
 
 
 
