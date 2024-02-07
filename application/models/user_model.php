@@ -1,23 +1,23 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_model extends CI_Model
+class user_model extends CI_Model
 {
     private $_table = "pengguna";
 
-    public $id_pengguna;
+    public $user_id;
+    public $name;
     public $username;
-    public $gambar;
-    public $password;
-    public $confirmpassword;
+    public $email;
 
     public function rules()
     {
         return [
+
             [
-                'field' => 'id_pengguna',
-                'label' => 'No',
-                'rules' => 'numeric'
+                'field' => 'name',
+                'label' => 'Nama Lengkap',
+                'rules' => 'required'
             ],
 
             [
@@ -27,63 +27,36 @@ class User_model extends CI_Model
             ],
 
             [
-                'field' => 'gambar',
-                'label' => 'Foto',
-                'rules' => 'required'
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'required|valid_email'
             ],
-
-            [
-                'field' => 'password',
-                'label' => 'password',
-                'rules' => 'required'
-            ],
-
-            [
-                'field' => 'confirmpassword',
-                'label' => 'confirmpassword',
-                'rules' => 'required'
-            ],
-
         ];
     }
 
 
-    public function getAll()
+    public function getById($user_id)
     {
-        $this->db->order_by('username', 'ASC');
-        $query = $this->db->get($this->_table);
-        return $query->result();
-    }
-
-    public function getById($id_pengguna)
-    {
-        return $this->db->get_where($this->_table, ["id" => $id_pengguna])->row();
+        return $this->db->get_where($this->_table, ["id" => $user_id])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->id_pengguna = $post["id_pengguna"];
+        $this->user_id = $post["user_id"];
+        $this->name = $post["name"];
         $this->username = $post["username"];
-        $this->gambar = $post["gambar"];
-        $this->password = $post["password"];
-        $this->confirmpassword = $post["confirmpassword"];;
+        $this->email = $post["email"];
         return $this->db->insert($this->_table, $this);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $this->id_pengguna = $post["id_pengguna"];
+        $this->user_id = $post["user_id"];
+        $this->name = $post["name"];
         $this->username = $post["username"];
-        $this->gambar = $post["gambar"];
-        $this->password = $post["password"];
-        $this->confirmpassword = $post["confirmpassword"];
-        return $this->db->update($this->_table, $this, array("id_pengguna" => $post["id_pengguna"]));
-    }
-
-    public function delete($id_pengguna)
-    {
-        return $this->db->delete($this->_table, array("id_pengguna" => $id_pengguna));
+        $this->email = $post["email"];
+        return $this->db->update($this->_table, $this, array("user_id" => $post["user_id"]));
     }
 }

@@ -18,7 +18,6 @@ class Admin extends CI_Model
     {
         $this->db->select('*');
         $this->db->from($table);
-        $this->db->join('data_staf_tu', 'data_staf_tu.id_staf_tu = pengguna.id', 'left');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengguna.id', 'left');
         $this->db->join('data_peserta', 'data_peserta.id_peserta = pengguna.id', 'left');
         $this->db->join('jurusan', 'jurusan.id_jurusan = data_peserta.id_jurusan', 'left');

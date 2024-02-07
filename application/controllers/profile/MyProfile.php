@@ -6,40 +6,40 @@ class MyProfile extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // Load model yang diperlukan
         $this->load->model("user_model");
-        // Load library-session
         $this->load->library('session');
+        $this->load->library('form_validation');
     }
 
     public function showprofile()
     {
-		$user_id = $this->session->userdata('id');
-		// Mengambil data profil pengguna berdasarkan ID pengguna
+        $user_id = $this->session->userdata('id');
         $data['user_profile'] = $this->user_model->getById($user_id);
-		$data["title"] = "My Profile";
+        $data["title"] = "MY PROFILE";
 
-        // Jika data profil tidak ditemukan, tampilkan error 404
         if (!$data['user_profile']) {
             show_404();
+        } else {
+            $this->load->view('profile/myprofile', $data);
         }
-
-        // Mengirim data profil ke tampilan myprofile.php
-        $this->load->view("profile/myprofile", $data);
     }
 
-    public function daftarprofil()
+    public function save($id = null)
     {
-        // Implementasi fungsi daftarprofil
-    }
 
-    public function editdataprofil($id = null)
-    {
-        // Implementasi fungsi editdataprofil
-    }
+        if (!isset($id)) redirect('profile/MyProfile');
+        $data= $this->user_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($data->rules());
 
-    public function hapusdataprofil($id = null)
-    {
-        // Implementasi fungsi hapusdataprofil
+        if ($validation->run()) {
+            $data->update();
+            $this->session->set_flashdata('success', 'Berhasil diubah');
+            redirect('profile/MyProfile');
+        }
+        $data['title'] = 'Edit Data Profile';
+        $data["user_profile"] = $data->getById($id);
+        if (!$data["user_profile"]) show_404();
+        $this->load->view('profile/myprofile', $data);
     }
 }

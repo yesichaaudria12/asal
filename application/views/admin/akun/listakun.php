@@ -70,7 +70,6 @@
                                             <td>
                                                 <?php echo $akun->nama_peserta ?>
                                                 <?php echo $akun->nama_guru ?>
-                                                <?php echo $akun->nama_staf_tu ?>
                                                 <?php echo $akun->nama_mentor ?>
                                             </td>
                                             <td style="text-align:center">

@@ -52,7 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'login';
 $route['admin'] = 'admin/Dashboard';
 $route['peserta'] = 'peserta/Dashboard';
-$route['dataprofil'] = 'dataprofil/Dashboard';
+$route['myprofile'] = 'myprofile/Dashboard';
 $route['pembimbingmentor'] = 'pembimbingmentor/Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

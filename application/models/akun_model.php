@@ -23,7 +23,6 @@ class akun_model extends CI_Model
     public function getAll()
     {
         $this->db->join('data_guru', 'data_guru.id_guru = pengguna.id', 'left');
-        $this->db->join('data_staf_tu', 'data_staf_tu.id_staf_tu = pengguna.id', 'left');
         $this->db->join('data_peserta', 'data_peserta.id_peserta = pengguna.id', 'left');
         $this->db->join('data_mentor', 'data_mentor.id_mentor = pengguna.id', 'left');
         $this->db->order_by('id', 'asc');
