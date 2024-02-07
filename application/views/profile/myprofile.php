@@ -51,7 +51,7 @@
                                 <div class="col-lg-12 mb-4">
                                     <div class="card">
                                         <div class="card-body">
-                                        <form action="<?= base_url('profile/MyProfile/showprofile') ?>" method="POST" enctype="multipart/form-data">
+                                            <form action="<?= base_url('profile/myprofile/showprofile') ?>" method="POST" enctype="multipart/form-data">
                                             
                                             <!-- ubah profile -->
                                             <div class="row mb-3">
@@ -90,7 +90,7 @@
                                                 <div class="row">
                                                     <div class="col-sm-3"></div>
                                                     <div class="col-sm-9 text-secondary">
-                                                    <input class="btn btn-success" type="submit" name="submitProfile" value="Save Profile" />
+                                                    <input class="btn btn-success" type="submit" name="btn" value="Save" />
                                                     </div>
                                                 </div>
                                             </form>
@@ -104,11 +104,7 @@
 
                 </div>
                 <!-- End of Content Wrapper -->
-                </div>
-                <!-- End of Content Wrapper -->
 
-            </div>
-            <!-- End of Page Wrapper -->
             </div>
             <!-- End of Page Wrapper -->
 
@@ -116,29 +112,17 @@
         <!-- Footer -->
         <?php $this->load->view("_partials/footer.php") ?>
         <!-- End of Footer -->
-        </div>
-        <!-- Footer -->
-        <?php $this->load->view("_partials/footer.php") ?>
-        <!-- End of Footer -->
 
-        <!-- Scroll to Top Button-->
-        <?php $this->load->view("_partials/scrolltop.php") ?>
         <!-- Scroll to Top Button-->
         <?php $this->load->view("_partials/scrolltop.php") ?>
 
         <!-- Logout Modal-->
         <?php $this->load->view("_partials/modal.php") ?>
-        <!-- Logout Modal-->
-        <?php $this->load->view("_partials/modal.php") ?>
 
-        <!-- Bootstrap core JavaScript-->
-        <?php $this->load->view("_partials/js.php") ?>
         <!-- Bootstrap core JavaScript-->
         <?php $this->load->view("_partials/js.php") ?>
 
 </body>
-
-
 
 
 
