@@ -89,9 +89,15 @@
                                         class="form-control <?php echo form_error('jenis_kelamin') ? 'is-invalid' : '' ?>"
                                         name="jenis_kelamin">
                                         <option disabled selected value="">---Pilih Jenis Kelamin--</option>
-                                        <option value="1">Laki-Laki</option>
-                                        <option value="2">Perempuan</option>
+                                        <?php
+                                            $kategori = mysqli_query($conn, "SELECT * FROM data_peserta ORDER BY id_peserta DESC");
+                                             While($r = mysqli_fetch_array($kategori)){
+                                            ?>
+                                            <option value="<?php echo $r['id_peserta'] ?>"<?php echo ($r['id_peserta'] == $p->id_peserta)? '
+                                            selected':''; ?>><?php echo $r['jenis_kelamin'] ?></option>
+                                            <?php } ?>
                                     </select>
+                                    
                                     <div class="invalid-feedback">
                                         <?php echo form_error('jenis_kelamin') ?>
                                     </div>

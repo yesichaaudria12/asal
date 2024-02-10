@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class user_model extends CI_Model
+class User_model extends CI_Model
 {
     private $_table = "pengguna";
 
-    public $user_id;
+    public $id_pengguna;
     public $name;
     public $username;
     public $email;
@@ -13,50 +13,46 @@ class user_model extends CI_Model
     public function rules()
     {
         return [
-
             [
-                'field' => 'name',
-                'label' => 'Nama Lengkap',
-                'rules' => 'required'
+                'field' => 'id_pengguna',
+                'label' => 'No',
+                'rules' => 'numeric'
             ],
 
             [
-                'field' => 'username',
+                'field' => 'name',
                 'label' => 'Nama Admin',
                 'rules' => 'required'
             ],
 
             [
+                'field' => 'username',
+                'label' => 'Username Admin',
+                'rules' => 'required'
+            ],
+
+            [
                 'field' => 'email',
-                'label' => 'Email',
-                'rules' => 'required|valid_email'
+                'label' => 'Email Admin',
+                'rules' => 'required'
             ],
         ];
     }
 
-
-    public function getById($user_id)
+    public function getById($id_pengguna)
     {
-        return $this->db->get_where($this->_table, ["id" => $user_id])->row();
+        return $this->db->get_where($this->_table, ["id" => $id_pengguna])->row();
     }
 
-    public function save()
+    public function updateProfile($user_id,  $name, $username, $email)
     {
-        $post = $this->input->post();
-        $this->user_id = $post["user_id"];
-        $this->name = $post["name"];
-        $this->username = $post["username"];
-        $this->email = $post["email"];
-        return $this->db->insert($this->_table, $this);
-    }
+        $data = [
+            'name' => $name,
+            'username' => $username,
+            'email' => $email,
+        ];
 
-    public function update()
-    {
-        $post = $this->input->post();
-        $this->user_id = $post["user_id"];
-        $this->name = $post["name"];
-        $this->username = $post["username"];
-        $this->email = $post["email"];
-        return $this->db->update($this->_table, $this, array("user_id" => $post["user_id"]));
+        $this->db->where('id', $user_id);
+        return $this->db->update($this->_table, $data);
     }
 }

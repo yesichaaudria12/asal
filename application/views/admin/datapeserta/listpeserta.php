@@ -33,6 +33,13 @@
                         <h1 class="h2 mr-4 mb-0 text-gray-800"><?php echo $title ?></h1>
                     </div>
 
+                    <?php if ($this->session->flashdata('success')) : ?>
+                    <div class="alert alert-success" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
+
                     <?php $this->load->view("_partials/breadcrumb.php") ?>
 
                     <!-- Content Row -->
